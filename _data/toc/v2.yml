@@ -1,0 +1,15 @@
+version_number: 2
+status: stable
+home: docs/pages
+contents:
+  - title: Docs
+    url: docs
+    top: true
+    pages:
+      - title: Pages
+        url: pages
+        pages:
+          - title: Page
+            url: page
+      - title: Other Page
+        url: other-page

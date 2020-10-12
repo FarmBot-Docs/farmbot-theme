@@ -1,0 +1,10 @@
+version_number: 1
+status: deprecated
+home: docs/page
+contents:
+  - title: Docs
+    url: docs
+    top: true
+    pages:
+      - title: Page
+        url: page

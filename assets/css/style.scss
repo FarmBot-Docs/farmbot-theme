@@ -356,6 +356,10 @@ nav {
     border-radius: 5px;
     th {
       text-align: left;
+      vertical-align: bottom;
+    }
+    td {
+      vertical-align: top;
     }
     th, td {
       border: none;

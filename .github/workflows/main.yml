@@ -1,0 +1,29 @@
+name: build
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build hub pages
+        run: |
+          curl --fail --request POST \
+            --url https://api.github.com/repos/farmbot-docs/farmbot-genesis/pages/builds \
+            --header "Authorization: Bearer $GITHUB_TOKEN"
+          curl --fail --request POST \
+            --url https://api.github.com/repos/farmbot-docs/farmbot-express/pages/builds \
+            --header "Authorization: Bearer $GITHUB_TOKEN"
+          curl --fail --request POST \
+            --url https://api.github.com/repos/farmbot-docs/farmbot-software/pages/builds \
+            --header "Authorization: Bearer $GITHUB_TOKEN"
+          curl --fail --request POST \
+            --url https://api.github.com/repos/farmbot-docs/farmbot-developers/pages/builds \
+            --header "Authorization: Bearer $GITHUB_TOKEN"
+          curl --fail --request POST \
+            --url https://api.github.com/repos/farmbot-docs/farmbot-meta/pages/builds \
+            --header "Authorization: Bearer $GITHUB_TOKEN"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}

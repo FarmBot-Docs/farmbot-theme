@@ -13,7 +13,7 @@ span.fb-button {
 
 span.fb-circle-button {
   font-weight: bold;
-	font-family: sans-serif;
+  font-family: sans-serif;
   padding: 2px 6px;
   border-radius: 50%;
   white-space: nowrap;
@@ -23,7 +23,7 @@ span.fb-xl-sticker {
   background: linear-gradient(315deg, #22a36d, #4ea3ed);
   border-radius: 50%;
   color: #f4f4f4;
-	font-family: sans-serif;
+  font-family: sans-serif;
   font-size: 12px;
   font-weight: bold;
   padding: 5.7px 5px;
@@ -154,54 +154,78 @@ span.fb-take-photo {
 }
 
 .fb-peripheral-on {
-    background: #6a4;
-    padding: 3px 24px 3px 6px;
+  background: #6a4;
+  padding: 3px 24px 3px 6px;
 }
 
 .fb-peripheral-off {
-    background: #ee6666;
-    padding: 3px 6px 3px 19px;
+  background: #ee6666;
+  padding: 3px 6px 3px 19px;
 }
 
 .fb-peripheral-unknown {
-		background: #fd6;
-    padding: 3px 45px 3px 0px;
+  background: #fd6;
+  padding: 3px 45px 3px 0px;
 }
 
 .fb-peripheral-disabled {
-		background: gray;
+  background: gray;
 }
 
 .fb-peripheral-on, .fb-peripheral-off, .fb-peripheral-unknown {
-    color: #f4f4f4;
-    border-bottom: 1px solid;
-    border-radius: 10px;
-    font-weight: 700;
-    font-family: sans-serif;
-    font-size: 10px;
-    text-transform: uppercase;
-    white-space: nowrap;
+  color: #f4f4f4;
+  border-bottom: 1px solid;
+  border-radius: 10px;
+  font-weight: 700;
+  font-family: sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .fb-peripheral-on:after {
-    margin-left: 8px;
+  margin-left: 8px;
 }
 
 .fb-peripheral-off:before {
-    margin-left: -17px;
+  margin-left: -17px;
 }
 
 .fb-peripheral-unknown:after {
-    margin-left: 16px;
+  margin-left: 16px;
 }
 
 .fb-peripheral-on:after, .fb-peripheral-off:before, .fb-peripheral-unknown:after {
-    content: "";
-    position: absolute;
-    margin-top: 6px;
-    height: 14px;
-    width: 14px;
-    border-radius: 50%;
-    background: #fff;
-    box-shadow: inset 0 0 3px 3px rgba(0,0,0,.03);
+  content: "";
+  position: absolute;
+  margin-top: 6px;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: inset 0 0 3px 3px rgba(0,0,0,.03);
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: #6a4;
+}
+
+.blue {
+  color: #37d;
+}
+
+.light-blue {
+  color: #a4c2f4;
+}
+
+.orange {
+  color: #e93;
+}
+
+.yellow {
+  color: #fd6;
 }

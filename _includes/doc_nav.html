@@ -21,7 +21,7 @@
     </select>
 
     <div class="mobile-nav">
-      <select onchange="if (this.value) window.location.href=this.value">
+      <select onchange="if (this.value) window.location.href=this.value" aria-label="Version picker">
         <option value>Navigate the docs...</option>
         {%- include mobile_toc.html toc=include.page_toc.contents
           version=include.page_version_number -%}

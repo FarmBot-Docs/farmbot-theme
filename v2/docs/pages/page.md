@@ -72,6 +72,8 @@ buttons:
 
 input:
 <span class="fb-input">INPUT</span>
+<span class="fb-input fb-disabled-input">disabled</span>
+<span class="fb-dropdown">dropdown <i class='fa fa-caret-down'></i></span>
 
 ### Peripheral controls
 
@@ -141,6 +143,9 @@ tooltip:
 <span class="fb-tooltip"><i class='fa fa-question'></i></span>
 
 ## Icons and emoji
+
+icon:
+<span><img class="value-icon" src="/assets/images/favicon.png"></span>
 
 art:
 :art:

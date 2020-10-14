@@ -295,6 +295,12 @@ nav {
   margin-bottom: -3px;
 }
 
+.value-icon {
+  display: inline-block;
+  height: 18px;
+  margin-bottom: -2px;
+}
+
 .content {
   width: 100%;
   position: relative;
@@ -335,7 +341,8 @@ nav {
     border: 3px solid #eee;
     border-radius: 5px;
     max-height: 600px;
-    &.emoji {
+    &.emoji,
+    &.value-icon {
       border: none;
       border-radius: 0;
     }

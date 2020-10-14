@@ -1,7 +1,7 @@
 ---
 ---
 
-span.fb-button {
+.fb-button {
   font-weight: bold;
   font-family: sans-serif;
   padding: 3px 7px;
@@ -11,7 +11,7 @@ span.fb-button {
   white-space: nowrap;
 }
 
-span.fb-circle-button {
+.fb-circle-button {
   font-weight: bold;
   font-family: sans-serif;
   padding: 2px 6px;
@@ -19,7 +19,7 @@ span.fb-circle-button {
   white-space: nowrap;
 }
 
-span.fb-xl-sticker {
+.fb-xl-sticker {
   background: linear-gradient(315deg, #22a36d, #4ea3ed);
   border-radius: 50%;
   color: #f4f4f4;
@@ -30,55 +30,55 @@ span.fb-xl-sticker {
   white-space: nowrap;
 }
 
-span.fb-green {
+.fb-green {
   background: #6a4;
   border-bottom: 1px solid #371;
   color: #f4f4f4;
 }
 
-span.fb-purple {
+.fb-purple {
   background: #a64d79;
   border-bottom: 1px solid #823c5f;
   color: #f4f4f4;
 }
 
-span.fb-red {
+.fb-red {
   background: #ee6666;
   border-bottom: 1px solid #fe0808;
   color: #f4f4f4;
 }
 
-span.fb-yellow {
+.fb-yellow {
   background: #fd6;
   border-bottom: 1px solid #b90;
   color: #434343;
 }
 
-span.fb-gray {
+.fb-gray {
   background: #666;
   border-bottom: 1px solid #434343;
   color: #f4f4f4;
 }
 
-span.fb-orange {
+.fb-orange {
   background: #fa0;
   border-bottom: 1px solid #e93;
   color: #434343;
 }
 
-span.fb-teal {
+.fb-teal {
   background: #1eb287;
   border-bottom: 1px solid #157e5f;
   color: #f4f4f4;
 }
 
-span.fb-blue {
+.fb-blue {
   background: #489fe4;
   border-bottom: 1px solid #287dc1;
   color: #f4f4f4;
 }
 
-span.fb-input {
+.fb-input {
   font-family: sans-serif;
   padding: 4px 7px;
   border-radius: 2px;
@@ -89,68 +89,73 @@ span.fb-input {
   white-space: nowrap;
 }
 
-span.fb-tooltip {
+.fb-tooltip {
   background: #5f5f5f;
   color: white;
   border-radius: 50%;
-  padding: 2px 5px;
+  padding: 0 5px;
   font-weight: bold;
   font-size: 11px;
   white-space: nowrap;
 }
 
-span.fb-step {
+.fb-step {
   border-radius: 2px;
   color: #434343;
   text-transform: uppercase;
   font-weight: bold;
-  padding: 6px 8px;
+  padding: 2px 8px;
   font-size: 11px;
   white-space: nowrap;
 }
 
-span.fb-move-absolute {
+.fb-move,
+.fb-find-home,
+.fb-set-servo-angle,
+.fb-set-zero,
+.fb-calibrate,
+.fb-move-home,
+.fb-move-absolute {
   background: #a4c2f4;
 }
 
-span.fb-move-relative {
+.fb-move-relative {
   background: #6a4;
 }
 
-span.fb-write-pin {
+.fb-toggle-pin,
+.fb-write-pin {
   background: #fa0;
 }
 
-span.fb-read-pin {
+.fb-read-pin {
   background: #fd6;
 }
 
-span.fb-wait {
+.fb-mark-as,
+.fb-send-message,
+.fb-take-photo,
+.fb-reboot,
+.fb-shutdown,
+.fb-wait {
   background: #ca8;
 }
 
-span.fb-send-message {
-  background: #e66;
-}
-
-span.fb-find-home {
-  background: #a4c2f4;
-}
-
-span.fb-if-statement {
+.fb-assertion,
+.fb-if-statement {
   background: #c68ed2;
 }
 
-span.fb-execute {
-  background: #bcbcbc;
+.fb-execute {
+  background: #ccc;
 }
 
-span.fb-run-farmware {
+.fb-run-farmware {
   background: #ebb;
 }
 
-span.fb-take-photo {
-  background: #ebb;
+.fb-e-stop {
+  background: #e66;
 }
 
 .fb-peripheral-on {
@@ -159,7 +164,7 @@ span.fb-take-photo {
 }
 
 .fb-peripheral-off {
-  background: #ee6666;
+  background: #e66;
   padding: 3px 6px 3px 19px;
 }
 
@@ -172,7 +177,9 @@ span.fb-take-photo {
   background: gray;
 }
 
-.fb-peripheral-on, .fb-peripheral-off, .fb-peripheral-unknown {
+.fb-peripheral-on,
+.fb-peripheral-off,
+.fb-peripheral-unknown {
   color: #f4f4f4;
   border-bottom: 1px solid;
   border-radius: 10px;
@@ -195,7 +202,9 @@ span.fb-take-photo {
   margin-left: 16px;
 }
 
-.fb-peripheral-on:after, .fb-peripheral-off:before, .fb-peripheral-unknown:after {
+.fb-peripheral-on:after,
+.fb-peripheral-off:before,
+.fb-peripheral-unknown:after {
   content: "";
   position: absolute;
   margin-top: 6px;
@@ -228,4 +237,71 @@ span.fb-take-photo {
 
 .yellow {
   color: #fd6;
+}
+
+.led {
+  &.red {
+    color: #e66;
+  }
+}
+
+.saucer {
+  &.red {
+    color: #e66;
+  }
+}
+
+.cable-color {
+  border-radius: 5px;
+  color: #434343;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 1px 10px;
+  font-size: 11px;
+  white-space: nowrap;
+  margin-left: 2px;
+  &.red {
+    background: red;
+    color: white;
+  }
+  &.yellow {
+    background: yellow;
+  }
+  &.green {
+    background: #339933;
+    color: white;
+  }
+  &.black {
+    background: black;
+    color: white;
+  }
+  &.white {
+    background: white;
+    border: 2px solid black;
+  }
+  &.brown {
+    background: #996633;
+    color: white;
+  }
+  &.blue {
+    background: #0000ff;
+    color: white;
+  }
+  &.grey {
+    background: #bfbfbf;
+  }
+  &.orange {
+    background: #ff6600;
+    color: white;
+  }
+  &.purple {
+    background: #9966ff;
+    color: white;
+  }
+  &.pink {
+    background: #ffcccc;
+  }
+  &.cyan {
+    background: #66ffd9;
+  }
 }

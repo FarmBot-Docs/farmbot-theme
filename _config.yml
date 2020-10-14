@@ -1,6 +1,8 @@
 theme: jekyll-theme-cayman
 color: '#434343'
 latest_version_number: 2
+plugins:
+  - jemoji
 exclude:
   - README.md
   - LICENSE

@@ -291,6 +291,10 @@ nav {
   }
 }
 
+.emoji {
+  margin-bottom: -3px;
+}
+
 .content {
   width: 100%;
   position: relative;
@@ -333,8 +337,7 @@ nav {
     max-height: 600px;
     &.emoji {
       border: none;
-      border-radius: none;
-      margin-bottom: -3px;
+      border-radius: 0;
     }
   }
   h1,

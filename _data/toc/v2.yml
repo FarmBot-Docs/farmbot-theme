@@ -13,3 +13,15 @@ contents:
             url: page
       - title: Other Page
         url: other-page
+  - title: Other
+    url: other
+    top: true
+    pages:
+      - title: Pages
+        url: pages
+        pages:
+          - title: Page
+            url: page
+      - title: External link
+        external: true
+        url: https://farm.bot

@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: 'en-US' }}">
 
-{%- include head.html -%}
+{%- assign version_factor = site.version_factor | default: 1 -%}
+{%- assign page_version_number =
+  page.url | split: '/' | slice: 1 | join: '' | slice: 1, 999
+  | replace: '.', '' | to_integer | divided_by: version_factor
+  | default: site.latest_version_number -%}
+
+{%- include head.html page_version_number=page_version_number -%}
 
 <body>
   {%- include hub_nav.html -%}
 
-  {%- assign version_factor = site.version_factor | default: 1 -%}
-  {%- assign page_version_number =
-    page.url | split: '/' | slice: 1 | join: '' | slice: 1, 999
-    | replace: '.', '' | to_integer | divided_by: version_factor
-    | default: site.latest_version_number -%}
   {%- assign page_toc =
     site.data.toc | where: "version_number", page_version_number | first -%}
 

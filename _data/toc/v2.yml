@@ -22,6 +22,11 @@ contents:
         pages:
           - title: Page
             url: page
+      - title: BOM
+        url: bom
+        pages:
+          - title: Parts
+            url: parts
       - title: External link
         external: true
         url: https://farm.bot

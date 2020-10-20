@@ -7,6 +7,7 @@
   {%- endcapture -%}
   {%- assign to = page.redirect.to | default: link | relative_url -%}
   <meta http-equiv="refresh" content="0; url={{ to }}" />
+  {%- seo -%}
 </head>
 
 <body>

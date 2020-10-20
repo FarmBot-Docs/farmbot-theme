@@ -1,0 +1,8 @@
+version_number: 2
+data:
+  - page: parts
+    data:
+      - section: part-1
+        image: /assets/images/favicon.png
+      - section: part-2
+        image: /assets/images/documentation.png

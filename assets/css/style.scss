@@ -18,32 +18,43 @@ body {
 }
 
 nav {
-  height: 4rem;
-  padding: 1rem;
-  padding-top: 0.75rem;
+  height: 60px;
   background: $site-color;
   a {
-    padding: 1rem 0.5rem;
-    text-decoration: none !important;
     color: #ddd;
-    padding-bottom: 1.2rem;
+    float: left;
+    line-height: 20px;
+    padding: 20px 15px;
+    text-decoration: none !important;
+    transition: background 0.2s ease;
     &:hover {
       color: white;
       background: darken($site-color, 5%);
-      transition: background 0.3s ease-out;
-      border-bottom-color: white;
+      transition: background 0.2s ease;
+      img {
+        filter: brightness(1.2);
+        transition: filter 0.2s ease;
+      }
     }
   }
   .current {
     border-bottom: 5px solid #f4f4f4;
+    padding-bottom: 15px;
   }
   .doc-icon {
-    &:hover {
-      border-bottom: none;
-    }
+    font-family: Inknut Antiqua;
+    height: 60px;
+    padding: 15px 25px;
     img {
-      width: 220px;
-      margin-bottom: -1rem;
+      filter: brightness(1);
+      float: left;
+      height: 30px;
+      transition: filter 0.2s ease;
+    }
+    p {
+      float: left;
+      line-height: 30px;
+      margin: 0 0 0 10px;
     }
   }
 }
@@ -76,6 +87,7 @@ nav {
     }
   }
   .version select {
+    background: white;
     border: 2px solid #eee;
     cursor: pointer;
     padding: .25rem .5rem;
@@ -173,7 +185,7 @@ nav {
         background: #dfdfdf;
       }
       &.current {
-        background: transparentize($site-color, 0.25);
+        background: $site-color;
         color: #f3f3f3;
         &:hover {
           background: $site-color;
@@ -189,7 +201,7 @@ nav {
           background: #dfdfdf;
         }
         &.current {
-          background: transparentize($site-color, 0.25);
+          background: $site-color;
           &:hover {
             background: $site-color;
           }

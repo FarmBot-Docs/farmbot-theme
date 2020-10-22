@@ -1,0 +1,9 @@
+{% assign gallery = include.images | split: ", " %}
+
+<div class="gallery">
+  <img class="gallery-featured-image" src="{{ gallery[0] }}" alt="{{ include.alt }}">
+  {% for image in gallery %}
+  <img class="gallery-thumbnail" src="{{ image }}" alt="{{ include.alt }}"
+    onclick="this.parentElement.firstElementChild.src = '{{ image }}';">
+  {% endfor %}
+</div>

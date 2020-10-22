@@ -38,6 +38,10 @@ tall image:
 
 ![tall image](tall.png)
 
+## Galleries
+
+{% include gallery.html images="/assets/images/express.jpg, /assets/images/genesis.jpg, /assets/images/software.jpg, /assets/images/developer.jpg, /assets/images/business.jpg, /assets/images/farmbot.svg, tall.png" alt="image gallery" %}
+
 ## Links
 
 here is a [link](page.md)

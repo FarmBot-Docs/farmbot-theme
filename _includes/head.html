@@ -5,8 +5,13 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.png' | relative_url }}">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-  <link rel="stylesheet" href="{{ '/assets/css/fb.css?v=' | append: site.github.build_revision | relative_url }}">
+  {% assign css = 'style fb' | split: ' ' %}
+  {% for filename in css %}
+  {%- capture stylesheet_url -%}
+  /assets/css/{{ filename }}.css?v={{ site.github.build_revision }}
+  {%- endcapture -%}
+  <link rel="stylesheet" href="{{ stylesheet_url | relative_url }}">
+  {% endfor %}
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inknut+Antiqua:700">
   <script src="/assets/js/toc.js"></script>
   {% include hover_image_styles.html page_version_number=include.page_version_number %}

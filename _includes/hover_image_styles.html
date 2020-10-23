@@ -1,16 +1,13 @@
 {%- assign version_section_images = site.data.section_images
         | where: "version_number", include.page_version_number | first -%}
-{%- assign page_section_images = version_section_images.data
-        | where: "page", page.slug | first -%}
-{%- assign folder = page.url | split: '/' | slice: -2 | first -%}
-{%- if folder == "bom" -%}
 <style>
+  /*{%- for page_section_images in version_section_images.data -%}*/
   /*{%- for item in page_section_images.data -%}*/
   a[href$="#{{ item.section }}"]:hover::after {
     content: "";
-    background-image: url('{{ item.image }}');
+    background-image: url('/v{{ include.page_version_number }}/{{ item.image }}');
   }
 
   /*{%- endfor -%}*/
+  /*{%- endfor -%}*/
 </style>
-{%- endif -%}

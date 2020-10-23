@@ -3,6 +3,6 @@ data:
   - page: parts
     data:
       - section: part-1
-        image: /assets/images/favicon.png
+        image: other/bom/_images/part_1.jpg
       - section: part-2
-        image: /assets/images/documentation.png
+        image: other/bom/_images/part_2.jpg

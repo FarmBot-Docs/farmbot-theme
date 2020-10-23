@@ -1,12 +1,10 @@
-{% assign gallery = include.images | strip | newline_to_br | split: "<br />" %}
+{%- assign gallery = include.images | markdownify | strip
+  | remove: '<p>' | remove: '</p>'
+  | newline_to_br | split: '<br />' -%}
 
-<div class="gallery">
-  {% assign featuredImageAlt = gallery[0] | split: "](" | first | remove: "![" %}
-  {% assign featuredImageSrc = gallery[0] | split: "](" | last | remove: ")" %}
-  <img class="gallery-featured-image" alt="{{ featuredImageAlt }}" src="{{ featuredImageSrc }}">
+<div class='gallery'>
+  {{ gallery | first | replace: '<img', '<img class="gallery-featured-image"' }}
   {% for image in gallery %}
-    {% assign imageAlt = image | strip | split: "](" | first | remove: "![" %}
-    {% assign imageSrc = image | split: "](" | last | remove: ")" %}
-    <img class="gallery-thumbnail" alt="{{ imageAlt }}" src="{{ imageSrc }}">
-  {% endfor %}
+  {{ image | strip | replace: '<img', '<img class="gallery-thumbnail"' }}
+  {%- endfor -%}
 </div>

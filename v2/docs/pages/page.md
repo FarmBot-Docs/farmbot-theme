@@ -32,7 +32,7 @@ text
 
 ## Images
 
-![image](/assets/images/express.jpg)
+![image](_images/express.jpg)
 
 tall image:
 
@@ -43,11 +43,11 @@ tall image:
 ## Galleries
 
 {% include gallery.html images="
-![express](/assets/images/express.jpg)
-![genesis](/assets/images/genesis.jpg)
-![software](/assets/images/software.jpg)
-![developer](/assets/images/developer.jpg)
-![business](/assets/images/business.jpg)
+![express](_images/express.jpg)
+![genesis](_images/genesis.jpg)
+![software](_images/software.jpg)
+![developer](_images/developer.jpg)
+![business](_images/business.jpg)
 ![farmbot logo](/assets/images/farmbot.svg)
 ![tall image](tall.png)
 " %}

@@ -13,7 +13,10 @@
   <link rel="stylesheet" href="{{ stylesheet_url | relative_url }}">
   {% endfor %}
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inknut+Antiqua:700">
-  <script src="/assets/js/toc.js"></script>
+  {%- assign js = 'toc gallery' | split: ' ' -%}
+  {% for filename in js %}
+  <script src="/assets/js/{{ filename }}.js"></script>
+  {% endfor %}
   {% include hover_image_styles.html page_version_number=include.page_version_number %}
   {%- seo -%}
 </head>

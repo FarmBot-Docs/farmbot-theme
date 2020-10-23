@@ -14,10 +14,10 @@ slug: parts
 
 # Part 1
 
-![part-1](_images/part_1.png)
+![part-1](_images/part_1.jpg)
 
 # Part 2
 
-![part-2](_images/part_2.png)
+![part-2](_images/part_2.jpg)
 
 # Part 3

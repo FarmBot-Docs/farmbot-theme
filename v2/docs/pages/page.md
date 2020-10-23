@@ -42,7 +42,15 @@ tall image:
 
 ## Galleries
 
-{% include gallery.html images="/assets/images/express.jpg, /assets/images/genesis.jpg, /assets/images/software.jpg, /assets/images/developer.jpg, /assets/images/business.jpg, /assets/images/farmbot.svg, tall.png" alt="image gallery" %}
+{% include gallery.html images="
+![express](/assets/images/express.jpg)
+![genesis](/assets/images/genesis.jpg)
+![software](/assets/images/software.jpg)
+![developer](/assets/images/developer.jpg)
+![business](/assets/images/business.jpg)
+![farmbot logo](/assets/images/farmbot.svg)
+![tall image](tall.png)
+" %}
 
 ## Links
 

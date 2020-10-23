@@ -1,9 +1,12 @@
-{% assign gallery = include.images | split: ", " %}
+{% assign gallery = include.images | strip | newline_to_br | split: "<br />" %}
 
 <div class="gallery">
-  <img class="gallery-featured-image" src="{{ gallery[0] }}" alt="{{ include.alt }}">
+  {% assign featuredImageAlt = gallery[0] | split: "](" | first | remove: "![" %}
+  {% assign featuredImageSrc = gallery[0] | split: "](" | last | remove: ")" %}
+  <img class="gallery-featured-image" alt="{{ featuredImageAlt }}" src="{{ featuredImageSrc }}">
   {% for image in gallery %}
-  <img class="gallery-thumbnail" src="{{ image }}" alt="{{ include.alt }}"
-    onclick="this.parentElement.firstElementChild.src = '{{ image }}';">
+    {% assign imageAlt = image | strip | split: "](" | first | remove: "![" %}
+    {% assign imageSrc = image | split: "](" | last | remove: ")" %}
+    <img class="gallery-thumbnail" alt="{{ imageAlt }}" src="{{ imageSrc }}">
   {% endfor %}
 </div>

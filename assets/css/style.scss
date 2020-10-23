@@ -482,6 +482,7 @@ h3 {
     grid-column: 1 / span 4;
   }
   .gallery-thumbnail {
+    cursor: pointer;
     max-height: 10rem;
   }
 }

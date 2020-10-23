@@ -476,7 +476,8 @@ h3 {
 .gallery {
   display: grid;
   gap: 0.5rem 0.7rem;
-  grid-template-columns: repeat(4, 25%);
+  grid-template-columns: repeat(4, 1fr);
+  margin: 1rem 0;
   .gallery-featured-image {
     grid-column: 1 / span 4;
   }

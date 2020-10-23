@@ -32,7 +32,7 @@ text
 
 ## Images
 
-![image](/assets/images/farmbot.svg)
+![image](/assets/images/express.jpg)
 
 tall image:
 

@@ -38,6 +38,8 @@ tall image:
 
 ![tall image](tall.png)
 
+[bom link with hover image](../../other/bom/parts/md#part-1)
+
 ## Links
 
 here is a [link](page.md)

@@ -473,6 +473,19 @@ h3 {
   }
 }
 
+.gallery {
+  display: grid;
+  gap: 0.5rem 0.7rem;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 1rem 0;
+  .gallery-featured-image {
+    grid-column: 1 / span 4;
+  }
+  .gallery-thumbnail {
+    max-height: 10rem;
+  }
+}
+
 #whats-next + ul {
   list-style-type: none;
   margin: 0;

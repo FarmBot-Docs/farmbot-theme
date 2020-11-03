@@ -19,7 +19,8 @@
       <i class="fa fa-external-link-square"></i>
     </a>
     {% else %}
-    <a class="{{ current }}" href="{{ v_url | relative_url }}">{{ item.title }}</a>
+    <a class="{{ current }}" href="{{ v_url | relative_url }}"
+      onclick="openSectionState('{{ path }}')">{{ item.title }}</a>
     {%- if item.pages -%}
     <i class="fa fa-chevron-right" onclick="toggleSectionState('{{ path }}')"></i>
     {%- else -%}

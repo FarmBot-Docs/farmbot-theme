@@ -51,6 +51,13 @@ function toggleSectionState(navItem) {
   toggleState(navItem);
 }
 
+/** Set nav item and parent section open state. */
+function openSectionState(navItem) {
+  addOpenClass(navItem);
+  addOpenClass(`${navItem}-top`);
+  setState(navItem, 'open');
+}
+
 /** Add the 'open' class to a nav item. */
 function addOpenClass(navItem) {
   log(`add open class to ${navItem}`);

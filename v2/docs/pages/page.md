@@ -25,10 +25,11 @@ text
 
 ## Callouts
 
-{% include callout.html type="info" title="Title" %}
-{% include callout.html type="success" content="content" %}
-{% include callout.html type="warning" title="Warning" content="content" %}
-{% include callout.html content="content" %}
+{% include callout.html type="info" title="Info" content="content" %}
+{% include callout.html type="success" title="Success" content="content" %}
+{% include callout.html type="warning" title="Warning" %}
+{% include callout.html type="danger" title="Danger" %}
+{% include callout.html title="Callout" content="content" %}
 
 ## Images
 

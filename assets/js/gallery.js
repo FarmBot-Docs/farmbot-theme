@@ -7,6 +7,9 @@ function addEventListeners() {
       const featuredImage = image.parentElement.firstElementChild;
       featuredImage.alt = image.alt;
       featuredImage.src = image.src;
+      image.parentElement.querySelectorAll('.gallery-thumbnail')
+        .forEach(image => image.classList.remove('featured'));
+      image.classList.add('featured');
     });
   });
 

@@ -4,7 +4,8 @@
 
 <div class='gallery'>
   {{ gallery | first | replace: '<img', '<img class="gallery-featured-image"' }}
-  {% for image in gallery %}
+  {{ gallery | first | replace: '<img', '<img class="gallery-thumbnail featured"' }}
+  {% for image in gallery offset:1 %}
   {{ image | strip | replace: '<img', '<img class="gallery-thumbnail"' }}
   {%- endfor -%}
   <i class='fa fa-times-circle'></i>

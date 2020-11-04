@@ -32,7 +32,10 @@
         <div class="page-description">{{ page.description | markdownify }}</div>
       </header>
       <main id="content" class="main-content" role="main">
+        {%- assign splitContent = content | newline_to_br | split: '<br />' -%}
+        {%- if splitContent.first == '<ul id="markdown-toc">' -%}
         <h2 class="markdown-toc-header">Page Contents</h2>
+        {%- endif -%}
         {% include content.html content=content %}
         <footer class="site-footer">
           <a href="{{ site.github.repository_url }}/edit/main{{ page.url

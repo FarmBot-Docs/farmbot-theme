@@ -3,9 +3,14 @@ name: build
 on:
   push:
     branches: [ main ]
+    paths:
+     - '_includes/**'
+     - '_layouts/**'
+     - 'assets/**'
 
 jobs:
   build:
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
     runs-on: ubuntu-latest
     steps:
       - name: Build hub pages

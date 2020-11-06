@@ -368,6 +368,26 @@ nav {
   h3 {
     color: $dark_gray;
     font-family: Inknut Antiqua;
+    a {
+      position: relative;
+      visibility: hidden;
+    }
+    .fa-anchor {
+      position: absolute;
+      left: -1.5rem;
+      padding: 0.5rem;
+      margin-top: 0.1rem;
+      font-size: 0.75rem;
+      color: #aaa;
+    }
+    &:hover {
+      a {
+        visibility: visible;
+        &:hover:after {
+          content: none;
+        }
+      }
+    }
   }
   .markdown-toc-header {
     font-family: unset;

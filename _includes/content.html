@@ -24,7 +24,30 @@
 {%- assign content = content | replace: old, new -%}
 {%- endfor -%}
 
+{%- assign whats_next_section = content | split: 'What’s next?</h1>'
+  | slice: 1 | first -%}
+{%- assign new_whats_next_section = whats_next_section -%}
+{%- assign whats_next_urls_plus = whats_next_section
+  | split: '<a href="' | slice: 1, 999 -%}
+{%- for whats_next_url_plus in whats_next_urls_plus -%}
+{%- assign url_plus = whats_next_url_plus | split: '</a>' | first -%}
+{%- assign url = url_plus | split: '"' | first -%}
+{%- assign name = url_plus | split: '>' | last -%}
+{%- assign whats_next_page = site.pages | where: 'url', url | first -%}
+{%- capture old -%}<a href="{{ url }}">{{ name }}{%- endcapture -%}
+{%- assign description = whats_next_page.description
+  | newline_to_br | split: '<br />' | first
+  | markdownify | strip_html | strip -%}
+{%- assign first_char = whats_next_page.description | slice: 0 -%}
+{%- if first_char == '[' -%}
+{%- assign description = '' -%}
+{%- endif -%}
+{%- capture new -%}{{ old }}<p>{{ description }}</p>{%- endcapture -%}
+{%- assign new_whats_next_section = new_whats_next_section | replace: old, new -%}
+{%- endfor -%}
+
 {{
 content
   | replace: '<th> </th>', '<th></th>'
+  | replace: whats_next_section, new_whats_next_section
 }}

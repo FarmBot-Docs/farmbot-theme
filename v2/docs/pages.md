@@ -9,4 +9,4 @@ description: pages
 
 # What's next?
 
- * [page](pages/page.md)
+ * [Page](pages/page.md)

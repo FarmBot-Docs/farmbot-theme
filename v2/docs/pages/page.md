@@ -186,5 +186,5 @@ LEDs:
 
 # What's next?
 
- * [page](page.md)
- * [page](page.md)
+ * [Page](page.md)
+ * [Other Page](../other-page.md)

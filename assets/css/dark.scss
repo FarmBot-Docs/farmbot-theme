@@ -110,6 +110,14 @@ body {
         color: $offWhite;
         border-color: $gray;
       }
+      #markdown-toc {
+        a {
+          color: darken($offWhite, 15%);
+          &:hover {
+            color: $white;
+          }
+        }
+      }
       .callout {
         h3 {
           color: $darkGray;
@@ -143,8 +151,18 @@ body {
       table {
         border-color: $gray;
       }
-      #whats-next + ul a:hover {
-        color: $darkestGray;
+      #whats-next + ul {
+        a {
+          color: $offWhite;
+          border-color: $mediumGray;
+          &:hover {
+            color: $white;
+            background: $mediumGray;
+          }
+        }
+        p {
+          color: $offWhite;
+        }
       }
       img {
         border-color: $gray;

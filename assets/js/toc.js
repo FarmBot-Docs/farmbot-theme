@@ -84,3 +84,48 @@ function initSectionState(navItem, current) {
     }
   }
 }
+
+/** Version and mobile table of contents menu navigation. */
+function navigate(value) {
+  if (value == 'darkMode') {
+    toggleDarkMode();
+    return;
+  }
+  if (value) {
+    window.location.href = value;
+  }
+}
+
+/** Toggle dark mode. */
+function toggleDarkMode() {
+  toggleState('darkMode');
+  document.body.classList.toggle('dark');
+  setDarkModeIcon();
+}
+
+/** Load dark mode state and add class if enabled. */
+function initDarkMode() {
+  if (isOpen('darkMode')) {
+    document.body.classList.add('dark');
+  }
+}
+
+function getDarkModeToggleButton() {
+  return document.getElementsByClassName('dark-mode-toggle')[0];
+}
+
+/** Set dark mode toggle button icon. */
+function setDarkModeIcon() {
+  const icon = isOpen('darkMode') ? 'fa fa-moon-o' : 'fa fa-sun-o';
+  document.getElementById('dark-mode-icon').classList = icon;
+  const toggleButton = getDarkModeToggleButton();
+  isOpen('darkMode')
+    ? toggleButton.classList.add('dark')
+    : toggleButton.classList.remove('dark');
+}
+
+/** Set dark mode toggle button state upon load. */
+addEventListener('load', () => {
+  getDarkModeToggleButton().classList.add('visible');
+  setDarkModeIcon();
+});

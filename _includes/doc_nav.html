@@ -1,6 +1,6 @@
 <div class="doc-nav">
   <div class="version">
-    <select onchange="if (this.value) window.location.href=this.value" aria-label="Version picker">
+    <select onchange="navigate(this.value)" aria-label="Version picker">
       {%- assign latest_number =
         site.latest_version_number | times: include.version_factor | to_integer -%}
       {% for v in (1..latest_number) %}
@@ -21,10 +21,11 @@
     </select>
 
     <div class="mobile-nav">
-      <select onchange="if (this.value) window.location.href=this.value" aria-label="Navigate the docs menu">
+      <select onchange="navigate(this.value)" aria-label="Navigate the docs menu">
         <option value>Navigate the docs...</option>
         {%- include mobile_toc.html toc=include.page_toc.contents
           version=include.page_version_number -%}
+        <option value="darkMode">[ toggle dark mode ]</option>
       </select>
     </div>
   </div>

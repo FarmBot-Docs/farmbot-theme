@@ -121,30 +121,30 @@ body {
       }
       .callout {
         h3 {
-          color: $darkGray;
+          color: $offWhite;
         }
         background: $gray;
         &.info {
-          h3 {
-            color: lighten($info_callout, 35%);
+          h3, i {
+            color: lighten($info_callout, 40%);
           }
           background: darken($info_callout, 15%);
         }
         &.success {
-          h3 {
-            color: lighten($success_callout, 35%);
+          h3, i {
+            color: lighten($success_callout, 40%);
           }
           background: darken($success_callout, 15%);
         }
         &.warning {
-          h3 {
-            color: lighten($warning_callout, 35%);
+          h3, i {
+            color: lighten($warning_callout, 40%);
           }
           background: darken($warning_callout, 15%);
         }
         &.danger {
-          h3 {
-            color: lighten($danger_callout, 35%);
+          h3, i {
+            color: lighten($danger_callout, 40%);
           }
           background: darken($danger_callout, 15%);
         }

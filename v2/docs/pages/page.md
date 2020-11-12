@@ -153,15 +153,15 @@ details
 
 # Icons and emoji
 
-Favicon: <span><img class="value-icon" src="/assets/images/favicon.png"></span>
+Favicon: <span class="value-icon fb"></span>
 
-Open products: <span><img class="value-icon" src="/assets/images/products.png"></span>
+Open products: <span class="value-icon products"></span>
 
-Open business: <span><img class="value-icon" src="/assets/images/business.png"></span>
+Open business: <span class="value-icon business"></span>
 
-1% for the community: <span><img class="value-icon" src="/assets/images/community.png"></span>
+1% for the community: <span class="value-icon community"></span>
 
-Be good people: <span><img class="value-icon" src="/assets/images/good-people.png"></span>
+Be good people: <span class="value-icon good-people"></span>
 
 Tooltip: <span class="fb-tooltip"><i class='fa fa-question'></i></span>
 

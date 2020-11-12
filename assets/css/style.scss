@@ -318,7 +318,25 @@ nav {
 .value-icon {
   display: inline-block;
   height: 18px;
+  width: 2rem;
   margin-bottom: -2px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  &.fb {
+    background-image: url('/assets/images/favicon.png');
+  }
+  &.business {
+    background-image: url('/assets/images/business.png');
+  }
+  &.products {
+    background-image: url('/assets/images/products.png');
+  }
+  &.community {
+    background-image: url('/assets/images/community.png');
+  }
+  &.good-people {
+    background-image: url('/assets/images/good-people.png');
+  }
 }
 
 .content {

@@ -74,6 +74,21 @@
       }
     }
   }
+  h1 {
+    .fa-anchor {
+      line-height: 1.1rem;
+    }
+  }
+  h2 {
+    .fa-anchor {
+      line-height: 0.9rem;
+    }
+  }
+  h3 {
+    .fa-anchor {
+      line-height: 0.5rem;
+    }
+  }
   .markdown-toc-header {
     font-family: unset;
   }

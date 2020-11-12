@@ -1,47 +1,55 @@
 ---
 title: Page
 slug: page
-description: "description :abc:"
+description: "Description :abc:"
 ---
 
 * toc
 {:toc}
 
-# Heading
+# H1 heading
 
-content
+## H2 heading
 
-## Tables
+### H3 heading
+
+Text
+
+# Tables
 
 |Table||
 |---|---|
 |content|text
 
-text
+Text
 
 |||
 |---|---|
 |headerless|table
 
-## Callouts
+# Callouts
 
-{% include callout.html type="info" title="Info" content="content" %}
-{% include callout.html type="success" title="Success" content="content" %}
-{% include callout.html type="warning" title="Warning" content="content" %}
-{% include callout.html type="danger" title="Danger" content="content" %}
-{% include callout.html title="Title (no type)" content="content" %}
-{% include callout.html title="Title only" %}
-{% include callout.html content="content only" %}
+{% include callout.html type="info" title="Info" content="This callout contains multiple lines of text, showcasing the spacing between lines. How does it look? It should look and feel consistent with body text outside of callouts.
 
-## Images
+This callout also has multiple paragraphs, showing the spacing between paragrpahs." %}
+
+{% include callout.html type="success" title="Success" content="This callout has just a little bit of content." %}
+
+{% include callout.html type="warning" title="Warning: this callout only has a title!" %}
+
+{% include callout.html type="danger" title="Danger" %}
+
+{% include callout.html title="Callout" content="This callout doesn't have a `type`." %}
+
+{% include callout.html content="This callout doesn't have a title." %}
+
+# Images
 
 ![image](_images/express.jpg)
 
-tall image:
+Tall images respect a maximum height:
 
 ![tall image](tall.png)
-
-[bom link with hover image](../../other/bom/parts/md#part-1)
 
 ## Galleries
 
@@ -55,11 +63,15 @@ tall image:
 ![tall image](tall.png)
 " %}
 
-## Links
+## Hover images
 
-here is a [link](page.md)
+Links to BOM entries have a hover image, like this [horizontal motor housing](../../other/bom/parts/md#part-1).
 
-## HTML
+# Links
+
+Here is a [link](page.md)
+
+# HTML
 
 <details>
 <summary>Details summary</summary>
@@ -68,9 +80,8 @@ details
 
 # Styles
 
-### Buttons and input
+## Buttons
 
-buttons:
 <span class="fb-button fb-green">BUTTON</span>
 <span class="fb-button fb-purple">purple</span>
 <span class="fb-button fb-red">red</span>
@@ -87,22 +98,21 @@ buttons:
 <span class="fb-button fb-gray"><i class='fa fa-arrow-up'></i></span>
 <span class="fb-button fb-gray"><i class='fa fa-arrow-down'></i></span>
 
-input:
+## Inputs
+
 <span class="fb-input">INPUT</span>
 <span class="fb-input fb-disabled-input">disabled</span>
 <span class="fb-dropdown">dropdown <i class='fa fa-caret-down'></i></span>
 
-### Peripheral controls
+## Peripheral controls
 
-toggle:
 <span class="fb-peripheral-on">ON</span>
 <span class="fb-peripheral-off">OFF</span>
 <span class="fb-peripheral-unknown"></span>
 <span class="fb-peripheral-unknown fb-peripheral-disabled"></span>
 
-### Sequence commands
+## Sequence commands
 
-commands:
 <span class="fb-step fb-move">MOVE</span>
 <span class="fb-step fb-move-absolute">MOVE TO</span>
 <span class="fb-step fb-move-relative">MOVE RELATIVE</span>
@@ -126,7 +136,8 @@ commands:
 <span class="fb-step fb-assertion">ASSERTION</span>
 <span class="fb-step fb-mark-as">MARK AS</span>
 
-### Cable colors
+## Cable colors
+
 <span class="cable-color red">red</span>
 <span class="cable-color yellow">yellow</span>
 <span class="cable-color green">green</span>
@@ -140,31 +151,26 @@ commands:
 <span class="cable-color pink">pink</span>
 <span class="cable-color cyan">cyan</span>
 
-### Misc
+# Icons and emoji
 
-settings:
+Favicon: <span><img class="value-icon" src="/assets/images/favicon.png"></span>
+
+Open products: <span><img class="value-icon" src="/assets/images/products.png"></span>
+
+Open business: <span><img class="value-icon" src="/assets/images/business.png"></span>
+
+1% for the community: <span><img class="value-icon" src="/assets/images/community.png"></span>
+
+Be good people: <span><img class="value-icon" src="/assets/images/good-people.png"></span>
+
+Tooltip: <span class="fb-tooltip"><i class='fa fa-question'></i></span>
+
+XL sticker: <span class="fb-xl-sticker">XL</span>
+
+Settings:
 <i class='fa fa-cog'></i>
 
-indicators:
-<span class="fa fa-circle saucer blue"></span>
-<span class="fa fa-circle saucer green"></span>
-<span class="fa fa-circle saucer red"></span>
-<span class="fa fa-circle saucer gray"></span>
-<span class="fa fa-circle saucer light-blue"></span>
-<span class="fa fa-circle saucer yellow"></span>
-
-sticker:
-<span class="fb-xl-sticker">XL</span>
-
-tooltip:
-<span class="fb-tooltip"><i class='fa fa-question'></i></span>
-
-## Icons and emoji
-
-icon:
-<span><img class="value-icon" src="/assets/images/favicon.png"></span>
-
-art:
+Art:
 :art:
 
 LEDs:
@@ -183,6 +189,14 @@ LEDs:
 <span class="fa fa-circle led gray"></span>
 <span class="fa fa-sun-o led gray"></span>
 <span class="fa fa-circle-thin led gray"></span>
+
+Indicators:
+<span class="fa fa-circle saucer blue"></span>
+<span class="fa fa-circle saucer green"></span>
+<span class="fa fa-circle saucer red"></span>
+<span class="fa fa-circle saucer gray"></span>
+<span class="fa fa-circle saucer light-blue"></span>
+<span class="fa fa-circle saucer yellow"></span>
 
 # What's next?
 

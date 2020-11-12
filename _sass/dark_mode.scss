@@ -98,6 +98,14 @@ body {
         color: $offWhite;
         border-color: $gray;
       }
+      a {
+        color: lighten($site-color, 45%);
+        border-bottom-color: lighten($site-color, 0%);
+        &:hover {
+          color: lighten($site-color, 55%);
+          border-bottom-color: lighten($site-color, 10%);
+        }
+      }
       #markdown-toc {
         a {
           color: darken($offWhite, 15%);
@@ -161,6 +169,18 @@ body {
     }
     .value-icon {
       filter: invert(1);
+    }
+    .fb-input,
+    .fb-dropdown {
+      background: $gray;
+      box-shadow: 0 0 10px $gray;
+    }
+    code {
+      background: $gray;
+      color: $white;
+    }
+    .highlight {
+      background: $gray;
     }
   }
 }

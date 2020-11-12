@@ -29,19 +29,44 @@ Text
 
 # Callouts
 
-{% include callout.html type="info" title="Info" content="This callout contains multiple lines of text, showcasing the spacing between lines. How does it look? It should look and feel consistent with body text outside of callouts.
+{%
+include callout.html
+type="info"
+title="Info"
+content="This callout contains multiple lines of text, showcasing the spacing between lines. How does it look? It should look and feel consistent with body text outside of callouts.
 
-This callout also has multiple paragraphs, showing the spacing between paragrpahs." %}
+This callout also has multiple paragraphs, showing the spacing between paragrpahs."
+%}
 
-{% include callout.html type="success" title="Success" content="This callout has just a little bit of content." %}
+{%
+include callout.html
+type="success"
+title="Success"
+content="This callout has just a little bit of content and a [link](page.md)."
+%}
 
-{% include callout.html type="warning" title="Warning: this callout only has a title!" %}
+{%
+include callout.html
+type="warning"
+title="Warning: this callout only has a title!"
+%}
 
-{% include callout.html type="danger" title="Danger" %}
+{%
+include callout.html
+type="danger"
+title="Danger"
+%}
 
-{% include callout.html title="Callout" content="This callout doesn't have a `type`." %}
+{%
+include callout.html
+title="Callout"
+content="This callout doesn't have a `type`."
+%}
 
-{% include callout.html content="This callout doesn't have a title." %}
+{%
+include callout.html
+content="This callout doesn't have a title."
+%}
 
 # Images
 
@@ -70,6 +95,26 @@ Links to BOM entries have a hover image, like this [horizontal motor housing](..
 # Links
 
 Here is a [link](page.md)
+
+# Misc Markdown
+
+> block quote
+
+horizontal rule:
+
+---
+
+0. list item 1
+   0. sublist item
+0. list item 2
+
+* bullet list item
+
+`code`
+
+```
+code block
+```
 
 # HTML
 

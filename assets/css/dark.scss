@@ -1,6 +1,8 @@
 ---
 ---
 
+$md-screen-size: 768px;
+
 $info_callout: #1877a6;
 $success_callout: #358036;
 $warning_callout: #b55400;
@@ -24,6 +26,9 @@ $darkestGray: #1f1f1f;
   width: 4rem;
   &.visible {
     visibility: visible;
+  }
+  @media (max-width: $md-screen-size) {
+    display: none;
   }
   &:focus {
     outline: none;

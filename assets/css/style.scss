@@ -86,6 +86,7 @@ nav {
       display: inline;
     }
     float: right;
+    margin-right: 0.5rem;
     select {
       width: 11rem;
     }
@@ -97,6 +98,9 @@ nav {
     padding: .25rem .5rem;
     border-radius: 5px;
     margin-left: 1rem;
+    @media (max-width: $md-screen-size) {
+      margin-left: 0.5rem;
+    }
   }
 }
 

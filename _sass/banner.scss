@@ -1,0 +1,16 @@
+.banner {
+  text-align: center;
+  a {
+    display: inline-block;
+    padding: 0.25rem 1rem;
+    text-decoration: none;
+    color: #b94a48;
+    background: #f2dede;
+    border: 1px solid #eed3d7;
+    border-radius: 4px;
+    &:hover {
+      color: #8b3735;
+      background: #deacac;
+    }
+  }
+}

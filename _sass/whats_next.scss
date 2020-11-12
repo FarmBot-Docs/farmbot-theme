@@ -1,0 +1,26 @@
+#whats-next + ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  a {
+    border: 2px solid #eee;
+    border-radius: 5px;
+    display: block;
+    margin-bottom: 10px;
+    padding: 1rem;
+    &:hover {
+      background: darken(#fff, 5%);
+    }
+    font-weight: bold;
+    color: $site-color;
+    p {
+      font-weight: normal;
+      color: $dark_gray;
+      margin-top: 0.25rem;
+      margin-bottom: 0;
+      &:empty {
+        display: none;
+      }
+    }
+  }
+}

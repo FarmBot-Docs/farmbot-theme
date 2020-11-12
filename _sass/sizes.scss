@@ -1,0 +1,7 @@
+$max-width: 1550px;
+$max-width-min: calc(min(#{$max-width}, 100vw));
+$md-screen-size: 768px;
+$lg-screen-size: 1200px;
+$nav-toc-width: 20rem;
+$markdown-toc-width: 20rem;
+$both-toc-width: calc(#{$nav-toc-width} + #{$markdown-toc-width});

@@ -1,0 +1,37 @@
+.markdown-toc-header,
+#markdown-toc {
+  position: absolute;
+  width: $markdown-toc-width;
+  left: calc(#{$max-width-min} - #{$both-toc-width} - 1rem);
+  @media (max-width: $lg-screen-size) {
+    display: none;
+  }
+}
+
+.markdown-toc-header {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-family: unset;
+}
+
+#markdown-toc {
+  padding: 0;
+  padding-top: 2rem;
+  a {
+    border: none;
+    color: #757575;
+    display: block;
+    padding: 0.1rem 0;
+    text-decoration: none;
+    &:hover {
+      color: $site-color;
+    }
+  }
+  li {
+    list-style-type: none;
+  }
+  ul {
+    margin-bottom: 0.2rem;
+    padding-inline-start: 1.5rem;
+  }
+}

@@ -1,0 +1,40 @@
+.doc-nav {
+  background: #f6f7f8;
+  border-bottom: 1px solid #dadee2;
+  padding: 0.25rem;
+  a {
+    display: inline-block;
+    margin: 0;
+    padding: 0.5rem;
+    color: #7d7d8e;
+    text-decoration: none;
+    &:hover {
+      color: #434343;
+    }
+    &.current-version {
+      font-weight: bold;
+    }
+  }
+  .mobile-nav {
+    display: none;
+    @media (max-width: $md-screen-size) {
+      display: inline;
+    }
+    float: right;
+    margin-right: 0.5rem;
+    select {
+      width: 11rem;
+    }
+  }
+  .version select {
+    background: white;
+    border: 2px solid #eee;
+    cursor: pointer;
+    padding: .25rem .5rem;
+    border-radius: 5px;
+    margin-left: 1rem;
+    @media (max-width: $md-screen-size) {
+      margin-left: 0.5rem;
+    }
+  }
+}

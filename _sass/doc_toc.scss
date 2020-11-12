@@ -1,0 +1,125 @@
+.nav-toc {
+  min-width: $nav-toc-width;
+  padding-left: 1rem;
+  padding-top: 0.5rem;
+  @media (max-width: $md-screen-size) {
+    display: none;
+  }
+  h3 {
+    text-transform: uppercase;
+    padding-left: 8px;
+    margin-bottom: .25rem;
+    margin-top: 2rem;
+  }
+  .fa-external-link-square {
+    float: right;
+    line-height: 1.5rem;
+  }
+  ul,
+  li {
+    list-style-type: none;
+    padding-inline-start: 0;
+  }
+  li {
+    &.parent {
+      &.current {
+        .fa-chevron-right {
+          color: #f3f3f3;
+        }
+      }
+    }
+  }
+  a {
+    border-radius: 5px;
+    color: $dark_gray;
+    display: block;
+    padding: 0.25rem 0.5rem;
+    &:hover {
+      background: #f3f3f3;
+      color: $site-color;
+      text-decoration: none;
+      transition: background 0.3s ease-out;
+    }
+    &.current {
+      background: $site-color;
+      color: #f3f3f3;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+  .parent {
+    position: relative;
+    a {
+      &:hover {
+        background: #dfdfdf;
+      }
+      &.current {
+        background: $site-color;
+        color: #f3f3f3;
+        &:hover {
+          background: $site-color;
+          color: white;
+        }
+      }
+    }
+    &.open {
+      a {
+        background: #f3f3f3;
+        font-weight: bold;
+        &:hover {
+          background: #dfdfdf;
+        }
+        &.current {
+          background: $site-color;
+          &:hover {
+            background: $site-color;
+          }
+        }
+      }
+      .fa-chevron-right {
+        transform: rotate(90deg);
+        &:hover {
+          transform: rotate(90deg) scale(1.25);
+        }
+      }
+    }
+    .fa-chevron-right {
+      position: absolute;
+      right: 0.5rem;
+      top: 0.25rem;
+      padding: 0.25rem;
+      cursor: pointer;
+      transition: transform 0.3s ease-out;
+      &:hover {
+        transform: scale(1.25);
+      }
+    }
+  }
+  .pages {
+    display: none;
+    margin: 0.5rem;
+    border-left: 3px solid $site-color;
+    a {
+      color: #666;
+      background: none;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      font-weight: normal;
+      &:hover {
+        color: $site-color;
+        background: #f3f3f3;
+      }
+      &.current {
+        background: $site-color;
+        color: #f3f3f3;
+        &:hover {
+          color: white;
+        }
+      }
+    }
+    &.open {
+      display: block;
+    }
+  }
+}

@@ -19,6 +19,7 @@ $site-color: darken({{ site.color }}, 0%);
 @import 'whats_next';
 @import 'hover_images';
 @import 'dark_mode';
+@import 'print';
 
 body {
   font-size: 15px;

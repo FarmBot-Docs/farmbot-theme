@@ -1,0 +1,30 @@
+@media print {
+  iframe,
+  nav,
+  .doc-nav,
+  .page-controls a,
+  .gallery-featured-image,
+  #whats-next,
+  #whats-next + ul,
+  footer {
+    display: none;
+  }
+  img {
+    display: inline;
+    max-height: 30vh!important;
+    max-width: 48%!important;
+  }
+  .gallery {
+    display: block;
+  }
+  img,
+  .callout {
+    page-break-before: auto;
+    page-break-after: auto;
+    page-break-inside: avoid;
+  }
+  * {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+}

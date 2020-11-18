@@ -32,6 +32,9 @@
       <header class="page-header" role="banner">
         <h1 class="page-name">{{ page.title | default: site.title }}</h1>
         <div class="page-controls">
+          <a href="javascript:window.print()">
+            <i class='fa fa-print'></i>
+          </a>
           <a href="{{ site.github.repository_url }}/edit/main{{ page.url
             | replace: '.html', '.md'  }}">
             <i class='fa fa-edit'></i>

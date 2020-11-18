@@ -1,11 +1,12 @@
 .gallery {
+  background: transparent;
   display: grid;
   gap: 0.5rem 0.7rem;
   grid-template-columns: repeat(4, 1fr);
   margin: 1rem 0;
   .gallery-featured-image {
     grid-column: 1 / span 4;
-    cursor: pointer;
+    cursor: zoom-in;
     margin: auto;
   }
   .gallery-thumbnail {
@@ -13,28 +14,35 @@
     max-height: 10rem;
     margin: auto;
     &.featured {
-      box-shadow: 0 0 0 4px #eee;
+      border-color: $darkGray;
     }
   }
   .fa-times-circle {
     display: none;
   }
   &.open {
+    background: $darkestGray;
+    cursor: zoom-out;
+    height: 100vh;
+    left: 0;
     position: fixed;
     top: -1rem;
-    left: 0;
-    z-index: 1;
+    transition: background 0.1s ease;
     width: 100vw;
-    height: 100vh;
-    background: #000000cc;
-    padding: 4rem;
+    z-index: 1;
     .gallery-featured-image {
-      max-height: unset;
-      width: 100%;
-      max-width: 1600px;
+      cursor: zoom-out;
+      border: none;
+      max-height: 100vh;
+      max-width: 100%;
     }
     .gallery-thumbnail {
-      max-height: 10vh;
+      border-color: $gray;
+      display: none;
+      max-height: 10rem;
+      &.featured {
+        border-color: $offWhite;
+      }
     }
     .fa-times-circle {
       display: block;
@@ -42,10 +50,10 @@
       right: 2rem;
       top: 2rem;
       cursor: pointer;
-      font-size: 3rem;
-      color: gray;
+      font-size: 2rem;
+      color: $offWhite;
       &:hover {
-        color: darken(gray, 10%);
+        color: darken($offWhite, 10%);
       }
     }
   }

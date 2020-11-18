@@ -163,6 +163,13 @@ body {
       img {
         border-color: $gray;
       }
+      .gallery {
+        .gallery-thumbnail {
+          &.featured {
+            border-color: $offWhite;
+          }
+        }
+      }
     }
     .site-footer {
       border-color: $gray;

@@ -1,5 +1,4 @@
 .gallery {
-  background: transparent;
   display: grid;
   gap: 0.5rem 0.7rem;
   grid-template-columns: repeat(4, 1fr);
@@ -27,7 +26,7 @@
     left: 0;
     position: fixed;
     top: -1rem;
-    transition: background 0.1s ease;
+    transition: background-color 0.1s ease;
     width: 100vw;
     z-index: 1;
     .gallery-featured-image {
@@ -37,12 +36,7 @@
       max-width: 100%;
     }
     .gallery-thumbnail {
-      border-color: $gray;
       display: none;
-      max-height: 10rem;
-      &.featured {
-        border-color: $offWhite;
-      }
     }
     .fa-times-circle {
       display: block;

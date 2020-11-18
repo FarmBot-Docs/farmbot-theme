@@ -94,6 +94,9 @@ body {
       .page-name {
         color: $offWhite;
       }
+      .page-controls a:hover {
+        background: $gray;
+      }
       .page-description {
         color: $offWhite;
         border-color: $gray;

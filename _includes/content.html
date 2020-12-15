@@ -3,7 +3,7 @@
 {%- for i in (1..3) -%}
 {%- capture header_start -%}<h{{ i }} id="{%- endcapture -%}
 {%- assign headers_plus = include.content | split: header_start | slice: 1, 999 -%}
-{% capture headers_joined -%}
+{%- capture headers_joined -%}
 {%- for header_plus in headers_plus -%}
 {%- assign id = header_plus | split: '">' | first -%}
 {{ header_start }}{{ id }}">|{{ header_start }}{{ id }}">
@@ -21,6 +21,28 @@
 {%- for header in headers -%}
 {%- assign old = header | split: '|' | first -%}
 {%- assign new = header | split: '|' | last -%}
+{%- assign content = content | replace: old, new -%}
+{%- endfor -%}
+
+{%- assign imgs = include.content | split: '<img src=' | slice: 1, 999 -%}
+{%- for img in imgs -%}
+{%- assign img_content = img | split: '>' | first -%}
+{%- capture img_inner -%}<img src={{ img_content }}>{%- endcapture -%}
+{%- capture wrapped_img -%}
+<div class='gallery'>
+  <img class="gallery-featured-image" src={{ img_content }}>
+</div>
+{%- endcapture -%}
+{%- assign content = content | replace: img_inner, wrapped_img -%}
+{%- endfor -%}
+
+{%- assign alt_texts = include.content | split: 'alt="' | slice: 1, 999 -%}
+{%- for alt_text in alt_texts -%}
+{%- assign alt_text_content = alt_text | split: '"' | first -%}
+{%- capture old -%}alt="{{ alt_text_content }}"{%- endcapture -%}
+{%- capture new -%}
+alt="{{ alt_text_content }}" title="{{ alt_text_content }}"
+{%- endcapture -%}
 {%- assign content = content | replace: old, new -%}
 {%- endfor -%}
 

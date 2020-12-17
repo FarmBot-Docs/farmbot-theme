@@ -36,6 +36,11 @@
           {% for mode in modes %}
           <option value="[{{ mode }}]">&nbsp;&nbsp;&nbsp;Toggle {{ mode }} mode</option>
           {%- endfor -%}
+          <option value="[print]">&nbsp;&nbsp;&nbsp;Print this page</option>
+          {%- capture edit_url -%}
+          {{ site.github.repository_url }}/edit/main{{ page.url | replace: '.html', '.md'  }}
+          {%- endcapture -%}
+          <option value="{{ edit_url }}">&nbsp;&nbsp;&nbsp;Edit this page</option>
         </optgroup>
       </select>
     </div>

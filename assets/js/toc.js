@@ -93,6 +93,7 @@ function navigate(value) {
       case 'dark':
       case 'internal':
         return toggleMode(action);
+      case 'print': return window.print();
     }
   }
   if (value) {

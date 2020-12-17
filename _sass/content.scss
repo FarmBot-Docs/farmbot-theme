@@ -2,6 +2,9 @@
   padding-left: 1rem;
   position: relative;
   width: 100%;
+  @media (max-width: $md-screen-size) {
+    padding-left: 0;
+  }
   .page-header,
   main {
     margin: 0;
@@ -26,6 +29,9 @@
     align-items: center;
     display: flex;
     justify-content: flex-end;
+    @media (max-width: $md-screen-size) {
+      display: none;
+    }
     a {
       border: none;
       border-radius: 5px;
@@ -55,7 +61,7 @@
     width: calc(#{$max-width-min} - #{$nav-toc-width} - 2rem);
   }
   @media (max-width: $md-screen-size) {
-    width: calc(100vw - 2rem);
+    width: 100vw;
   }
   font-size: 15px;
   padding-top: 0 !important;

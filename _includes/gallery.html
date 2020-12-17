@@ -5,16 +5,19 @@
 <div class='gallery'>
   {{ gallery | first
    | replace: '<img', '<img class="gallery-featured-image"'
-   | replace: '<div', '<div class="gallery-featured-image"'
+   | replace: '<iframe', '<div class="gallery-featured-image"><iframe'
+   | replace: '</iframe>', '</iframe></div>'
   }}
   {{ gallery | first
    | replace: '<img', '<img class="gallery-thumbnail featured"'
-   | replace: '<div', '<div class="gallery-thumbnail featured"'
+   | replace: '<iframe', '<div class="gallery-thumbnail featured"><iframe'
+   | replace: '</iframe>', '</iframe></div>'
   }}
   {% for image in gallery offset:1 %}
   {{ image | strip
     | replace: '<img', '<img class="gallery-thumbnail"'
-    | replace: '<div', '<div class="gallery-thumbnail"'
+    | replace: '<iframe', '<div class="gallery-thumbnail"><iframe'
+    | replace: '</iframe>', '</iframe></div>'
   }}
   {%- endfor -%}
   <i class='fa fa-times-circle'></i>

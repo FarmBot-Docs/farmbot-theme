@@ -20,6 +20,8 @@ $site-color: darken({{ site.color }}, 0%);
 @import 'hover_images';
 @import 'dark_mode';
 @import 'print';
+@import 'internal_mode';
+@import 'mode_toggles';
 
 body {
   font-size: 15px;

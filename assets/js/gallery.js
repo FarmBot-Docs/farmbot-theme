@@ -7,6 +7,8 @@ function addEventListeners() {
       const oldFeaturedImage = image.parentElement.firstElementChild;
       const newFeaturedImage = image.cloneNode(true);
       newFeaturedImage.classList = 'gallery-featured-image';
+      newFeaturedImage.addEventListener('click', () =>
+        image.parentElement.classList.toggle('open'));
       oldFeaturedImage.replaceWith(newFeaturedImage);
       image.parentElement.querySelectorAll('.gallery-thumbnail')
         .forEach(image => image.classList.remove('featured'));

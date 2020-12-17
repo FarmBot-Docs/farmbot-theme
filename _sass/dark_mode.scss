@@ -20,7 +20,8 @@ body {
         background: $darkestGray;
         border-color: $gray;
       }
-      .dark-mode-toggle, .internal-mode-toggle {
+      .dark-mode-toggle,
+      .internal-mode-toggle {
         background: $darkestGray;
         border-color: $gray;
         &:after {

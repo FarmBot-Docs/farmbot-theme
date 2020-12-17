@@ -1,4 +1,5 @@
-.dark-mode-toggle, .internal-mode-toggle {
+.dark-mode-toggle,
+.internal-mode-toggle {
   background: $white;
   border: 2px solid #eee;
   border-radius: 1rem;
@@ -21,6 +22,7 @@
       transition: margin-left 0.2s ease-out;
     }
   }
+
   i {
     margin-left: -2rem;
   }
@@ -36,10 +38,9 @@
     background: $offWhite;
     box-shadow: inset 0 0 0px 2px rgba(0, 0, 0, 0.05);
   }
-}
 
-.dark-mode-toggle {
-  &.dark {
+  &.dark,
+  &.internal {
     i {
       margin-left: 2rem;
     }
@@ -47,16 +48,8 @@
       margin-left: -0.4rem;
     }
   }
-}
 
-.internal-mode-toggle {
   &.internal {
-    border-color: orange!important;
-    i {
-      margin-left: 2rem;
-    }
-    &:after {
-      margin-left: -0.4rem;
-    }
+    border-color: orange !important;
   }
 }

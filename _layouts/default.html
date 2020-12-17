@@ -10,8 +10,7 @@
 {%- include head.html page_version_number=page_version_number -%}
 
 <body>
-  <script>initDarkMode()</script>
-  <script>initInternalMode()</script>
+  <script>['dark', 'internal'].map(mode => initMode(mode))</script>
 
   {%- include hub_nav.html -%}
 

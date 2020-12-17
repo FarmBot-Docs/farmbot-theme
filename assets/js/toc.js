@@ -87,45 +87,64 @@ function initSectionState(navItem, current) {
 
 /** Version and mobile table of contents menu navigation. */
 function navigate(value) {
-  if (value == 'darkMode') {
-    toggleDarkMode();
-    return;
+  if (value.startsWith('[') && value.endsWith(']')) {
+    const action = value.slice(1, -1);
+    switch (action) {
+      case 'dark':
+      case 'internal':
+        return toggleMode(action);
+    }
   }
   if (value) {
     window.location.href = value;
   }
 }
 
-/** Toggle dark mode. */
-function toggleDarkMode() {
-  toggleState('darkMode');
-  document.body.classList.toggle('dark');
-  setDarkModeIcon();
+/** Toggle mode. */
+function toggleMode(mode) {
+  toggleState(`${mode}Mode`);
+  document.body.classList.toggle(mode);
+  setModeIcon(mode);
 }
 
-/** Load dark mode state and add class if enabled. */
-function initDarkMode() {
-  if (isOpen('darkMode')) {
-    document.body.classList.add('dark');
+/** Load mode state and add class if enabled. */
+function initMode(mode) {
+  if (isOpen(`${mode}Mode`)) {
+    document.body.classList.add(mode);
   }
 }
 
-function getDarkModeToggleButton() {
-  return document.getElementsByClassName('dark-mode-toggle')[0];
+function getModeToggleButton(mode) {
+  return document.getElementsByClassName(`${mode}-mode-toggle`)[0];
 }
 
-/** Set dark mode toggle button icon. */
-function setDarkModeIcon() {
-  const icon = isOpen('darkMode') ? 'fa fa-moon-o' : 'fa fa-sun-o';
-  document.getElementById('dark-mode-icon').classList = icon;
-  const toggleButton = getDarkModeToggleButton();
-  isOpen('darkMode')
-    ? toggleButton.classList.add('dark')
-    : toggleButton.classList.remove('dark');
+const ICONS = {
+  dark: {
+    enabled: 'fa fa-moon-o',
+    disabled: 'fa fa-sun-o',
+  },
+  internal: {
+    enabled: 'fa fa-industry',
+    disabled: 'fa fa-user',
+  },
+};
+
+/** Set mode toggle button icon. */
+function setModeIcon(mode) {
+  const icon = isOpen(`${mode}Mode`)
+    ? ICONS[mode].enabled
+    : ICONS[mode].disabled;
+  document.getElementById(`${mode}-mode-icon`).classList = icon;
+  const toggleButton = getModeToggleButton(mode);
+  isOpen(`${mode}Mode`)
+    ? toggleButton.classList.add(mode)
+    : toggleButton.classList.remove(mode);
 }
 
-/** Set dark mode toggle button state upon load. */
+/** Set mode toggle button states upon load. */
 addEventListener('load', () => {
-  getDarkModeToggleButton().classList.add('visible');
-  setDarkModeIcon();
+  Object.keys(ICONS).map(mode => {
+    getModeToggleButton(mode).classList.add('visible');
+    setModeIcon(mode);
+  });
 });

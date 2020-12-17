@@ -18,10 +18,10 @@ $site-color: darken({{ site.color }}, 0%);
 @import 'gallery';
 @import 'whats_next';
 @import 'hover_images';
-@import 'dark_mode';
-@import 'print';
-@import 'internal_mode';
 @import 'mode_toggles';
+@import 'dark_mode';
+@import 'internal_mode';
+@import 'print';
 
 body {
   font-size: 15px;

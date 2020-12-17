@@ -20,20 +20,23 @@
       {%- endfor -%}
     </select>
 
-    <button class="dark-mode-toggle" onclick="toggleDarkMode()">
-      <i id="dark-mode-icon" class="fa"></i>
+    {%- assign modes = 'dark internal' | split: ' ' -%}
+    {% for mode in modes %}
+    <button class="{{ mode }}-mode-toggle" onclick="toggleMode('{{ mode }}')">
+      <i id="{{ mode }}-mode-icon" class="fa"></i>
     </button>
-
-    <button class="internal-mode-toggle" onclick="toggleInternalMode()">
-      <i id="internal-mode-icon" class="fa"></i>
-    </button>
+    {%- endfor -%}
 
     <div class="mobile-nav">
       <select onchange="navigate(this.value)" aria-label="Navigate the docs menu">
         <option value>Navigate the docs...</option>
         {%- include mobile_toc.html toc=include.page_toc.contents
           version=include.page_version_number -%}
-        <option value="darkMode">[ toggle dark mode ]</option>
+        <optgroup label="Actions">
+          {% for mode in modes %}
+          <option value="[{{ mode }}]">&nbsp;&nbsp;&nbsp;Toggle {{ mode }} mode</option>
+          {%- endfor -%}
+        </optgroup>
       </select>
     </div>
   </div>

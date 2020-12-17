@@ -129,6 +129,7 @@
     border-radius: 5px;
     margin: 1rem auto;
     &.internal {
+      display: none;
       border-color: orange;
     }
     th {

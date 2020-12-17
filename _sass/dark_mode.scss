@@ -25,15 +25,11 @@
     margin-left: -2rem;
   }
   &.dark {
-    background: $darkestGray;
-    border-color: $gray;
     i {
       margin-left: 2rem;
     }
     &:after {
       margin-left: -0.4rem;
-      background: $gray;
-      box-shadow: inset 0 0 0px 2px rgba(0, 0, 0, 0.5);
     }
   }
   &:after {
@@ -71,6 +67,14 @@ body {
         color: $offWhite;
         background: $darkestGray;
         border-color: $gray;
+      }
+      .dark-mode-toggle, .internal-mode-toggle {
+        background: $darkestGray;
+        border-color: $gray;
+        &:after {
+          background: $gray;
+          box-shadow: inset 0 0 0px 2px rgba(0, 0, 0, 0.5);
+        }
       }
     }
     .nav-toc {

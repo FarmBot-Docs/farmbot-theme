@@ -1,10 +1,4 @@
-body.internal {
-  table.internal {
-    display: block;
-  }
-}
-
-.internal-mode-toggle {
+.dark-mode-toggle, .internal-mode-toggle {
   background: $white;
   border: 2px solid #eee;
   border-radius: 1rem;
@@ -30,15 +24,6 @@ body.internal {
   i {
     margin-left: -2rem;
   }
-  &.internal {
-    border-color: orange!important;
-    i {
-      margin-left: 2rem;
-    }
-    &:after {
-      margin-left: -0.4rem;
-    }
-  }
   &:after {
     content: "";
     position: absolute;
@@ -50,5 +35,28 @@ body.internal {
     border-radius: 50%;
     background: $offWhite;
     box-shadow: inset 0 0 0px 2px rgba(0, 0, 0, 0.05);
+  }
+}
+
+.dark-mode-toggle {
+  &.dark {
+    i {
+      margin-left: 2rem;
+    }
+    &:after {
+      margin-left: -0.4rem;
+    }
+  }
+}
+
+.internal-mode-toggle {
+  &.internal {
+    border-color: orange!important;
+    i {
+      margin-left: 2rem;
+    }
+    &:after {
+      margin-left: -0.4rem;
+    }
   }
 }

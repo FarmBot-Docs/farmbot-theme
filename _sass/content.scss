@@ -127,6 +127,10 @@
   table {
     border: #eee 3px solid;
     border-radius: 5px;
+    margin: 1rem auto;
+    &.internal {
+      border-color: orange;
+    }
     th {
       text-align: left;
       vertical-align: bottom;

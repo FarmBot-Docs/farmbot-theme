@@ -149,6 +149,9 @@ body {
       }
       table {
         border-color: $gray;
+        &.internal {
+          border-color: orange;
+        }
       }
       #whats-next + ul {
         a {

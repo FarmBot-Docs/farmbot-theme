@@ -8,12 +8,19 @@
     cursor: zoom-in;
     margin: auto;
   }
+  div.gallery-featured-image {
+    margin: unset;
+  }
   .gallery-thumbnail {
     cursor: pointer;
     max-height: 10rem;
     margin: auto;
     &.featured {
       border-color: $darkGray;
+    }
+    iframe {
+      max-height: 10rem;
+      pointer-events: none;
     }
   }
   .fa-times-circle {

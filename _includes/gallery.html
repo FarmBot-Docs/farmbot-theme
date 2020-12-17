@@ -3,10 +3,19 @@
   | newline_to_br | split: '<br />' -%}
 
 <div class='gallery'>
-  {{ gallery | first | replace: '<img', '<img class="gallery-featured-image"' }}
-  {{ gallery | first | replace: '<img', '<img class="gallery-thumbnail featured"' }}
+  {{ gallery | first
+   | replace: '<img', '<img class="gallery-featured-image"'
+   | replace: '<div', '<div class="gallery-featured-image"'
+  }}
+  {{ gallery | first
+   | replace: '<img', '<img class="gallery-thumbnail featured"'
+   | replace: '<div', '<div class="gallery-thumbnail featured"'
+  }}
   {% for image in gallery offset:1 %}
-  {{ image | strip | replace: '<img', '<img class="gallery-thumbnail"' }}
+  {{ image | strip
+    | replace: '<img', '<img class="gallery-thumbnail"'
+    | replace: '<div', '<div class="gallery-thumbnail"'
+  }}
   {%- endfor -%}
   <i class='fa fa-times-circle'></i>
 </div>

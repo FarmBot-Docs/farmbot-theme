@@ -4,9 +4,10 @@ addEventListener('load', addEventListeners);
 function addEventListeners() {
   document.querySelectorAll('.gallery-thumbnail').forEach(image => {
     image.addEventListener('click', () => {
-      const featuredImage = image.parentElement.firstElementChild;
-      featuredImage.alt = image.alt;
-      featuredImage.src = image.src;
+      const oldFeaturedImage = image.parentElement.firstElementChild;
+      const newFeaturedImage = image.cloneNode(true);
+      newFeaturedImage.classList = 'gallery-featured-image';
+      oldFeaturedImage.replaceWith(newFeaturedImage);
       image.parentElement.querySelectorAll('.gallery-thumbnail')
         .forEach(image => image.classList.remove('featured'));
       image.classList.add('featured');

@@ -65,6 +65,9 @@ body {
           color: lighten($site-color, 55%);
           border-bottom-color: lighten($site-color, 10%);
         }
+        &[href*='#']:hover::after {
+          border-color: $offWhite;
+        }
       }
       #markdown-toc {
         a {

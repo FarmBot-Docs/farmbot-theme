@@ -65,7 +65,14 @@ content="This callout doesn't have a `type`."
 
 {%
 include callout.html
-content="This callout doesn't have a title."
+type="cog"
+content="This callout doesn't have a title, but it does have a custom `type`."
+%}
+
+{%
+include callout.html
+type="bug"
+title="This callout also has a custom type"
 %}
 
 # Media

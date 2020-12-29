@@ -1,9 +1,16 @@
 <div class="callout {{ include.type }}">
   {%- capture icon -%}
-  {%- if include.type == 'success' -%}fa-check-square{%- endif -%}
-  {%- if include.type == 'info' -%}fa-info-circle{%- endif -%}
-  {%- if include.type == 'warning' -%}fa-exclamation-circle{%- endif -%}
-  {%- if include.type == 'danger' -%}fa-exclamation-triangle{%- endif -%}
+  {%- if include.type == 'success' -%}
+  fa-check-square
+  {%- elsif include.type == 'info' -%}
+  fa-info-circle
+  {%- elsif include.type == 'warning' -%}
+  fa-exclamation-circle
+  {%- elsif include.type == 'danger' -%}
+  fa-exclamation-triangle
+  {%- elsif include.type -%}
+  fa-{{ include.type }}
+  {%- endif -%}
   {%- endcapture -%}
   <i class="fa {{ icon }}"></i>
   {% if include.title and include.title != '' %}

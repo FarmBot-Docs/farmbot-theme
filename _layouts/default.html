@@ -47,7 +47,7 @@
         {%- if splitContent.first == '<ul id="markdown-toc">' -%}
         <h2 class="markdown-toc-header">Page Contents</h2>
         {%- endif -%}
-        {% include content.html content=content %}
+        {% include content.html content=content page_version_number=page_version_number %}
         <footer class="site-footer">
         </footer>
       </main>

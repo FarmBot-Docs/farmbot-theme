@@ -24,6 +24,26 @@
 {%- assign content = content | replace: old, new -%}
 {%- endfor -%}
 
+{%- assign sections = content
+  | split: '><i class="fa fa-anchor"></i></a>' | slice: 1, 999 -%}
+{%- for section in sections -%}
+{%- assign section_title = section | split: '<' | first -%}
+{%- assign cad =
+  site.data.cad | where: "version_number", include.page_version_number | first -%}
+{%- assign part = cad.part | where: "name", section_title | first -%}
+{%- if part -%}
+{%- capture with_cad -%}
+<td><strong>CAD model</strong></td>
+<td>{% include cad.html type='part' name=section_title %}</td>
+</tr>
+<tr><td><strong>Recommended Supplier
+{%- endcapture -%}
+{%- assign new_section = section
+  | replace: '<td><strong>Recommended Supplier', with_cad -%}
+{%- assign content = content | replace: section, new_section -%}
+{%- endif -%}
+{%- endfor -%}
+
 {%- assign imgs = include.content | split: '<img src=' | slice: 1, 999 -%}
 {%- for img in imgs -%}
 {%- assign img_content = img | split: '>' | first -%}

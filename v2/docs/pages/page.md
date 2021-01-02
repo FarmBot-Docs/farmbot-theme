@@ -35,7 +35,7 @@ type="info"
 title="Info"
 content="This callout contains multiple lines of text, showcasing the spacing between lines. How does it look? It should look and feel consistent with body text outside of callouts.
 
-This callout also has multiple paragraphs, showing the spacing between paragrpahs."
+This callout also has multiple paragraphs, showing the spacing between paragraphs."
 %}
 
 {%
@@ -109,6 +109,8 @@ Links to BOM entries have a hover image, like this [horizontal motor housing](..
 # Links
 
 Here is a [link](page.md)
+
+Here is a link to a CAD model: {% include cad.html type='part' name='Part 1' %}
 
 # Misc Markdown
 

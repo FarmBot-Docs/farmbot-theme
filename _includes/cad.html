@@ -1,0 +1,16 @@
+{%- assign version_factor = site.version_factor | default: 1 -%}
+{%- assign page_version_number =
+  page.url | split: '/' | slice: 1 | join: '' | slice: 1, 999
+  | replace: '.', '' | to_integer | divided_by: version_factor
+  | default: site.latest_version_number -%}
+{%- assign cad =
+  site.data.cad | where: "version_number", page_version_number | first -%}
+{%- assign element = cad[include.type] | where: "name", include.name | first -%}
+{%- if element.id -%}
+{%- capture url -%}
+https://cad.onshape.com/documents/{{ cad.document }}/w/{{ cad.workspace }}/e/{{ element.id }}
+{%- endcapture -%}
+<a href="{{ url }}" target="_blank" rel="noreferrer">
+  {{ include.name }}&nbsp;<i class="fa fa-external-link-square"></i>
+</a>
+{%- endif -%}

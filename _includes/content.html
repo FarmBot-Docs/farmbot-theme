@@ -32,6 +32,7 @@
   site.data.cad | where: "version_number", include.page_version_number | first -%}
 {%- assign part = cad.part | where: "name", section_title | first -%}
 {%- if part -%}
+{%- unless section contains 'CAD model' -%}
 {%- capture with_cad -%}
 <td><strong>CAD model</strong></td>
 <td>{% include cad.html type='part' name=section_title %}</td>
@@ -41,6 +42,7 @@
 {%- assign new_section = section
   | replace: '<td><strong>Recommended Supplier', with_cad -%}
 {%- assign content = content | replace: section, new_section -%}
+{%- endunless -%}
 {%- endif -%}
 {%- endfor -%}
 

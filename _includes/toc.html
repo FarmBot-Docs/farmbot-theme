@@ -23,11 +23,12 @@
       onclick="openSectionState('{{ path }}')">{{ item.title }}</a>
     {%- if item.pages -%}
     <i class="fa fa-chevron-right" onclick="toggleSectionState('{{ path }}')"></i>
-    {%- else -%}
-    {%- assign parent_url = include.path -%}
-    <script>initSectionState('{{ parent_url }}', '{{ current }}')</script>
     {%- endif -%}
     {% endif %}
+    {%- unless item.pages -%}
+    {%- assign parent_url = include.path -%}
+    <script>initSectionState('{{ parent_url }}', '{{ current }}')</script>
+    {%- endunless -%}
   </li>
   {%- endif -%}
   {% if item.pages %}

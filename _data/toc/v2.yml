@@ -27,6 +27,12 @@ contents:
         pages:
           - title: Parts
             url: parts
+      - title: External links
+        url: external-links
+        pages:
+          - title: External link
+            external: true
+            url: https://farm.bot
       - title: External link
         external: true
         url: https://farm.bot

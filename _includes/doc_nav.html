@@ -22,9 +22,11 @@
 
     {%- assign modes = 'dark internal' | split: ' ' -%}
     {% for mode in modes %}
-    <button class="{{ mode }}-mode-toggle" onclick="toggleMode('{{ mode }}')">
-      <i id="{{ mode }}-mode-icon" class="fa"></i>
-    </button>
+      {%- if mode == 'dark' or site.modes contains mode -%}
+        <button class="{{ mode }}-mode-toggle" onclick="toggleMode('{{ mode }}')">
+          <i id="{{ mode }}-mode-icon" class="fa"></i>
+        </button>
+      {%- endif -%}
     {%- endfor -%}
 
     <div class="mobile-nav">
@@ -34,7 +36,9 @@
           version=include.page_version_number -%}
         <optgroup label="Actions">
           {% for mode in modes %}
-          <option value="[{{ mode }}]">&nbsp;&nbsp;&nbsp;Toggle {{ mode }} mode</option>
+            {%- if mode == 'dark' or site.modes contains mode -%}
+              <option value="[{{ mode }}]">&nbsp;&nbsp;&nbsp;Toggle {{ mode }} mode</option>
+            {%- endif -%}
           {%- endfor -%}
           <option value="[print]">&nbsp;&nbsp;&nbsp;Print this page</option>
           {%- capture edit_url -%}

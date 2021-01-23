@@ -2,10 +2,15 @@
 <html lang="{{ site.lang | default: 'en-US' }}">
 
 {%- assign version_factor = site.version_factor | default: 1 -%}
-{%- assign page_version_number =
-  page.url | split: '/' | slice: 1 | join: '' | slice: 1, 999
-  | replace: '.', '' | to_integer | divided_by: version_factor
-  | default: site.latest_version_number -%}
+
+{%- if site.latest_version_number == 'docs' -%}
+  {%- assign page_version_number = 'docs' -%}
+{%- else -%}
+  {%- assign page_version_number =
+    page.url | split: '/' | slice: 1 | join: '' | slice: 1, 999
+    | replace: '.', '' | to_integer | divided_by: version_factor
+    | default: site.latest_version_number -%}
+{%- endif -%}
 
 {%- include head.html page_version_number=page_version_number -%}
 

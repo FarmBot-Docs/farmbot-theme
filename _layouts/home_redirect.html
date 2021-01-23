@@ -4,8 +4,12 @@
 <head>
   {%- assign version_toc =
     site.data.toc | where: "version_number", site.latest_version_number | first -%}
+  {%- capture version -%}
+  {%- if version_toc.version_number != 'docs' -%}v{%- endif -%}
+  {{ version_toc.version_number }}
+  {%- endcapture -%}
   {%- capture home -%}
-  v{{ version_toc.version_number }}/{{ version_toc.home }}
+  {{ version }}/{{ version_toc.home }}
   {%- endcapture -%}
   <meta http-equiv="refresh" content="0; url={{ home | relative_url }}" />
   {%- seo -%}

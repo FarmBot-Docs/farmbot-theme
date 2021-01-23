@@ -26,15 +26,18 @@
       width: 11rem;
     }
   }
-  .version select {
-    background: white;
-    border: 2px solid #eee;
-    cursor: pointer;
-    padding: .25rem .5rem;
-    border-radius: 5px;
-    margin-left: 1rem;
-    @media (max-width: $md-screen-size) {
-      margin-left: 0.5rem;
+  .version {
+    height: 2rem;
+    select {
+      background: white;
+      border: 2px solid #eee;
+      cursor: pointer;
+      padding: .25rem .5rem;
+      border-radius: 5px;
+      margin-left: 1rem;
+      @media (max-width: $md-screen-size) {
+        margin-left: 0.5rem;
+      }
     }
   }
 }

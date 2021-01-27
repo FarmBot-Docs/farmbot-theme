@@ -9,5 +9,7 @@
 {{ code | replace: '.', '/' }}
 {%- endif -%}
 {%- endcapture -%}
-<a href="{{ standards.url }}{{ page }}" target="_blank" rel="noreferrer">
-  {{- org -}}&nbsp;{{- code -}}&nbsp;<i class="fa fa-external-link-square"></i></a>
+{%- if standard -%}
+  <a href="{{ standards.url }}{{ page }}" target="_blank" rel="noreferrer">
+    {{- org -}}&nbsp;{{- code -}}&nbsp;<i class="fa fa-external-link-square"></i></a>
+{%- endif -%}

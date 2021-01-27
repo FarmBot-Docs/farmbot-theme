@@ -7,10 +7,9 @@
   site.data.cad | where: "version_number", page_version_number | first -%}
 {%- assign element = cad[include.type] | where: "name", include.name | first -%}
 {%- if element.id -%}
-{%- capture url -%}
-https://cad.onshape.com/documents/{{ cad.document }}/w/{{ cad.workspace }}/e/{{ element.id }}
-{%- endcapture -%}
-<a href="{{ url }}" target="_blank" rel="noreferrer">
-  {{ include.name }}&nbsp;<i class="fa fa-external-link-square"></i>
-</a>
+  {%- capture url -%}
+  https://cad.onshape.com/documents/{{ cad.document }}/w/{{ cad.workspace }}/e/{{ element.id }}
+  {%- endcapture -%}
+  <a href="{{ url }}" target="_blank" rel="noreferrer">
+    {{- include.name -}}&nbsp;<i class="fa fa-external-link-square"></i></a>
 {%- endif -%}

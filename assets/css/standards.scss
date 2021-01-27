@@ -5,22 +5,35 @@
 
 a[href^="{{ site.data.standards.ngss.url }}"]:hover::after,
 a[href^="{{ site.data.standards.ccss.url }}"]:hover::after {
-      background: $white;
-      border: 3px solid $darkGray;
-      border-radius: 5px;
-      padding: 0.5rem;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-      position: absolute;
-      margin-top: -2rem;
-      margin-left: 1rem;
+  background: $white;
+  border: 3px solid $darkGray;
+  border-radius: 5px;
+  padding: 0.5rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  margin-top: -2rem;
+  margin-left: 1rem;
+  max-width: 350px;
+  white-space: pre-wrap;
 }
 
 {% assign orgs = 'ngss ccss' | split: ' ' %}
 {%- for org in orgs -%}
   {%- assign standards = site.data.standards[org] -%}
   {%- for standard in standards.data -%}
-    a[href^="{{ standards.url }}"]:hover::after {
-      content: "{{ standard.title }}: {{ standard.description }}";
+    {%- capture page -%}
+    {%- if org == "ngss" -%}
+      {{ standard.code | downcase }}-{{ standard.title | downcase | replace: ':', '' | replace: ' ', '-' }}
+    {%- else -%}
+      {{ standard.code | replace: '.', '/' }}
+    {%- endif -%}
+    {%- endcapture -%}
+    a[href$="{{ page }}"]:hover::after {
+      {% if standard.description %}
+        content: "{{ standard.title }} \00000a\00000a {{ standard.description }}";
+      {% else %}
+        content: "{{ standard.title }}";
+      {% endif %}
     }
   {%- endfor -%}
 {%- endfor -%}

@@ -1,0 +1,13 @@
+{%- assign org = include.org | upcase -%}
+{%- assign code = include.code -%}
+{%- assign standards = site.data.standards | where: "org", org | first -%}
+{%- assign standard = standards.data | where: "code", code | first -%}
+{%- capture page -%}
+{%- if org == "NGSS" -%}
+{{ code | downcase }}-{{ standard.title | downcase | replace: ':', '' | replace: ' ', '-' }}
+{%- else -%}
+{{ code | replace: '.', '/' }}
+{%- endif -%}
+{%- endcapture -%}
+<a href="{{ standards.url }}{{ page }}" target="_blank" rel="noreferrer">
+  {{- org -}}&nbsp;{{- code -}}&nbsp;<i class="fa fa-external-link-square"></i></a>

@@ -1,0 +1,5 @@
+org: CCSS
+url: http://www.corestandards.org/
+data:
+  - code: ELA-Literacy.RST.6-8.3
+    title: Follow precisely a multistep procedure when carrying out experiments, taking measurements, or performing technical tasks.

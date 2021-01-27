@@ -112,6 +112,12 @@ Here is a [link](page.md)
 
 Here is a link to a CAD model: {% include cad.html type='part' name='Part 1' %}
 
+# OER standard reference
+
+{% include standard.html org="NGSS" code="2-LS4-1" %}
+
+{% include standard.html org="CCSS" code="ELA-Literacy.RST.6-8.3" %}
+
 # Misc Markdown
 
 > block quote

@@ -6,7 +6,7 @@
   <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.png' | relative_url }}">
   <link rel="stylesheet" href="/assets/css/icon_fallback.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  {% assign css = 'style fb' | split: ' ' %}
+  {% assign css = 'style fb standards' | split: ' ' %}
   {% for filename in css %}
   {%- capture stylesheet_url -%}
   /assets/css/{{ filename }}.css?v={{ site.github.build_revision }}

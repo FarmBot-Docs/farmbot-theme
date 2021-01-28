@@ -1,9 +1,10 @@
 org: NGSS
 url: https://www.nextgenscience.org/pe/
 data:
-  - code: 2-LS4-1
-    title: "Biological Evolution: Unity and Diversity"
-    description: Make observations of plants and animals to compare the diversity of life in different habitats.
+  - code: K-LS1-1
+    title: "From Molecules to Organisms: Structures and Processes"
+    slug: molecules-organisms-structures-and-processes
+    description: Use observations to describe patterns of what plants and animals (including humans) need to survive.
   - code: 5-PS1-3
     title: Matter and Its Interactions
     description: Make observations and measurements to identify materials based on their properties.

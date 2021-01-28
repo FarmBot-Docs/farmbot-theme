@@ -116,7 +116,7 @@ Here is a link to a CAD model: {% include cad.html type='part' name='Part 1' %}
 
 ## OER standard reference
 
-{% include standard.html org="NGSS" code="2-LS4-1" %}
+{% include standard.html org="NGSS" code="K-LS1-1" %}
 
 {% include standard.html org="NGSS" code="5-PS1-3" %}
 

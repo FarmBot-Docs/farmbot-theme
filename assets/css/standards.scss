@@ -21,26 +21,15 @@ a[href^="{{ site.data.standards.ccss.url }}"]:hover::after {
 {%- for org in orgs -%}
   {%- assign standards = site.data.standards[org] -%}
   {%- for standard in standards.data -%}
-  {%- capture slug -%}
-  {%- if standard.slug -%}
-    {{ standard.slug }}
-  {%- else -%}
-    {{ standard.title | downcase | replace: ':', '' | replace: ' ', '-' }}
-  {%- endif -%}
-  {%- endcapture -%}
-  {%- capture page -%}
-  {%- if org == "ngss" -%}
-    {{ standard.code | downcase }}-{{ slug }}
-  {%- else -%}
-    {{ standard.code | replace: '.', '/' }}
-  {%- endif -%}
-  {%- endcapture -%}
-    a[href$="{{ page }}"]:hover::after {
-      {% if standard.description %}
-        content: "{{ standard.title }} \00000a\00000a {{ standard.description }}";
-      {% else %}
-        content: "{{ standard.title }}";
-      {% endif %}
-    }
+    {%- capture page -%}
+    {%- include standard_page_path.txt org=org standard=standard -%}
+    {%- endcapture -%}
+      a[href$="{{ page }}"]:hover::after {
+        {% if standard.description %}
+          content: "{{ standard.title }} \00000a\00000a {{ standard.description }}";
+        {% else %}
+          content: "{{ standard.title }}";
+        {% endif %}
+      }
   {%- endfor -%}
 {%- endfor -%}

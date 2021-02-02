@@ -1,0 +1,17 @@
+{%- capture slug -%}
+{%- if include.standard.slug -%}
+  {{ include.standard.slug }}
+{%- else -%}
+  {{ include.standard.title | downcase
+      | replace: ':', ''
+      | replace: ' ', '-'
+      | replace: "'", '' }}
+{%- endif -%}
+{%- endcapture -%}
+
+{%- assign org_upcase = include.org | upcase -%}
+{%- if org_upcase == "NGSS" -%}
+  {{ include.standard.code | downcase }}-{{ slug }}
+{%- else -%}
+  {{ include.standard.code | replace: '.', '/' }}
+{%- endif -%}

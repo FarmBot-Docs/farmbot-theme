@@ -2,19 +2,8 @@
 {%- assign code = include.code -%}
 {%- assign standards = site.data.standards | where: "org", org | first -%}
 {%- assign standard = standards.data | where: "code", code | first -%}
-{%- capture slug -%}
-{%- if standard.slug -%}
-  {{ standard.slug }}
-{%- else -%}
-  {{ standard.title | downcase | replace: ':', '' | replace: ' ', '-' }}
-{%- endif -%}
-{%- endcapture -%}
 {%- capture page -%}
-{%- if org == "NGSS" -%}
-  {{ code | downcase }}-{{ slug }}
-{%- else -%}
-  {{ code | replace: '.', '/' }}
-{%- endif -%}
+{%- include standard_page_path.txt org=org standard=standard -%}
 {%- endcapture -%}
 {%- if standard -%}
   <a href="{{ standards.url }}{{ page }}" target="_blank" rel="noreferrer">

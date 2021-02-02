@@ -205,6 +205,7 @@ details
 <span class="fb-step fb-run-farmware">DETECT WEEDS</span>
 <span class="fb-step fb-take-photo">TAKE PHOTO</span>
 <span class="fb-step fb-assertion">ASSERTION</span>
+<span class="fb-step fb-lua">LUA</span>
 <span class="fb-step fb-mark-as">MARK AS</span>
 
 ## Cable colors

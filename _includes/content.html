@@ -86,7 +86,11 @@ alt="{{ alt_text_content }}" title="{{ alt_text_content }}"
 {%- if first_char == '[' -%}
 {%- assign description = '' -%}
 {%- endif -%}
-{%- capture new -%}{{ old }}<p>{{ description }}</p>{%- endcapture -%}
+{%- capture tags -%}
+{%- assign page_data = site.pages | where: "url", url | first -%}
+{%- for tag in page_data.tags -%}<i class="tag">{{ tag }}</i>{%- endfor -%}
+{%- endcapture -%}
+{%- capture new -%}{{ old }}{{ tags }}<p>{{ description }}</p>{%- endcapture -%}
 {%- assign new_whats_next_section = new_whats_next_section | replace: old, new -%}
 {%- endfor -%}
 

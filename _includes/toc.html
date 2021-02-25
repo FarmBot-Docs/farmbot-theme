@@ -23,7 +23,14 @@
           </a>
         {% else %}
           <a class="{{ current }}" href="{{ v_url | relative_url }}"
-            onclick="openSectionState('{{ path }}')">{{ item.title }}</a>
+            onclick="openSectionState('{{ path }}')">
+            {{ item.title }}
+            {%- capture md_path -%}{{ v_url }}.md{%- endcapture -%}
+            {%- assign page_data = site.pages | where: "path", md_path | first -%}
+            {%- for tag in page_data.tags -%}
+              <i class="tag">{{ tag }}</i>
+            {%- endfor -%}
+          </a>
           {%- if item.pages -%}
             <i class="fa fa-chevron-right" onclick="toggleSectionState('{{ path }}')"></i>
           {%- endif -%}

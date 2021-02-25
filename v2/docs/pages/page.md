@@ -2,6 +2,8 @@
 title: Page
 slug: page
 description: "Description :abc:"
+tags:
+ - tag
 ---
 
 * toc

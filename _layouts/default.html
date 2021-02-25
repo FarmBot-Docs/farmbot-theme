@@ -35,7 +35,12 @@
     </div>
     <div class="content">
       <header class="page-header" role="banner">
-        <h1 class="page-name">{{ page.title | default: site.title }}</h1>
+        <h1 class="page-name">
+          {{ page.title | default: site.title }}
+          {%- for tag in page.tags -%}
+            <i class="tag">{{ tag }}</i>
+          {%- endfor -%}
+        </h1>
         <div class="page-controls">
           <a href="javascript:window.print()">
             <i class='fa fa-print'></i>

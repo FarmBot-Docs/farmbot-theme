@@ -1,71 +1,72 @@
 {%- assign all_headers_joined = '' -%}
 
 {%- for i in (1..3) -%}
-{%- capture header_start -%}<h{{ i }} id="{%- endcapture -%}
-{%- assign headers_plus = include.content | split: header_start | slice: 1, 999 -%}
-{%- capture headers_joined -%}
-{%- for header_plus in headers_plus -%}
-{%- assign id = header_plus | split: '">' | first -%}
-{{ header_start }}{{ id }}">|{{ header_start }}{{ id }}">
-<a href="#{{ id }}"><i class="fa fa-anchor"></i></a>%%%
-{%- endfor -%}
-{%- endcapture -%}
-{%- capture all_headers_joined -%}
-{{ all_headers_joined }}%%%{{ headers_joined }}
-{%- endcapture -%}
+  {%- capture header_start -%}<h{{ i }} id="{%- endcapture -%}
+  {%- assign headers_plus = include.content
+        | split: header_start | slice: 1, 999 -%}
+  {%- capture headers_joined -%}
+  {%- for header_plus in headers_plus -%}
+    {%- assign id = header_plus | split: '">' | first -%}
+    {{ header_start }}{{ id }}">|{{ header_start }}{{ id }}">
+    <a href="#{{ id }}"><i class="fa fa-anchor"></i></a>%%%
+  {%- endfor -%}
+  {%- endcapture -%}
+  {%- capture all_headers_joined -%}
+  {{ all_headers_joined }}%%%{{ headers_joined }}
+  {%- endcapture -%}
 {%- endfor -%}
 
 {%- assign content = include.content -%}
 
 {%- assign headers = all_headers_joined | split: '%%%' -%}
 {%- for header in headers -%}
-{%- assign old = header | split: '|' | first -%}
-{%- assign new = header | split: '|' | last -%}
-{%- assign content = content | replace: old, new -%}
+  {%- assign old = header | split: '|' | first -%}
+  {%- assign new = header | split: '|' | last -%}
+  {%- assign content = content | replace: old, new -%}
 {%- endfor -%}
 
 {%- assign sections = content
   | split: '><i class="fa fa-anchor"></i></a>' | slice: 1, 999 -%}
 {%- for section in sections -%}
-{%- assign section_title = section | split: '<' | first -%}
-{%- assign cad =
-  site.data.cad | where: "version_number", include.page_version_number | first -%}
-{%- assign part = cad.part | where: "name", section_title | first -%}
-{%- if part -%}
-{%- unless section contains 'CAD model' -%}
-{%- capture with_cad -%}
-<td><strong>CAD model</strong></td>
-<td>{% include cad.html type='part' name=section_title %}</td>
-</tr>
-<tr><td><strong>Recommended Supplier
-{%- endcapture -%}
-{%- assign new_section = section
-  | replace: '<td><strong>Recommended Supplier', with_cad -%}
-{%- assign content = content | replace: section, new_section -%}
-{%- endunless -%}
-{%- endif -%}
+  {%- assign section_title = section | split: '<' | first -%}
+  {%- assign cad = site.data.cad
+        | where: "version_number", include.page_version_number | first -%}
+  {%- assign part = cad.part | where: "name", section_title | first -%}
+  {%- if part -%}
+    {%- unless section contains 'CAD model' -%}
+      {%- capture with_cad -%}
+      <td><strong>CAD model</strong></td>
+      <td>{% include cad.html type='part' name=section_title %}</td>
+      </tr>
+      <tr><td><strong>Recommended Supplier
+      {%- endcapture -%}
+      {%- assign new_section = section
+        | replace: '<td><strong>Recommended Supplier', with_cad -%}
+      {%- assign content = content | replace: section, new_section -%}
+    {%- endunless -%}
+  {%- endif -%}
 {%- endfor -%}
 
 {%- assign imgs = include.content | split: '<img src=' | slice: 1, 999 -%}
 {%- for img in imgs -%}
-{%- assign img_content = img | split: '>' | first -%}
-{%- capture img_inner -%}<img src={{ img_content }}>{%- endcapture -%}
-{%- capture wrapped_img -%}
-<div class='gallery'>
-  <img class="gallery-featured-image" src={{ img_content }}>
-</div>
-{%- endcapture -%}
-{%- assign content = content | replace: img_inner, wrapped_img -%}
+  {%- assign img_content = img | split: '>' | first -%}
+  {%- capture img_inner -%}<img src={{ img_content }}>{%- endcapture -%}
+  {%- capture wrapped_img -%}
+  <div class='gallery'>
+    <img class="gallery-featured-image" src={{ img_content }}>
+  </div>
+  {%- endcapture -%}
+  {%- assign content = content | replace: img_inner, wrapped_img -%}
 {%- endfor -%}
 
 {%- assign alt_texts = include.content | split: 'alt="' | slice: 1, 999 -%}
 {%- for alt_text in alt_texts -%}
-{%- assign alt_text_content = alt_text | split: '"' | first -%}
-{%- capture old -%}alt="{{ alt_text_content }}"{%- endcapture -%}
-{%- capture new -%}
-alt="{{ alt_text_content }}" title="{{ alt_text_content }}"
-{%- endcapture -%}
-{%- assign content = content | replace: old, new -%}
+  {%- assign alt_text_content = alt_text | split: '"' | first -%}
+  {%- capture old -%}alt="{{ alt_text_content }}"{%- endcapture -%}
+  {%- capture new -%}
+  alt="{{ alt_text_content }}" title="{{ alt_text_content }}"
+  {%- endcapture -%}
+  {%- assign content = content | replace: old, new -%}
 {%- endfor -%}
 
 {%- assign whats_next_section = content | split: 'What’s next?</h1>'
@@ -74,24 +75,23 @@ alt="{{ alt_text_content }}" title="{{ alt_text_content }}"
 {%- assign whats_next_urls_plus = whats_next_section
   | split: '<a href="' | slice: 1, 999 -%}
 {%- for whats_next_url_plus in whats_next_urls_plus -%}
-{%- assign url_plus = whats_next_url_plus | split: '</a>' | first -%}
-{%- assign url = url_plus | split: '"' | first -%}
-{%- assign name = url_plus | split: '>' | last -%}
-{%- assign whats_next_page = site.pages | where: 'url', url | first -%}
-{%- capture old -%}<a href="{{ url }}">{{ name }}{%- endcapture -%}
-{%- assign description = whats_next_page.description
-  | newline_to_br | split: '<br />' | first
-  | markdownify | strip_html | strip -%}
-{%- assign first_char = whats_next_page.description | slice: 0 -%}
-{%- if first_char == '[' -%}
-{%- assign description = '' -%}
-{%- endif -%}
-{%- capture tags -%}
-{%- assign page_data = site.pages | where: "url", url | first -%}
-{%- for tag in page_data.tags -%}<i class="tag">{{ tag }}</i>{%- endfor -%}
-{%- endcapture -%}
-{%- capture new -%}{{ old }}{{ tags }}<p>{{ description }}</p>{%- endcapture -%}
-{%- assign new_whats_next_section = new_whats_next_section | replace: old, new -%}
+  {%- assign url_plus = whats_next_url_plus | split: '</a>' | first -%}
+  {%- assign url = url_plus | split: '"' | first -%}
+  {%- assign name = url_plus | split: '>' | last -%}
+  {%- assign whats_next_page = site.pages | where: 'url', url | first -%}
+  {%- capture old -%}<a href="{{ url }}">{{ name }}{%- endcapture -%}
+  {%- assign description = whats_next_page.description
+    | newline_to_br | split: '<br />' | first
+    | markdownify | strip_html | strip -%}
+  {%- assign first_char = whats_next_page.description | slice: 0 -%}
+  {%- if first_char == '[' -%}
+    {%- assign description = '' -%}
+  {%- endif -%}
+  {%- capture tags -%}
+  {%- for tag in whats_next_page.tags -%}<i class="tag">{{ tag }}</i>{%- endfor -%}
+  {%- endcapture -%}
+  {%- capture new -%}{{ old }}{{ tags }}<p>{{ description }}</p>{%- endcapture -%}
+  {%- assign new_whats_next_section = new_whats_next_section | replace: old, new -%}
 {%- endfor -%}
 
 {{

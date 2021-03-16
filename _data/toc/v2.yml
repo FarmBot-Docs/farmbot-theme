@@ -11,6 +11,8 @@ contents:
         pages:
           - title: Page
             url: page
+            tags:
+              - tag
       - title: Other Page
         url: other-page
   - title: Other

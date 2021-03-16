@@ -25,9 +25,7 @@
           <a class="{{ current }}" href="{{ v_url | relative_url }}"
             onclick="openSectionState('{{ path }}')">
             {{ item.title }}
-            {%- capture md_path -%}{{ v_url }}.md{%- endcapture -%}
-            {%- assign page_data = site.pages | where: "path", md_path | first -%}
-            {%- for tag in page_data.tags -%}
+            {%- for tag in item.tags -%}
               <i class="tag">{{ tag }}</i>
             {%- endfor -%}
           </a>

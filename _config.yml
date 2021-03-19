@@ -13,3 +13,7 @@ exclude:
   - vendor
 modes:
   - internal
+algolia:
+  application_id: Z1MM044EZ8
+  index_name: theme
+  search_only_api_key: cad8ec927860485f3a8ac1ce2372be28

@@ -50,5 +50,11 @@
         </optgroup>
       </select>
     </div>
+
+    {%- if site.algolia.index_name -%}
+      <div id="search-searchbar"></div>
+      <div id="search-hits"></div>
+      {% include algolia.html %}
+    {%- endif -%}
   </div>
 </div>

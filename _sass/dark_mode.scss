@@ -156,5 +156,10 @@ body {
     .highlight {
       background: $gray;
     }
+    .ais-search-box {
+      input {
+        background: $darkestGray;
+      }
+    }
   }
 }

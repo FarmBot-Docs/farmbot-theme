@@ -1,0 +1,57 @@
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+<link rel="stylesheet" type="text/css"
+  href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.css">
+<link rel="stylesheet" type="text/css"
+  href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+  const search = instantsearch({
+    appId: '{{ site.algolia.application_id }}',
+    apiKey: '{{ site.algolia.search_only_api_key }}',
+    indexName: '{{ site.algolia.index_name }}'
+  });
+
+  const hitTemplate = function (hit) {
+    let url = `${hit.url}#${hit.anchor}`;
+
+    let breadcrumbs = '';
+    if (hit._highlightResult.headings) {
+      breadcrumbs = hit._highlightResult.headings.map(match => {
+        return `<span class="breadcrumb">${match.value}</span>`
+      }).join(' > ')
+    }
+
+    return `
+    <div class="page-item">
+      <h2><a class="page-link" href="${url}">${hit._highlightResult.title.value}</a></h2>
+      {{#breadcrumbs}}<a href="${url}" class="breadcrumbs">${breadcrumbs}</a>{{/breadcrumbs}}
+      <div class="page-snippet">${hit._highlightResult.html.value}</div>
+    </div>
+  `;
+  }
+
+
+  search.addWidget(
+    instantsearch.widgets.searchBox({
+      container: '#search-searchbar',
+      placeholder: 'Search the docs...',
+      poweredBy: true
+    })
+  );
+
+  search.addWidget(
+    instantsearch.widgets.hits({
+      container: '#search-hits',
+      templates: {
+        item: hitTemplate
+      }
+    })
+  );
+
+  document.querySelector('#search-searchbar').addEventListener('click', () => {
+    document.querySelector('#search-hits').classList.toggle('open');
+  });
+
+  search.start();
+</script>

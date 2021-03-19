@@ -22,6 +22,7 @@ $site-color: darken({{ site.color }}, 0%);
 @import 'dark_mode';
 @import 'internal_mode';
 @import 'print';
+@import 'algolia';
 
 body {
   font-size: 15px;

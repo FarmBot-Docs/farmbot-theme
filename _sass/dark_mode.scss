@@ -159,7 +159,22 @@ body {
     .ais-search-box {
       input {
         background: $darkestGray;
+        border-color: $gray;
       }
+    }
+    #search-hits {
+      background: $darkGray;
+      border-color: $mediumGray;
+    }
+    .ais-hits--item {
+      background: $darkGray;
+      border-color: $gray;
+      &:hover {
+        background: $mediumGray;
+      }
+    }
+    .breadcrumbs, .page-snippet {
+      color: #eee;
     }
   }
 }

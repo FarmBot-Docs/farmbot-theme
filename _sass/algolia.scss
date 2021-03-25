@@ -2,41 +2,78 @@
   height: 2rem !important;
   max-width: 100%;
   margin-bottom: 15px;
+  input {
+    border: 2px solid #eee;
+    border-radius: 5px;
+    box-shadow: none;
+  }
+}
+
+.ais-hits--item {
+  background: white;
+  border: 2px solid #eee;
+  border-radius: 5px;
+  margin-bottom: 1rem!important;
+  width: 100%;
+  a {
+    color: #4d4d4d;
+    &:hover {
+      color: black;
+      &::after {
+        display: none;
+      }
+    }
+  }
+  h2 {
+    font-family: Inknut Antiqua;
+    margin: 0;
+    a {
+      padding: 0;
+    }
+  }
+  &:hover {
+    background: #fafafa;
+  }
 }
 
 .page-item {
-  margin-bottom: 30px;
+  padding: 0.75rem 1rem!important;
 }
 
 .page-link .ais-Highlight {
-  color: #111;
   font-style: normal;
   text-decoration: underline;
 }
 
 .breadcrumbs {
-  color: #424242;
+  color: $mediumGray;
   display: block;
+  margin-bottom: 0.5rem;
+  opacity: 0.75;
+  padding: 0;
 }
 
 .breadcrumb {
   font-size: 18px;
-  color: #424242;
 }
 
 .breadcrumb .ais-Highlight {
-  font-weight: bold;
-  font-style: normal;
-}
-
-.page-snippet .ais-Highlight {
-  color: #2a7ae2;
   font-style: normal;
   font-weight: bold;
 }
 
-.page-snippet img {
-  display: none;
+.page-snippet {
+  p {
+    margin: 0;
+  }
+  .ais-Highlight {
+    font-style: normal;
+    font-weight: bold;
+  }
+  .page-snippet img {
+    max-height: 150px;
+    display: block;
+  }
 }
 
 #search-searchbar {
@@ -51,17 +88,20 @@
 }
 
 #search-hits {
+  background: #f6f7f8;
+  border-bottom: 1px solid #dadee2;
+  border-bottom-left-radius: 5px;
+  border-left: 1px solid #dadee2;
   display: none;
-  position: absolute;
-  background: gray;
-  width: calc(min(30rem, 100%));
-  height: 20rem;
+  height: 25rem;
+  margin-top: 4px;
   overflow: scroll;
-  right: 0;
-  z-index: 1;
-  padding: 1rem;
   overflow-x: hidden;
-  border-radius: 5px;
+  padding: 0.5rem 1rem 0;
+  position: absolute;
+  right: 0;
+  width: calc(min(30rem, 100%));
+  z-index: 1;
 }
 
 #search-hits.open {

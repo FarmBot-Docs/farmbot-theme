@@ -23,11 +23,11 @@
     }
 
     return `
-    <a href="${url}" class="page-item">
+    <div class="page-item" onclick="window.location.href = '${url}'">
       <h2 class="page-link">${hit._highlightResult.title.value}</h2>
       {{#breadcrumbs}}<div class="breadcrumbs">${breadcrumbs}</div>{{/breadcrumbs}}
       <div class="page-snippet">${hit._highlightResult.html.value}</div>
-    </a>
+    </div>
   `;
   }
 

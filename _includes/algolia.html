@@ -49,8 +49,38 @@
     })
   );
 
-  document.querySelector('#search-searchbar').addEventListener('click', () => {
-    document.querySelector('#search-hits').classList.toggle('open');
+  const searchResults = document.querySelector('#search-hits');
+  const searchBoxQuery = '.ais-search-box--input';
+  const searchBar = document.querySelector('#search-searchbar');
+
+  const open = () => searchResults.classList.add('open');
+  const close = () => searchResults.classList.remove('open');
+  const focus = () => document.querySelector(searchBoxQuery).focus();
+
+  searchBar.addEventListener('keydown', () => open());
+  searchBar.addEventListener('click', e => {
+    if (searchResults.classList.contains('open')
+      && e.target.tagName != 'INPUT') {
+      close();
+    } else {
+      open();
+    }
+  });
+  document.addEventListener('keydown', e => {
+    e.key == 'Escape' && close();
+    if (e.key == '/') {
+      if (!searchResults.classList.contains('open')
+        || document.querySelector(searchBoxQuery) != document.activeElement) {
+        e.preventDefault();
+      }
+      open();
+      focus();
+    }
+    if (e.keyCode == 75) {
+      e.preventDefault();
+      open();
+      focus();
+    }
   });
 
   search.start();

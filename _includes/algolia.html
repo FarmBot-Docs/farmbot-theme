@@ -66,6 +66,9 @@
       open();
     }
   });
+  document.addEventListener('click', e =>
+    !(e.target.classList.contains('ais-search-box--input')
+      || e.target.id == 'search-hits') && close());
   document.addEventListener('keydown', e => {
     e.key == 'Escape' && close();
     if (e.key == '/') {

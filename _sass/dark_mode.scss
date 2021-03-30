@@ -107,12 +107,6 @@ body {
           background: darken($danger_callout, 15%);
         }
       }
-      table {
-        border-color: $gray;
-        &.internal {
-          border-color: orange;
-        }
-      }
       #whats-next + ul {
         a {
           color: $offWhite;
@@ -176,5 +170,12 @@ body {
     .breadcrumbs, .page-snippet {
       color: #eee;
     }
+    .content, .page-snippet {
+      table {
+        border-color: $gray;
+        &.internal {
+          border-color: orange;
+        }
+      }
   }
 }

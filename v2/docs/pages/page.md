@@ -19,11 +19,23 @@ Text
 
 # Tables
 
-|Table||
-|---|---|
-|content|text
+|Table  |    |
+|-------|----|
+|Content|Text
 
 Text
+
+|Component|$/Unit|Genesis Qty|Genesis Subtotal|XL Qty|XL Subtotal|MAX Qty|MAX Subtotal|
+|---------|------|-----------|----------------|------|-----------|-------|------------|
+|40mm Horizontal Cable Carrier Support|$3.00|12|$36.00|24|$72.00|72|$216.00
+|60mm Horizontal Cable Carrier Support|$3.00|6|$18.00|12|$36.00|12|$36.00
+
+|                              |                              |
+|------------------------------|------------------------------|
+|**Material**                  |Gray UV stabilized ABS
+|**Price**                     |$3.00
+|**Quantity**                  |Genesis - 12<br>Genesis XL - 24<br>Genesis MAX - 72
+|**Recommended Supplier**      |[The FarmBot Shop](http://shop.farm.bot)
 
 |||
 |---|---|

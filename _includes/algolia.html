@@ -71,16 +71,11 @@
       || e.target.id == 'search-hits') && close());
   document.addEventListener('keydown', e => {
     e.key == 'Escape' && close();
-    if (e.key == '/') {
+    if (e.key == '/' || e.keyCode == 75) {
       if (!searchResults.classList.contains('open')
         || document.querySelector(searchBoxQuery) != document.activeElement) {
         e.preventDefault();
       }
-      open();
-      focus();
-    }
-    if (e.keyCode == 75) {
-      e.preventDefault();
       open();
       focus();
     }

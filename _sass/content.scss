@@ -124,26 +124,28 @@
     margin-top: 1rem;
     border-radius: 5px;
   }
-  table {
-    border: #eee 3px solid;
-    border-radius: 5px;
-    margin: 1rem auto;
-    &.internal {
+}
+
+.main-content table,
+.page-snippet table {
+  border: #eee 3px solid;
+  border-radius: 5px;
+  margin: 1rem auto;
+  &.internal {
+    display: none;
+  }
+  th {
+    text-align: left;
+    vertical-align: bottom;
+    &:empty {
       display: none;
     }
-    th {
-      text-align: left;
-      vertical-align: bottom;
-      &:empty {
-        display: none;
-      }
-    }
-    td {
-      vertical-align: top;
-    }
-    th, td {
-      border: none;
-    }
+  }
+  td {
+    vertical-align: top;
+  }
+  th, td {
+    border: none;
   }
 }
 

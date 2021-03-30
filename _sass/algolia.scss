@@ -64,7 +64,11 @@
 }
 
 .page-snippet {
-  overflow: scroll;
+  table {
+    overflow: scroll;
+    max-height: 9rem;
+    display: block;
+  }
   max-height: 9rem;
   a {
     padding: 0;

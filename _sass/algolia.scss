@@ -64,6 +64,8 @@
 }
 
 .page-snippet {
+  overflow: scroll;
+  max-height: 9rem;
   a {
     padding: 0;
   }

@@ -1,6 +1,8 @@
 <div class="doc-nav">
   <div class="version">
-    {%- unless site.latest_version_number == 'docs' -%}
+    {%- if site.latest_version_number == 'docs' -%}
+      <div style='display: inline-flex; height: 2rem'></div>
+    {%- else -%}
       <select onchange="navigate(this.value)" aria-label="Version picker">
         {%- assign latest_number =
           site.latest_version_number | times: include.version_factor | to_integer -%}
@@ -20,7 +22,7 @@
           {%- endif -%}
         {%- endfor -%}
       </select>
-    {%- endunless -%}
+    {%- endif -%}
 
     {%- assign modes = 'dark internal' | split: ' ' -%}
     {% for mode in modes %}

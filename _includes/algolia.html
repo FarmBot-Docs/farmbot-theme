@@ -57,7 +57,7 @@
   const close = () => searchResults.classList.remove('open');
   const focus = () => document.querySelector(searchBoxQuery).focus();
 
-  searchBar.addEventListener('keydown', () => open());
+  searchBar.addEventListener('keypress', () => open());
   searchBar.addEventListener('click', e => {
     if (searchResults.classList.contains('open')
       && e.target.tagName != 'INPUT') {

@@ -1,15 +1,37 @@
-<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
-<link rel="stylesheet" type="text/css"
-  href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch.min.css">
-<link rel="stylesheet" type="text/css"
-  href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.0/dist/instantsearch-theme-algolia.min.css">
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.20.0/dist/instantsearch.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 
 <script>
+  const algoliaClient = algoliasearch(
+    '{{ site.algolia.application_id }}',
+    '{{ site.algolia.search_only_api_key }}',
+  );
+
+  const searchResults = document.querySelector('#search-hits');
+
+  const searchClient = {
+    search(requests) {
+      if (requests.every(({ params }) => !params.query)) {
+        searchResults.classList.remove('results');
+        return Promise.resolve({
+          results: requests.map(() => ({
+            hits: [],
+            nbHits: 0,
+            nbPages: 0,
+            page: 0,
+            processingTimeMS: 0,
+          })),
+        });
+      }
+      searchResults.classList.add('results');
+      return algoliaClient.search(requests);
+    },
+  };
+
   const search = instantsearch({
-    appId: '{{ site.algolia.application_id }}',
-    apiKey: '{{ site.algolia.search_only_api_key }}',
-    indexName: '{{ site.algolia.index_name }}'
+    indexName: '{{ site.algolia.index_name }}',
+    searchClient,
   });
 
   const hitTemplate = function (hit) {
@@ -26,31 +48,27 @@
     <div class="page-item" onclick="window.location.href = '${url}'">
       <h2 class="page-link">${hit._highlightResult.title.value}</h2>
       {{#breadcrumbs}}<div class="breadcrumbs">${breadcrumbs}</div>{{/breadcrumbs}}
-      <div class="page-snippet">${hit._highlightResult.html.value}</div>
+      <div class="page-snippet">{{#helpers.highlight}}${hit.html || ""}{{/helpers.highlight}}</div>
     </div>
   `;
   }
 
 
-  search.addWidget(
+  search.addWidgets([
     instantsearch.widgets.searchBox({
       container: '#search-searchbar',
       placeholder: 'Search the docs...',
       poweredBy: false
-    })
-  );
-
-  search.addWidget(
+    }),
     instantsearch.widgets.hits({
       container: '#search-hits',
       templates: {
         item: hitTemplate
       }
-    })
-  );
+    }),
+  ]);
 
-  const searchResults = document.querySelector('#search-hits');
-  const searchBoxQuery = '.ais-search-box--input';
+  const searchBoxQuery = '.ais-SearchBox-input';
   const searchBar = document.querySelector('#search-searchbar');
 
   const open = () => searchResults.classList.add('open');
@@ -67,7 +85,7 @@
     }
   });
   document.addEventListener('click', e =>
-    !(e.target.classList.contains('ais-search-box--input')
+    !(e.target.classList.contains('ais-SearchBox-input')
       || e.target.id == 'search-hits') && close());
   document.addEventListener('keydown', e => {
     e.key == 'Escape' && close();

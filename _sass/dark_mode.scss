@@ -150,7 +150,7 @@ body {
     .highlight {
       background: $gray;
     }
-    .ais-search-box {
+    .ais-SearchBox {
       input {
         background: $darkestGray;
         border-color: $gray;
@@ -160,7 +160,7 @@ body {
       background: $darkGray;
       border-color: $mediumGray;
     }
-    .ais-hits--item {
+    .ais-Hits-item {
       background: $darkGray;
       border-color: $gray;
       &:hover {

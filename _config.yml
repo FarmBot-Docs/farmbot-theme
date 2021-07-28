@@ -1,4 +1,4 @@
-theme: jekyll-theme-cayman
+remote_theme: pages-themes/cayman
 color: '#434343'
 latest_version_number: 2
 plugins:

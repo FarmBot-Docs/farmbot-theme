@@ -175,8 +175,12 @@ details
 <span class="fb-button fb-orange">orange</span>
 <span class="fb-button fb-teal">teal</span>
 <span class="fb-button fb-blue">blue</span>
+<span class="fb-button fb-clear">clear</span>
+<span class="fb-button fb-add-variable">add variable</span>
 
-<span class="fb-circle-button fb-green">+</span>
+<span class="fb-circle-button fb-green"><i class='fa fa-plus'></i></span>
+
+<span class="fb-add-command-button"><i class='fa fa-plus'></i></span>
 
 <span class="fb-button fb-gray"><i class='fa fa-arrow-left'></i></span>
 <span class="fb-button fb-gray"><i class='fa fa-arrow-right'></i></span>

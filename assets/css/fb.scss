@@ -19,6 +19,23 @@
   white-space: nowrap;
 }
 
+.fb-add-command-button {
+  background: #434343;
+  transform: rotate(-45deg);
+  color: #f4f4f4;
+  border-radius: 50%;
+  border-top-left-radius: 0px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center;
+  i {
+    transform: rotate(45deg);
+  }
+}
+
 .fb-xl-sticker {
   background: linear-gradient(315deg, #22a36d, #4ea3ed);
   border-radius: 50%;
@@ -76,6 +93,10 @@
   background: #489fe4;
   border-bottom: 1px solid #287dc1;
   color: #f4f4f4;
+}
+
+.fb-clear {
+  border: 2px solid #666;
 }
 
 .fb-add-variable {

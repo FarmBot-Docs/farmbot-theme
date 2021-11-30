@@ -25,6 +25,8 @@ Part 1 is a very important part. Without it, FarmBot might not work correctly.
 |**Quantity**                  |3
 |**Recommended Supplier**      |[The FarmBot Shop](http://shop.farm.bot)
 
+**Internal specs**{:.internal}
+
 |                              |                              |
 |------------------------------|------------------------------|
 |**Internal Part Name**        |`75mm Part 1 Gray Rev A`

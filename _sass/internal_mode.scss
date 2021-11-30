@@ -1,6 +1,9 @@
 body.internal {
-  table.internal {
+  table.internal,
+  strong.internal {
     display: block;
+  }
+  table.internal {
     border-color: orange;
   }
 }

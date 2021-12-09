@@ -3,7 +3,7 @@
 <style>
   /*{%- for page_section_images in version_section_images.data -%}*/
   /*{%- for item in page_section_images.data -%}*/
-  a[href$="{{ item.section }}#"]:hover::after {
+  a[href$="#{{ item.section }}"]:hover::after {
     content: "";
     background-image: url('/v{{ include.page_version_number }}/{{ item.image }}');
   }

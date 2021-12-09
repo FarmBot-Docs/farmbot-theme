@@ -1,4 +1,0 @@
----
-title: Cables
-slug: cables
----

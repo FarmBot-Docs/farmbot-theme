@@ -72,10 +72,6 @@
           {% include spec_table.html %}
           {% include internal_spec_table.html %}
         {%- endif -%}
-        {%- assign page_dir = page.dir | split: "/" | last -%}
-        {%- if page_dir == "bom" -%}
-          {% include bom_table.html %}
-        {%- endif -%}
         {% include content.html content=content page_version_number=page_version_number %}
         <footer class="site-footer">
         </footer>

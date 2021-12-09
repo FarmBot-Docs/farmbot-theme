@@ -126,6 +126,9 @@
     max-width: 100%;
     margin-top: 1rem;
     border-radius: 5px;
+    &[src*="youtube"] {
+      aspect-ratio: 16/9;
+    }
   }
 }
 

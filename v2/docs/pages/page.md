@@ -93,7 +93,7 @@ title="This callout also has a custom type"
 
 ## Videos
 
-<iframe width="100%" height="450" src="https://www.youtube.com/embed/qwSbWy_1f8w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{% include youtube.html id="qwSbWy_1f8w" %}
 
 ## Images
 
@@ -117,7 +117,7 @@ Links to BOM entries have a hover image, like this [horizontal motor housing](..
 ![business](_images/business.jpg)
 ![farmbot logo](/assets/images/farmbot.svg)
 ![tall image](tall.png)
-<iframe width="100%" height="450" src="https://www.youtube.com/embed/qwSbWy_1f8w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{% include youtube.html id="qwSbWy_1f8w" %}
 ' %}
 
 # Links

@@ -182,7 +182,7 @@ body {
         &.internal {
           border-color: orange;
         }
-        tr.bom-total-row {
+        tr.bom-total-row, tr.bom-header {
           background: $gray;
         }
       }

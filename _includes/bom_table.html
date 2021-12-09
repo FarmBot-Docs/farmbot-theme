@@ -1,13 +1,13 @@
 {%- assign bom_category = page.path | remove: ".md" -%}
 
 <table>
-  <tr>
+  <tr class="bom-header">
     <th><i></i></th>
     <th><i></i></th>
     <th style="text-align: center; padding-bottom: 0;" colspan="2">{{ site.title | remove: "FarmBot " | remove: " Documentation" | default: "Genesis" }}</th>
     <th style="text-align: center; padding-bottom: 0;" colspan="2">{{ site.title | remove: "FarmBot " | remove: " Documentation" | default: "Genesis" }} <span class="fb-xl-sticker">XL</span></th>
   </tr>
-  <tr>
+  <tr class="bom-header">
     <th style="width: 50%;">Part</th>
     <th style="text-align: right;">$/Unit</th>
     <th style="text-align: center;">Qty</th>

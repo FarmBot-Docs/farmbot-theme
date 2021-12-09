@@ -1,0 +1,50 @@
+{%- assign bom_category = page.path | remove: ".md" -%}
+
+<table>
+  <tr>
+    <th><i></i></th>
+    <th><i></i></th>
+    <th style="text-align: center; padding-bottom: 0;" colspan="2">{{ site.title | remove: "FarmBot " | remove: " Documentation" | default: "Genesis" }}</th>
+    <th style="text-align: center; padding-bottom: 0;" colspan="2">{{ site.title | remove: "FarmBot " | remove: " Documentation" | default: "Genesis" }} <span class="fb-xl-sticker">XL</span></th>
+  </tr>
+  <tr>
+    <th style="width: 50%;">Part</th>
+    <th style="text-align: right;">$/Unit</th>
+    <th style="text-align: center;">Qty</th>
+    <th style="text-align: right;">Subtotal</th>
+    <th style="text-align: center;">Qty</th>
+    <th style="text-align: right;">Subtotal</th>
+  </tr>
+
+  {% assign total_quantity = 0 %}
+  {% assign total_xl_quantity = 0 %}
+  {% assign total_price = 0 %}
+  {% assign total_xl_price = 0 %}
+
+  {% for part in site.pages %}
+  {%- if part.dir contains bom_category -%}
+  <tr>
+    <td><a href="{{ part.slug }}#">{{ part.title }}</a></td>
+    <td style="text-align: right;">{{ part.price }}</td>
+    <td style="text-align: center;">{{ part.quantity.genesis }}</td>
+    {% assign subtotal = part.price | remove: "$" | times: part.quantity.genesis %}
+    <td style="text-align: right;">{% include format_price.html price=subtotal %}</td>
+    <td style="text-align: center;">{{ part.quantity.xl }}</td>
+    {% assign xl_subtotal = part.price | remove: "$" | times: part.quantity.xl %}
+    <td style="text-align: right;">{% include format_price.html price=xl_subtotal %}</td>
+  </tr>
+  {% assign total_quantity = total_quantity | plus: part.quantity.genesis %}
+  {% assign total_xl_quantity = total_xl_quantity | plus: part.quantity.xl %}
+  {% assign total_price = total_price | plus: subtotal %}
+  {% assign total_xl_price = total_xl_price | plus: xl_subtotal %}
+  {% endif %}
+  {% endfor %}
+  <tr class="bom-total-row">
+    <td><strong>TOTAL</strong></td>
+    <td><i></i></td>
+    <td style="text-align: center;"><strong>{{ total_quantity }}</strong></td>
+    <td style="text-align: right;"><strong>{% include format_price.html price=total_price %}</strong></td>
+    <td style="text-align: center;"><strong>{{ total_xl_quantity }}</strong></td>
+    <td style="text-align: right;"><strong>{% include format_price.html price=total_xl_price %}</strong></td>
+  </tr>
+</table>

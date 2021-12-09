@@ -1,6 +1,10 @@
+.main-content .internal,
+.page-snippet .internal {
+  display: none;
+}
+
 body.internal {
-  table.internal,
-  strong.internal {
+  .internal {
     display: block;
   }
   table.internal {

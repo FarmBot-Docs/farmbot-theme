@@ -25,16 +25,16 @@ Text
 
 Text
 
-|Component|$/Unit|Genesis Qty|Genesis Subtotal|XL Qty|XL Subtotal|MAX Qty|MAX Subtotal|
-|---------|------|-----------|----------------|------|-----------|-------|------------|
-|40mm Horizontal Cable Carrier Support|$3.00|12|$36.00|24|$72.00|72|$216.00
-|60mm Horizontal Cable Carrier Support|$3.00|6|$18.00|12|$36.00|12|$36.00
+|Component|$/Unit|Genesis Qty|Genesis Subtotal|XL Qty|XL Subtotal|
+|---------|------|-----------|----------------|------|-----------|
+|40mm Horizontal Cable Carrier Support|$3.00|12|$36.00|24|$72.00
+|60mm Horizontal Cable Carrier Support|$3.00|6|$18.00|12|$36.00
 
 |                              |                              |
 |------------------------------|------------------------------|
 |**Material**                  |Gray UV stabilized ABS
 |**Price**                     |$3.00
-|**Quantity**                  |Genesis - 12<br>Genesis XL - 24<br>Genesis MAX - 72
+|**Quantity**                  |Genesis - 12<br>Genesis XL - 24
 |**Recommended Supplier**      |[The FarmBot Shop](http://shop.farm.bot)
 
 |||
@@ -93,7 +93,7 @@ title="This callout also has a custom type"
 
 ## Videos
 
-<iframe width="100%" height="450" src="https://www.youtube.com/embed/qwSbWy_1f8w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{% include youtube.html id="qwSbWy_1f8w" %}
 
 ## Images
 
@@ -117,7 +117,7 @@ Links to BOM entries have a hover image, like this [horizontal motor housing](..
 ![business](_images/business.jpg)
 ![farmbot logo](/assets/images/farmbot.svg)
 ![tall image](tall.png)
-<iframe width="100%" height="450" src="https://www.youtube.com/embed/qwSbWy_1f8w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" src="https://www.youtube.com/embed/qwSbWy_1f8w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ' %}
 
 # Links

@@ -17,10 +17,15 @@
     margin: auto;
     &.featured {
       border-color: $darkGray;
+      iframe {
+        border-color: $darkGray;
+      }
     }
     iframe {
       max-height: 10rem;
       pointer-events: none;
+      border: #eee 3px solid;
+      margin-bottom: -1px;
     }
   }
   .fa-times-circle {

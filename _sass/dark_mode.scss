@@ -127,6 +127,12 @@ body {
         .gallery-thumbnail {
           &.featured {
             border-color: $offWhite;
+            iframe {
+              border-color: $offWhite;
+            }
+          }
+          iframe {
+            border-color: $gray;
           }
         }
       }

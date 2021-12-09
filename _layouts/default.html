@@ -42,6 +42,16 @@
           {%- endfor -%}
         </h1>
         <div class="page-controls">
+          {%- if page.specs -%}
+          <a href="http://shop.farm.bot">
+            <i class='fa fa-shopping-cart'></i>
+          </a>
+          {%- endif -%}
+          {%- if page.cad -%}
+          <a href="{{ page.cad | default: "http://cad.farm.bot/" }}">
+            <i class='fa fa-cube'></i>
+          </a>
+          {%- endif -%}
           <a href="javascript:window.print()">
             <i class='fa fa-print'></i>
           </a>
@@ -56,6 +66,15 @@
         {%- assign splitContent = content | newline_to_br | split: '<br />' -%}
         {%- if splitContent.first == '<ul id="markdown-toc">' -%}
         <h2 class="markdown-toc-header">Page Contents</h2>
+        {%- endif -%}
+        {%- if page.specs -%}
+          {% include bom_gallery.html %}
+          {% include spec_table.html %}
+          {% include internal_spec_table.html %}
+        {%- endif -%}
+        {%- assign page_dir = page.dir | split: "/" | last -%}
+        {%- if page_dir == "bom" -%}
+          {% include bom_table.html %}
         {%- endif -%}
         {% include content.html content=content page_version_number=page_version_number %}
         <footer class="site-footer">

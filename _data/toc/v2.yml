@@ -24,11 +24,6 @@ contents:
         pages:
           - title: Page
             url: page
-      - title: BOM
-        url: bom
-        pages:
-          - title: Parts
-            url: parts
       - title: External links
         url: external-links
         pages:
@@ -38,3 +33,13 @@ contents:
       - title: External link
         external: true
         url: https://farm.bot
+  - title: Bill of Materials
+    url: bom
+    top: true
+    pages:
+      - title: BOM Category
+        url: bom-category
+      - title: Cables
+        url: cables
+      - title: Plastic Parts
+        url: plastic-parts

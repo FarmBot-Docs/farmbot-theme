@@ -176,6 +176,9 @@ body {
         &.internal {
           border-color: orange;
         }
+        tr.bom-total-row {
+          background: $gray;
+        }
       }
     }
   }

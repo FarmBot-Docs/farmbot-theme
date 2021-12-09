@@ -1,0 +1,34 @@
+<h2>Specs</h2>
+
+<table>
+  {% for spec in page.specs %}
+  <tr>
+    <td>
+      <strong>
+        {{ spec[0] | capitalize }}
+      </strong>
+    </td>
+    <td>{{ spec[1] }}</td>
+  </tr>
+  {% endfor %}
+  <tr>
+    <td><strong>Price</strong></td>
+    <td>{{ page.price }}</td>
+  </tr>
+  <tr>
+    <td><strong>Quantity</strong></td>
+    <td>
+      {{ site.title | remove: "FarmBot " | remove: " Documentation" | default: "Genesis" }} - {{ page.quantity.genesis }}
+      <br>
+      {{ site.title | remove: "FarmBot " | remove: " Documentation" | default: "Genesis" }} <span class="fb-xl-sticker">XL</span> - {{ page.quantity.xl }}
+    </td>
+  </tr>
+  <tr>
+    <td><strong>CAD model</strong></td>
+    <td><a href="{{ page.cad | default: "http://cad.farm.bot" }}">Onshape</a> <i class="fa fa-cube"></i></td>
+  </tr>
+  <tr>
+    <td><strong>Purchase</strong></td>
+    <td><a href="http://shop.farm.bot">The FarmBot Shop</a> <i class="fa fa-shopping-cart"></i></td>
+  </tr>
+</table>

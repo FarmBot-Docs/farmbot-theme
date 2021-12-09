@@ -1,8 +1,0 @@
-version_number: 2
-data:
-  - page: parts
-    data:
-      - section: part-1
-        image: other/bom/_images/part_1.jpg
-      - section: part-2
-        image: other/bom/_images/part_2.jpg

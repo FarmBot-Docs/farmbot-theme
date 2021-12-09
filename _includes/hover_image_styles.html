@@ -1,13 +1,22 @@
-{%- assign version_section_images = site.data.section_images
-        | where: "version_number", include.page_version_number | first -%}
-<style>
-  /*{%- for page_section_images in version_section_images.data -%}*/
-  /*{%- for item in page_section_images.data -%}*/
-  a[href$="#{{ item.section }}"]:hover::after {
-    content: "";
-    background-image: url('/v{{ include.page_version_number }}/{{ item.image }}');
-  }
+{%- capture all_css_rules -%}
+{%- for part in site.pages -%}
+  {%- assign part_version = part.path | split: "/" | first -%}
+  {%- assign docs_version = page.path | split: "/" | first -%}
+  {%- if part.specs and part_version == docs_version -%}
+    {%- assign part_temp_path = part.path | prepend: "/" | remove: ".md" | replace: "-", "_" -%}
+    {%- for media in site.static_files -%}
+      {%- assign media_temp_path = media.path | remove: "/_images" | split: "." | first | replace: "-", "_" -%}
+      {%- if media_temp_path == part_temp_path %}
+      a[href$="{{ part.name | remove: ".md" }}#"]:hover::after {
+        content: "";
+        background-image: url('{{ media.path }}');
+        }
+      {% endif -%}
+    {%- endfor -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- endcapture -%}
 
-  /*{%- endfor -%}*/
-  /*{%- endfor -%}*/
+<style>
+  {{ all_css_rules }}
 </style>

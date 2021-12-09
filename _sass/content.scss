@@ -52,6 +52,9 @@
     font-size: 1rem;
     grid-column: 1 / span 2;
     text-align: left;
+    p {
+      margin-top: 0;
+    }
   }
 }
 
@@ -126,11 +129,6 @@
   }
 }
 
-.main-content strong.internal,
-.page-snippet strong.internal {
-  display: none;
-}
-
 .main-content table {
   margin: 1rem auto;
 }
@@ -144,9 +142,6 @@
   border: #eee 3px solid;
   border-collapse: initial;
   border-radius: 5px;
-  &.internal {
-    display: none;
-  }
   th {
     text-align: left;
     vertical-align: bottom;
@@ -160,6 +155,9 @@
   th, td {
     border: none;
     padding: 0.5rem 1rem;
+  }
+  tr.bom-total-row {
+    background: #eeeeee;
   }
 }
 

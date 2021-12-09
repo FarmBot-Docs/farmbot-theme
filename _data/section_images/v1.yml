@@ -1,0 +1,8 @@
+version_number: 1
+data:
+  - page: bom-category
+    data:
+      - section: part
+        image: bom/bom-category/_images/picture_of_part.jpeg
+      - section: stepper-motor
+        image: bom/bom-category/_images/nema_17.jpg

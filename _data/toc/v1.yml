@@ -8,3 +8,13 @@ contents:
     pages:
       - title: Page
         url: page
+  - title: Bill of Materials
+    url: bom
+    top: true
+    pages:
+      - title: BOM Category
+        url: bom-category
+      - title: Cables
+        url: cables
+      - title: Plastic Parts
+        url: plastic-parts

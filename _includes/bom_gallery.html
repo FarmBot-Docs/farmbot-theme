@@ -1,0 +1,17 @@
+{%- capture gallery_content -%}
+{%- for media in site.static_files -%}
+  {%- assign media_dir = media.path | remove: media.name | remove: "_images/" -%}
+  {%- if media_dir == page.dir -%}
+    {%- assign media_basename = media.basename | replace: "_", "-" -%}
+    {%- if media_basename contains page.slug -%}
+      {%- if media.extname == ".youtube" -%}
+        {%- assign youtube_id = media.basename | slice: -11, 11 -%}
+        {% include youtube.html id=youtube_id %}
+      {%- else -%}
+        ![{{ media.name }}]({{ media.path }})
+      {% endif -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- endcapture -%}
+{% include gallery.html images=gallery_content %}

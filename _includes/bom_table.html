@@ -24,7 +24,7 @@
   {% for part in site.pages %}
   {%- if part.dir contains bom_category -%}
   <tr>
-    <td><a href="{{ part.slug }}#">{{ part.title }}</a></td>
+    <td><a href="{{ part.url | remove: '.html' }}#">{{ part.title }}</a></td>
     <td style="text-align: right;">{{ part.price }}</td>
     <td style="text-align: center;">{{ part.quantity.genesis }}</td>
     {% assign subtotal = part.price | remove: "$" | times: part.quantity.genesis %}

@@ -18,7 +18,7 @@
   {% for filename in js %}
   <script src="/assets/js/{{ filename }}.js"></script>
   {% endfor %}
-  {% include hover_image_styles_old.html page_version_number=include.page_version_number %}
-  {% include hover_image_styles.html %}
+  {% include section_image_styles.html page_version_number=include.page_version_number %}
+  {% include part_hover_image_styles.html page_version_number=include.page_version_number %}
   {%- seo -%}
 </head>

@@ -68,6 +68,10 @@
   }
   font-size: 15px;
   padding-top: 0 !important;
+  &.full-width {
+    width: 100%;
+    max-width: none;
+  }
   img {
     border: 3px solid #eee;
     border-radius: 5px;
@@ -162,6 +166,11 @@
     &:empty {
       display: none;
     }
+    &.farmbot-model {
+      text-align: center;
+      padding-bottom: 0;
+      white-space: nowrap;
+    }
     span.part-variant {
       background: #434343;
       border-radius: 4px;
@@ -192,11 +201,17 @@
   th, td {
     border: none;
     padding: 0.5rem 1rem;
-    &.price {
-      text-align: right;
+    &.part {
+      white-space: nowrap;
+    }
+    &.notes {
+      min-width: 250px;
     }
     &.qty {
       text-align: center;
+    }
+    &.price, &.price-subtotal, &.cost, &.cost-subtotal {
+      text-align: right;
     }
   }
   &.variant-spec-table {

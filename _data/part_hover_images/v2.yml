@@ -8,7 +8,6 @@ bom:
     parts:
       - image: encoder_cable.jpeg
       - image: motor_cable.jpeg
-      - image: motor_cable_x1_700mm.jpeg
       - image: motor_cable_zy_2600mm.jpeg
       - image: motor_cable_zz_1800mm.jpeg
   - category: plastic-parts

@@ -150,22 +150,67 @@
   border: #eee 3px solid;
   border-collapse: initial;
   border-radius: 5px;
+  thead, tfoot {
+    background: #eeeeee;
+  }
+  tfoot {
+    font-weight: bold;
+  }
   th {
     text-align: left;
     vertical-align: bottom;
     &:empty {
       display: none;
     }
+    span.part-variant {
+      background: #434343;
+      border-radius: 4px;
+      color: #f4f4f4;
+      padding: 0px 4px;
+      margin-right: 4px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+  }
+  tr.internal {
+    background: lighten(orange, 35%);
   }
   td {
     vertical-align: top;
+    &.spec-name {
+      font-weight: bold;
+      text-transform: capitalize;
+      white-space: nowrap;
+    }
+    &[qty="0"] span {
+      background: lighten(red, 46%);
+      border-radius: 3px;
+      padding: 2px 12px;
+      color: lighten(red, 20%);
+    }
   }
   th, td {
     border: none;
     padding: 0.5rem 1rem;
+    &.price {
+      text-align: right;
+    }
+    &.qty {
+      text-align: center;
+    }
   }
-  tr.bom-total-row, tr.bom-header {
-    background: #eeeeee;
+  &.variant-spec-table {
+    td.spec-value, th.spec-value {
+      text-align: center;
+      min-width: 220px;
+      span.label {
+        font-weight: bold;
+        background: #eeeeee;
+        color: #434343;
+        border-radius: 3px;
+        padding: 2px 7px;
+      }
+    }
   }
 }
 
@@ -178,6 +223,10 @@
     &:hover {
       color: darken($site-color, 10%);
       border-bottom-color: rgba($site-color, 0.5);
+    }
+    &.part {
+      border-bottom-style: dotted;
+      font-weight: bold;
     }
   }
 }

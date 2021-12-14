@@ -1,50 +1,95 @@
 {%- assign bom_category = page.path | remove: ".md" -%}
 
 <table>
-  <tr class="bom-header">
+  <!-- Header -->
+  <thead>
     <th><i></i></th>
     <th><i></i></th>
-    <th style="text-align: center; padding-bottom: 0;" colspan="2">{{ site.title | remove: "FarmBot " | remove: " Documentation" | default: "Genesis" }}</th>
-    <th style="text-align: center; padding-bottom: 0;" colspan="2">{{ site.title | remove: "FarmBot " | remove: " Documentation" | default: "Genesis" }} <span class="fb-xl-sticker">XL</span></th>
-  </tr>
-  <tr class="bom-header">
+    <th style="text-align: center; padding-bottom: 0; white-space: nowrap" colspan="2">
+      {{ site.title | remove: "FarmBot " | remove: " Documentation" | default: "Genesis" }}
+    </th>
+    <th style="text-align: center; padding-bottom: 0; white-space: nowrap" colspan="2">
+      {{ site.title | remove: "FarmBot " | remove: " Documentation" | default: "Genesis" }}
+      <span class="fb-xl-sticker">XL</span>
+    </th>
+  </thead>
+  <thead>
     <th style="width: 50%;">Part</th>
-    <th style="text-align: right;">$/Unit</th>
-    <th style="text-align: center;">Qty</th>
-    <th style="text-align: right;">Subtotal</th>
-    <th style="text-align: center;">Qty</th>
-    <th style="text-align: right;">Subtotal</th>
-  </tr>
+    <th class="price">$/Unit</th>
+    <th class="qty">Qty</th>
+    <th class="price">Subtotal</th>
+    <th class="qty">Qty</th>
+    <th class="price">Subtotal</th>
+  </thead>
 
+  <!-- Part rows -->
+  <tbody>
   {% assign total_quantity = 0 %}
   {% assign total_xl_quantity = 0 %}
   {% assign total_price = 0 %}
   {% assign total_xl_price = 0 %}
-
   {% for part in site.pages %}
-  {%- if part.dir contains bom_category -%}
-  <tr>
-    <td><a href="{{ part.slug }}#">{{ part.title }}</a></td>
-    <td style="text-align: right;">{{ part.price }}</td>
-    <td style="text-align: center;">{{ part.quantity.genesis }}</td>
-    {% assign subtotal = part.price | remove: "$" | times: part.quantity.genesis %}
-    <td style="text-align: right;">{% include format_price.html price=subtotal %}</td>
-    <td style="text-align: center;">{{ part.quantity.xl }}</td>
-    {% assign xl_subtotal = part.price | remove: "$" | times: part.quantity.xl %}
-    <td style="text-align: right;">{% include format_price.html price=xl_subtotal %}</td>
-  </tr>
-  {% assign total_quantity = total_quantity | plus: part.quantity.genesis %}
-  {% assign total_xl_quantity = total_xl_quantity | plus: part.quantity.xl %}
-  {% assign total_price = total_price | plus: subtotal %}
-  {% assign total_xl_price = total_xl_price | plus: xl_subtotal %}
-  {% endif %}
+    {%- if part.dir contains bom_category -%}
+      <!-- Parts with variants -->
+      {%- if part.variants -%}
+        {% assign variants = part.variants | split: "|" %}
+        {% assign prices = part.price | split: "|" %}
+        {% assign genesis_quantities = part.quantity.genesis | split: "|" %}
+        {% assign xl_quantities = part.quantity.xl | split: "|" %}
+          {%- for variant in variants -%}
+          {% assign price = prices[forloop.index0] %}
+          {% assign genesis_quantity = genesis_quantities[forloop.index0] %}
+          {% assign xl_quantity = xl_quantities[forloop.index0] %}
+          <tr>
+            <td><a href="{{ part.url | remove: '.html' }}#">{{ part.title }} - {{ variant }}</a></td>
+            <td class="price">{{ price }}</td>
+            <td class="qty" qty="{{ genesis_quantity }}">
+              <span>{{- genesis_quantity -}}</span>
+            </td>
+            {%- assign subtotal = price | remove: "$" | times: genesis_quantity -%}
+            <td class="price">{% include format_price.html price=subtotal %}</td>
+            <td class="qty" qty="{{ xl_quantity }}">
+              <span>{{- xl_quantity -}}</span>
+            </td>
+            {%- assign xl_subtotal = price | remove: "$" | times: xl_quantity -%}
+            <td class="price">{% include format_price.html price=xl_subtotal %}</td>
+          </tr>
+          <!-- Add variant to TOTAL -->
+          {% assign total_quantity = total_quantity | plus: genesis_quantity %}
+          {% assign total_xl_quantity = total_xl_quantity | plus: xl_quantity %}
+          {% assign total_price = total_price | plus: subtotal %}
+          {% assign total_xl_price = total_xl_price | plus: xl_subtotal %}
+        {%- endfor -%}
+
+      <!-- Parts without variants -->
+      {%- else -%}
+      <tr>
+        <td><a href="{{ part.url | remove: '.html' }}#">{{ part.title }}</a></td>
+        <td class="price">{{ part.price }}</td>
+        <td class="qty">{{ part.quantity.genesis }}</td>
+        {% assign subtotal = part.price | remove: "$" | times: part.quantity.genesis %}
+        <td class="price">{% include format_price.html price=subtotal %}</td>
+        <td class="qty">{{ part.quantity.xl }}</td>
+        {% assign xl_subtotal = part.price | remove: "$" | times: part.quantity.xl %}
+        <td class="price">{% include format_price.html price=xl_subtotal %}</td>
+      </tr>
+      <!-- Add part to TOTAL -->
+      {% assign total_quantity = total_quantity | plus: part.quantity.genesis %}
+      {% assign total_xl_quantity = total_xl_quantity | plus: part.quantity.xl %}
+      {% assign total_price = total_price | plus: subtotal %}
+      {% assign total_xl_price = total_xl_price | plus: xl_subtotal %}
+      {%- endif -%}
+    {% endif %}
   {% endfor %}
-  <tr class="bom-total-row">
-    <td><strong>TOTAL</strong></td>
+  </tbody>
+
+  <!-- Footer -->
+  <tfoot>
+    <td>TOTAL</td>
     <td><i></i></td>
-    <td style="text-align: center;"><strong>{{ total_quantity }}</strong></td>
-    <td style="text-align: right;"><strong>{% include format_price.html price=total_price %}</strong></td>
-    <td style="text-align: center;"><strong>{{ total_xl_quantity }}</strong></td>
-    <td style="text-align: right;"><strong>{% include format_price.html price=total_xl_price %}</strong></td>
-  </tr>
+    <td class="qty">{{ total_quantity }}</td>
+    <td class="price">{% include format_price.html price=total_price %}</td>
+    <td class="qty">{{ total_xl_quantity }}</td>
+    <td class="price">{% include format_price.html price=total_xl_price %}</td>
+  </tfoot>
 </table>

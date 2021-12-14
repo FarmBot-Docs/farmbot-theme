@@ -7,6 +7,9 @@ body.internal {
   .internal {
     display: block;
   }
+  tr.internal {
+    display: table-row;
+  }
   table.internal {
     border-color: orange;
   }

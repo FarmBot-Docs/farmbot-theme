@@ -66,10 +66,14 @@
       <tr>
         <td><a href="{{ part.url | remove: '.html' }}#">{{ part.title }}</a></td>
         <td class="price">{{ part.price }}</td>
-        <td class="qty">{{ part.quantity.genesis }}</td>
+        <td class="qty" qty="{{ part.quantity.genesis }}">
+          <span>{{ part.quantity.genesis }}</span>
+        </td>
         {% assign subtotal = part.price | remove: "$" | times: part.quantity.genesis %}
         <td class="price">{% include format_price.html price=subtotal %}</td>
-        <td class="qty">{{ part.quantity.xl }}</td>
+        <td class="qty" qty="{{ part.quantity.xl }}">
+          <span>{{ part.quantity.xl }}</span>
+        </td>
         {% assign xl_subtotal = part.price | remove: "$" | times: part.quantity.xl %}
         <td class="price">{% include format_price.html price=xl_subtotal %}</td>
       </tr>

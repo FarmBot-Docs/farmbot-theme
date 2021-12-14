@@ -1,3 +1,7 @@
+{%- if include.price == 0 -%}
+---
+{%- else -%}
 {% assign dollars = include.price | split: "." | first %}
 {% assign cents = include.price | split: "." | last | append: "00" | truncate: 2, "" %}
 ${{ dollars }}.{{ cents }}
+{%- endif -%}

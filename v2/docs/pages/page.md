@@ -103,9 +103,13 @@ Tall images respect a maximum height:
 
 ![tall image](tall.png)
 
+## Section images
+
+Section links to aggregate BOM pages with sections for multiple parts (Genesis v1.5- and Express v1.0) have a hover image, like for these [dowel pins](../../bom/legacy-parts.md#dowel-pins).
+
 ## Hover images
 
-Links to BOM entries have a hover image, like this [horizontal motor housing](../../other/bom/parts/md#part-1).
+Links to individual part BOM pages (Genesis v1.6+ and Express v1.1+) have a hover image, like for this {% include part.html category='bom category' part='stepper motor' %}.
 
 ## Galleries
 
@@ -123,6 +127,14 @@ Links to BOM entries have a hover image, like this [horizontal motor housing](..
 # Links
 
 Here is a [link](page.md)
+
+## Part links
+
+Here is a link to the BOM entry for a {% include part.html category='plastic parts' part='horizontal motor housing' %} using `part.html`:
+
+```
+include part.html category='plastic parts' part='horizontal motor housing'
+```
 
 ## CAD
 

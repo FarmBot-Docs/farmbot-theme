@@ -70,7 +70,9 @@
         {%- if page.specs -%}
           {% include bom_gallery.html %}
           {% include spec_table.html %}
-          {% include internal_spec_table.html %}
+          {%- if page.variants -%}
+            {% include variant_table.html %}
+          {%- endif -%}
         {%- endif -%}
         {% include content.html content=content page_version_number=page_version_number %}
         <footer class="site-footer">

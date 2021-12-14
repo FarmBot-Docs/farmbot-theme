@@ -1,0 +1,6 @@
+version_number: 2
+data:
+  - page: legacy-parts
+    data:
+      - section: dowel-pins
+        image: bom/_images/dowel_pins.jpeg

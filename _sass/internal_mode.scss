@@ -13,4 +13,12 @@ body.internal {
   table.internal {
     border-color: orange;
   }
+  th, td {
+    &.cost, &.cost-subtotal {
+      display: table-cell;
+    }
+    &.price, &.price-subtotal {
+      display: none;
+    }
+  }
 }

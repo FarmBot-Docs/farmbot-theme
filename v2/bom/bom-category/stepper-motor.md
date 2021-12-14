@@ -16,4 +16,5 @@ internal-specs:
   internal part name: NEMA 17 Stepper Motor w/ Rotary Encoder
   vendor: LDO (motor), Honest Sensor (encoder)
   cost: $29.40
+  notes: "- Logo engraving must not be stretched.<br>- Send photo of 1st piece<br>- Insert into box with FarmBot logo facing UP<br>- Extras used for extra motor kits"
 ---

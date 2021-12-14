@@ -1,34 +1,52 @@
-<h2>Specs</h2>
+{% assign product_line = site.title | remove: "FarmBot " | remove: " Documentation" %}
 
-<table>
+<h2>
+  {% if page.variants %}
+  Common specs
+  {% else %}
+  Specs
+  {% endif %}
+</h2>
+
+<table class="spec-table">
   {% for spec in page.specs %}
+  {% unless spec[1] contains "|" %}
   <tr>
-    <td>
-      <strong>
-        {{ spec[0] | capitalize }}
-      </strong>
-    </td>
+    <td class="spec-name">{{ spec[0] }}</td>
     <td>{{ spec[1] }}</td>
   </tr>
+  {% endunless %}
   {% endfor %}
+  {% unless page.price contains "|" %}
   <tr>
-    <td><strong>Price</strong></td>
+    <td class="spec-name">Price</td>
     <td>{{ page.price }}</td>
   </tr>
+  {% endunless %}
+  {% unless page.quantity.genesis contains "|" %}
   <tr>
-    <td><strong>Quantity</strong></td>
+    <td class="spec-name">Quantity</td>
     <td>
-      {{ site.title | remove: "FarmBot " | remove: " Documentation" | default: "Genesis" }} - {{ page.quantity.genesis }}
+      {{ product_line }} - {{ page.quantity.genesis }}
       <br>
-      {{ site.title | remove: "FarmBot " | remove: " Documentation" | default: "Genesis" }} <span class="fb-xl-sticker">XL</span> - {{ page.quantity.xl }}
+      {{ product_line }} <span class="fb-xl-sticker">XL</span> - {{ page.quantity.xl }}
     </td>
   </tr>
+  {% endunless %}
   <tr>
-    <td><strong>CAD model</strong></td>
+    <td class="spec-name">CAD model</td>
     <td><a href="{{ page.cad | default: "http://cad.farm.bot" }}">Onshape</a> <i class="fa fa-cube"></i></td>
   </tr>
   <tr>
-    <td><strong>Purchase</strong></td>
+    <td class="spec-name">Purchase</td>
     <td><a href="http://shop.farm.bot">The FarmBot Shop</a> <i class="fa fa-shopping-cart"></i></td>
   </tr>
+  {% for internal_spec in page.internal-specs %}
+  {% unless internal_spec[1] contains "|" %}
+  <tr class="internal">
+    <td class="spec-name">{{ internal_spec[0] }}</td>
+    <td>{{ internal_spec[1] }}</td>
+  </tr>
+  {% endunless %}
+  {% endfor %}
 </table>

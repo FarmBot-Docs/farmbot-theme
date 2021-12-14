@@ -43,3 +43,5 @@ contents:
         url: cables
       - title: Plastic Parts
         url: plastic-parts
+      - title: Legacy Parts
+        url: legacy-parts

@@ -182,7 +182,16 @@ body {
         &.internal {
           border-color: orange;
         }
-        tr.bom-total-row, tr.bom-header {
+        tr.internal {
+          background: darken(orange, 30%);
+        }
+        td {
+          &[qty="0"] span {
+            background: darken(red, 43%);
+            color: darken(red, 15%);
+          }
+        }
+        thead, tfoot {
           background: $gray;
         }
       }

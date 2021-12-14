@@ -1,0 +1,85 @@
+{% assign product_line = site.title | remove: "FarmBot " | remove: " Documentation" %}
+
+<h2>Variant specs</h2>
+
+<table class="variant-spec-table">
+  <!-- Variants header -->
+  <thead>
+    <th>Variants ({{ page.variants | split: "|" | size }})</th>
+    {% assign part_variants = page.variants | split: "|" %}
+    {% for variant in part_variants %}
+    <th class="spec-value">
+      <span class="part-variant">{{ variant }}</span>
+    </th>
+    {% endfor %}
+  </thead>
+  <!-- Spec rows -->
+  {% for spec in page.specs %}
+  {% if spec[1] contains "|" %}
+  <tr>
+    <td class="spec-name">{{ spec[0] }}</td>
+    {% assign spec_variations = spec[1] | split: "|" %}
+    {% assign part_variants = page.variants | split: "|" %}
+    {% for spec_value in spec_variations %}
+    <td class="spec-value">
+      <span class="{{ spec[0] | slugify }}">{{- spec_value -}}</span>
+    </td>
+    {% endfor %}
+  </tr>
+  {% endif %}
+  {% endfor %}
+  <!-- Price row -->
+  {% if page.price contains "|" %}
+  <tr>
+    <td class="spec-name">Price</td>
+    {% assign price_variations = page.price | split: "|" %}
+    {% assign part_variants = page.variants | split: "|" %}
+    {% for price_value in price_variations %}
+    <td class="spec-value">
+      <span class="price">{{- price_value -}}</span>
+    </td>
+    {% endfor %}
+  </tr>
+  {% endif %}
+  <!-- Quantity row -->
+  {% if page.quantity.genesis contains "|" %}
+  <tr>
+    <td class="spec-name">
+      Quantity - {{ product_line }}
+    </td>
+    {% assign quantity_variations = page.quantity.genesis | split: "|" %}
+    {% assign part_variants = page.variants | split: "|" %}
+    {% for quantity_value in quantity_variations %}
+    <td class="spec-value" qty="{{ quantity_value }}">
+      <span class="quantity">{{- quantity_value -}}</span>
+    </td>
+    {% endfor %}
+  </tr>
+  <tr>
+    <td class="spec-name">
+      Quantity - {{ product_line }} <span class='fb-xl-sticker'>XL</span>
+    </td>
+    {% assign quantity_variations = page.quantity.xl | split: "|" %}
+    {% assign part_variants = page.variants | split: "|" %}
+    {% for quantity_value in quantity_variations %}
+    <td class="spec-value" qty="{{ quantity_value }}">
+      <span class="quantity">{{- quantity_value -}}</span>
+    </td>
+    {% endfor %}
+  </tr>
+  {% endif %}
+  {% for internal_spec in page.internal-specs %}
+  {% if internal_spec[1] contains "|" %}
+  <tr class="internal">
+    <td class="spec-name">{{ internal_spec[0] }}</td>
+    {% assign internal_spec_variations = internal_spec[1] | split: "|" %}
+    {% assign part_variants = page.variants | split: "|" %}
+    {% for internal_spec_value in internal_spec_variations %}
+    <td class="spec-value">
+      <span class="{{ internal_spec[0] | slugify }}">{{- internal_spec_value -}}</span>
+    </td>
+    {% endfor %}
+  </tr>
+  {% endif %}
+  {% endfor %}
+</table>

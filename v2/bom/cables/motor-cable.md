@@ -26,4 +26,5 @@ internal-specs:
     Motor Cable - ZZ, 1.8m (Genesis and Genesis XL)
   vendor: LDO
   cost: $1.50|$2.10|$1.50|$2.10|$1.50|$2.10|$1.50|$2.10
+  notes: One note for all motor cables
 ---

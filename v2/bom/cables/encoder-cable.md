@@ -26,8 +26,8 @@ internal-specs:
     Encoder Cable - ZZ, 1.8m (Genesis and Genesis XL)
   vendor: LDO
   cost: $1.50|$2.10|$1.50|$2.10|$1.50|$2.10|$1.50|$2.10
-  notes: "Updated length: 0.7m, Label: X1|
+  notes: "Updated length: 0.7m<br>Label: X1|
 Label: X2|
 Label: X2|
-Label: Y|End 1: Other half of the 90-degree waterproof connector used on the Z-axis cable section<br>End 2: Standard Farmduino encoder connector"
+Label: Y<br>The rest of the encoder cables don't have notes"
 ---

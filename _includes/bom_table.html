@@ -46,7 +46,11 @@
         {% assign genesis_quantities = part.quantity.genesis | split: "|" %}
         {% assign xl_quantities = part.quantity.xl | split: "|" %}
           {%- for variant in variants -%}
-          {% assign note = notes[forloop.index0] %}
+          {% if part.internal-specs.notes contains "|" %}
+            {% assign note = notes[forloop.index0] %}
+          {% else %}
+            {% assign note = part.internal-specs.notes %}
+          {% endif %}
           {% assign price = prices[forloop.index0] %}
           {% assign cost = costs[forloop.index0] %}
           {% assign genesis_quantity = genesis_quantities[forloop.index0] %}

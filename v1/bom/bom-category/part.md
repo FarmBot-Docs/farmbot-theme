@@ -4,7 +4,7 @@ slug: part
 description: A part that is very important
 price: $6.15
 quantity:
-  genesis: 4
+  standard: 4
   xl: 7
 specs:
   spec 1: 800mm

@@ -1,4 +1,5 @@
 {%- assign bom_category = page.path | remove: ".md" -%}
+{%- assign product_line = site.title | remove: "FarmBot " | remove: " Documentation" -%}
 
 <table>
   {% comment %}<!-- Header -->{% endcomment %}
@@ -7,10 +8,10 @@
     <th class="notes internal"><i></i></th>
     <th><i></i></th>
     <th class="farmbot-model" colspan="2">
-      {{ site.title | remove: "FarmBot " | remove: " Documentation" | default: "Genesis" }}
+      {{ product_line }}
     </th>
     <th class="farmbot-model" colspan="2">
-      {{ site.title | remove: "FarmBot " | remove: " Documentation" | default: "Genesis" }}
+      {{ product_line }}
       <span class="fb-xl-sticker">XL</span>
     </th>
   </thead>
@@ -29,8 +30,8 @@
 
   {% comment %}<!-- Part rows -->{% endcomment %}
   <tbody>
-  {% assign total_quantity = 0 %}
-  {% assign total_xl_quantity = 0 %}
+  {% assign total_quantity_standard = 0 %}
+  {% assign total_quantity_xl = 0 %}
   {% assign total_price = 0 %}
   {% assign total_xl_price = 0 %}
   {% assign total_cost = 0 %}
@@ -43,8 +44,8 @@
         {% assign notes = part.internal-specs.notes | split: "|" %}
         {% assign prices = part.price | split: "|" %}
         {% assign costs = part.internal-specs.cost | split: "|" %}
-        {% assign genesis_quantities = part.quantity.genesis | split: "|" %}
-        {% assign xl_quantities = part.quantity.xl | split: "|" %}
+        {% assign quantities_standard = part.quantity.standard | split: "|" %}
+        {% assign quantities_xl = part.quantity.xl | split: "|" %}
           {%- for variant in variants -%}
           {% if part.internal-specs.notes contains "|" %}
             {% assign note = notes[forloop.index0] %}
@@ -53,8 +54,8 @@
           {% endif %}
           {% assign price = prices[forloop.index0] %}
           {% assign cost = costs[forloop.index0] %}
-          {% assign genesis_quantity = genesis_quantities[forloop.index0] %}
-          {% assign xl_quantity = xl_quantities[forloop.index0] %}
+          {% assign quantity_standard = quantities_standard[forloop.index0] %}
+          {% assign quantity_xl = quantities_xl[forloop.index0] %}
           <tr>
             <td class="part">
               <a href="{{ part.url | remove: '.html' }}#">{{ part.title }} - {{ variant }}</a>
@@ -62,24 +63,24 @@
             <td class="notes internal">{{ note | default: "---" }}</td>
             <td class="price">{{ price }}</td>
             <td class="cost internal">{{ cost }}</td>
-            <td class="qty" qty="{{ genesis_quantity }}">
-              <span>{{- genesis_quantity -}}</span>
+            <td class="qty" qty="{{ quantity_standard }}">
+              <span>{{- quantity_standard -}}</span>
             </td>
-            {%- assign price_subtotal = price | remove: "$" | times: genesis_quantity -%}
+            {%- assign price_subtotal = price | remove: "$" | times: quantity_standard -%}
             <td class="price-subtotal">{% include format_price.html price=price_subtotal %}</td>
-            {% assign cost_subtotal = cost | remove: "$" | times: genesis_quantity %}
+            {% assign cost_subtotal = cost | remove: "$" | times: quantity_standard %}
             <td class="cost-subtotal internal">{% include format_price.html price=cost_subtotal %}</td>
-            <td class="qty" qty="{{ xl_quantity }}">
-              <span>{{- xl_quantity -}}</span>
+            <td class="qty" qty="{{ quantity_xl }}">
+              <span>{{- quantity_xl -}}</span>
             </td>
-            {%- assign xl_price_subtotal = price | remove: "$" | times: xl_quantity -%}
+            {%- assign xl_price_subtotal = price | remove: "$" | times: quantity_xl -%}
             <td class="price-subtotal">{% include format_price.html price=xl_price_subtotal %}</td>
-            {% assign xl_cost_subtotal = cost | remove: "$" | times: xl_quantity %}
+            {% assign xl_cost_subtotal = cost | remove: "$" | times: quantity_xl %}
             <td class="cost-subtotal internal">{% include format_price.html price=xl_cost_subtotal %}</td>
           </tr>
           {% comment %}<!-- Add variant to TOTAL -->{% endcomment %}
-          {% assign total_quantity = total_quantity | plus: genesis_quantity %}
-          {% assign total_xl_quantity = total_xl_quantity | plus: xl_quantity %}
+          {% assign total_quantity_standard = total_quantity_standard | plus: quantity_standard %}
+          {% assign total_quantity_xl = total_quantity_xl | plus: quantity_xl %}
           {% assign total_price = total_price | plus: price_subtotal %}
           {% assign total_xl_price = total_xl_price | plus: xl_price_subtotal %}
           {% assign total_cost = total_cost | plus: cost_subtotal %}
@@ -95,12 +96,12 @@
         <td class="notes internal">{{ part.internal-specs.notes | default: "---" }}</td>
         <td class="price">{{ part.price }}</td>
         <td class="cost internal">{{ part.internal-specs.cost }}</td>
-        <td class="qty" qty="{{ part.quantity.genesis }}">
-          <span>{{ part.quantity.genesis }}</span>
+        <td class="qty" qty="{{ part.quantity.standard }}">
+          <span>{{ part.quantity.standard }}</span>
         </td>
-        {% assign price_subtotal = part.price | remove: "$" | times: part.quantity.genesis %}
+        {% assign price_subtotal = part.price | remove: "$" | times: part.quantity.standard %}
         <td class="price-subtotal">{% include format_price.html price=price_subtotal %}</td>
-        {% assign cost_subtotal = part.internal-specs.cost | remove: "$" | times: part.quantity.genesis %}
+        {% assign cost_subtotal = part.internal-specs.cost | remove: "$" | times: part.quantity.standard %}
         <td class="cost-subtotal internal">{% include format_price.html price=cost_subtotal %}</td>
         <td class="qty" qty="{{ part.quantity.xl }}">
           <span>{{ part.quantity.xl }}</span>
@@ -111,8 +112,8 @@
         <td class="cost-subtotal internal">{% include format_price.html price=xl_cost_subtotal %}</td>
       </tr>
       {% comment %}<!-- Add part to TOTAL -->{% endcomment %}
-      {% assign total_quantity = total_quantity | plus: part.quantity.genesis %}
-      {% assign total_xl_quantity = total_xl_quantity | plus: part.quantity.xl %}
+      {% assign total_quantity_standard = total_quantity_standard | plus: part.quantity.standard %}
+      {% assign total_quantity_xl = total_quantity_xl | plus: part.quantity.xl %}
       {% assign total_price = total_price | plus: price_subtotal %}
       {% assign total_xl_price = total_xl_price | plus: xl_price_subtotal %}
       {% assign total_cost = total_cost | plus: cost_subtotal %}
@@ -127,10 +128,10 @@
     <td>TOTAL</td>
     <td class="notes internal"><i></i></td>
     <td><i></i></td>
-    <td class="qty">{{ total_quantity }}</td>
+    <td class="qty">{{ total_quantity_standard }}</td>
     <td class="price">{% include format_price.html price=total_price %}</td>
     <td class="cost internal">{% include format_price.html price=total_cost %}</td>
-    <td class="qty">{{ total_xl_quantity }}</td>
+    <td class="qty">{{ total_quantity_xl }}</td>
     <td class="price">{% include format_price.html price=total_xl_price %}</td>
     <td class="cost internal">{% include format_price.html price=total_xl_cost %}</td>
   </tfoot>

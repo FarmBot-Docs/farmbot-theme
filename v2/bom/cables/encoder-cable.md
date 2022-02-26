@@ -5,7 +5,7 @@ description: "These 7-wire cables connect the rotary encoders to the Farmduino. 
 variants: X1, 0.7m|X2, 2.3m|X2, 3.8m|Y, 2.7m|Y, 4.2m|ZY, 2.6m|ZY, 4.1m|ZZ, 1.8m
 price: $5.00|$6.00|$7.00|$8.00|$9.00|$6.00|$7.00|$8.00
 quantity:
-  genesis: 1|1|0|1|0|1|0|1
+  standard: 1|1|0|1|0|1|0|1
   xl: 1|0|1|0|1|0|1|1
 specs:
   cores: 7

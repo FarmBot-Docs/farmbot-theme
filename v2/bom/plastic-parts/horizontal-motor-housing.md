@@ -4,7 +4,7 @@ slug: horizontal-motor-housing
 description: These housings protect the gantry and cross-slide motors and encoders from rain.
 price: $10.00
 quantity:
-  genesis: 3
+  standard: 3
   xl: 3
 specs:
   material: Gray UV stabilized ABS

@@ -23,11 +23,11 @@
     <td>{{ page.price }}</td>
   </tr>
   {% endunless %}
-  {% unless page.quantity.genesis contains "|" %}
+  {% unless page.quantity.standard contains "|" %}
   <tr>
     <td class="spec-name">Quantity</td>
     <td>
-      {{ product_line }} - {{ page.quantity.genesis }}
+      {{ product_line }} - {{ page.quantity.standard }}
       <br>
       {{ product_line }} <span class="fb-xl-sticker">XL</span> - {{ page.quantity.xl }}
     </td>

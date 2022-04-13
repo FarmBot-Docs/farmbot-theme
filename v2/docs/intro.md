@@ -118,7 +118,7 @@ simplSection links to aggregate BOM pages with sections for multiple parts (Gene
 
 ## Hover images
 
-Links to individual part BOM pages (Genesis v1.6+ and Express v1.1+) have a hover image, like for this [[stepper motor]].
+Links to individual part BOM pages (Genesis v1.6+ and Express v1.1+) have a hover image, like for this singular [[stepper motor]] or these plural [[stepper motors]].
 
 ## Galleries
 

@@ -72,7 +72,14 @@
 {%- assign part_links = include.content | split: '[[' | slice: 1, 999 -%}
 {%- for part_link in part_links -%}
   {%- assign part_name = part_link | split: ']]' | first -%}
-  {%- assign part_slug = part_name | slugify -%}
+  {%- assign part_name_last_letter = part_name | slice: -1, 1 -%}
+  {%- if part_name_last_letter == 's' -%}
+    {%- assign length = part_name | size | minus: 1 -%}
+    {%- assign part_name_singular = part_name | slice: 0, length -%}
+  {%- else -%}
+    {%- assign part_name_singular = part_name -%}
+  {%- endif -%}
+  {%- assign part_slug = part_name_singular | slugify -%}
   {%- assign part_page = site.pages | where: 'slug', part_slug | first -%}
   {%- capture old -%}[[{{ part_name }}]]{%- endcapture -%}
   {%- capture new -%}

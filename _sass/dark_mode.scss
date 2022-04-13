@@ -139,6 +139,14 @@ body {
     }
     .site-footer {
       border-color: $gray;
+      background: $darkGray;
+      a {
+        color: lighten($site-color, 45%);
+        &:hover {
+          color: lighten($site-color, 55%);
+          border-bottom: 2px solid lighten($site-color, 10%);
+        }
+      }
     }
     .value-icon {
       filter: invert(1);

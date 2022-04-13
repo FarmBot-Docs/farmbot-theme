@@ -275,3 +275,20 @@ h3 {
   text-transform: uppercase;
   font-family: sans-serif;
 }
+
+footer.site-footer {
+  padding: 1rem;
+  background: #f6f7f8;
+  text-align: center;
+  p {
+    margin: 0;
+    a {
+      color: $site-color;
+      text-decoration: none;
+      &:hover {
+        color: darken($site-color, 10%);
+        border-bottom: 2px solid rgba($site-color, 0.5);
+      }
+    }
+  }
+}

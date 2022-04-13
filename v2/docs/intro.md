@@ -1,13 +1,22 @@
 ---
-title: Page
-slug: page
-description: "Description :abc:"
-tags:
- - tag
+title: FarmBot Theme
+slug: intro
+description: "Example FarmBot documentation for infrastructure development purposes :wrench:"
 ---
 
 * toc
 {:toc}
+
+
+{%
+include callout.html
+type="info"
+title="For development purposes"
+content="This hub is used for theme development.
+The content on these pages includes whatever is necessary to do so and has no other meaning.
+
+Use the links in the top navigation bar to navigate to the actual documentation hubs."
+%}
 
 # H1 heading
 
@@ -101,7 +110,7 @@ title="This callout also has a custom type"
 
 Tall images respect a maximum height:
 
-![tall image](tall.png)
+![tall image](_images/tall.png)
 
 ## Section images
 
@@ -120,7 +129,7 @@ Links to individual part BOM pages (Genesis v1.6+ and Express v1.1+) have a hove
 ![developer](_images/developer.jpg)
 ![business](_images/business.jpg)
 ![farmbot logo](/assets/images/farmbot.svg)
-![tall image](tall.png)
+![tall image](_images/tall.png)
 <iframe width="100%" src="https://www.youtube.com/embed/qwSbWy_1f8w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ' %}
 
@@ -302,5 +311,4 @@ Indicators:
 
 # What's next?
 
- * [Page](page.md)
- * [Other Page](../other-page.md)
+ * [Other Page](other-page.md)

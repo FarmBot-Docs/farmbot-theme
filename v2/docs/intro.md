@@ -114,11 +114,11 @@ Tall images respect a maximum height:
 
 ## Section images
 
-Section links to aggregate BOM pages with sections for multiple parts (Genesis v1.5- and Express v1.0) have a hover image, like for these [dowel pins](../../bom/legacy-parts.md#dowel-pins).
+simplSection links to aggregate BOM pages with sections for multiple parts (Genesis v1.5- and Express v1.0) have a hover image, like for these [dowel pins](../bom/legacy-parts.md#dowel-pins).
 
 ## Hover images
 
-Links to individual part BOM pages (Genesis v1.6+ and Express v1.1+) have a hover image, like for this {% include part.html category='bom category' part='stepper motor' %}.
+Links to individual part BOM pages (Genesis v1.6+ and Express v1.1+) have a hover image, like for this [[stepper motor]].
 
 ## Galleries
 
@@ -139,11 +139,7 @@ Here is a [link](page.md)
 
 ## Part links
 
-Here is a link to the BOM entry for a {% include part.html category='plastic parts' part='horizontal motor housing' %} using `part.html`:
-
-```
-include part.html category='plastic parts' part='horizontal motor housing'
-```
+Here is a link to the BOM page for a [[horizontal motor housing]]. It is created by wrapping the part name in double square brackets, `[``[`like this`]``]`, but without any spaces between the double brackets. This syntax will auto generate the link to the BOM page, extra styling, and hover image.
 
 ## CAD
 

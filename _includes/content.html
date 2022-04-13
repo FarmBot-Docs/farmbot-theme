@@ -69,6 +69,18 @@
   {%- assign content = content | replace: old, new -%}
 {%- endfor -%}
 
+{%- assign part_links = include.content | split: '[[' | slice: 1, 999 -%}
+{%- for part_link in part_links -%}
+  {%- assign part_name = part_link | split: ']]' | first -%}
+  {%- assign part_slug = part_name | slugify -%}
+  {%- assign part_page = site.pages | where: 'slug', part_slug | first -%}
+  {%- capture old -%}[[{{ part_name }}]]{%- endcapture -%}
+  {%- capture new -%}
+  <a href="{{ part_page.url | remove: '.html' }}#" class="part">{{ part_name }}</a>
+  {%- endcapture -%}
+  {%- assign content = content | replace: old, new -%}
+{%- endfor -%}
+
 {%- assign whats_next_section = content | split: 'What’s next?</h1>'
   | slice: 1 | first -%}
 {%- assign new_whats_next_section = whats_next_section -%}

@@ -1,8 +1,15 @@
 ---
 title: Other Page
 slug: other-page
-description: "**On this page**: A different page.\n[page](page.md)"
+description: "**On this page**: A what's next section to another page."
+tags:
+ - tag
 ---
 
 * toc
 {:toc}
+
+
+# What's next?
+
+ * [Page](other-page/page.md)

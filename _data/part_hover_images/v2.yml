@@ -2,14 +2,14 @@ version_number: 2
 bom:
   - category: bom-category
     parts:
-      - image: part.jpeg
+      - image: part.jpg
       - image: stepper_motor.jpg
   - category: cables
     parts:
-      - image: encoder_cable.jpeg
-      - image: motor_cable.jpeg
-      - image: motor_cable_zy_2600mm.jpeg
-      - image: motor_cable_zz_1800mm.jpeg
+      - image: encoder_cable.jpg
+      - image: motor_cable.jpg
+      - image: motor_cable_zy_2600mm.jpg
+      - image: motor_cable_zz_1800mm.jpg
   - category: plastic-parts
     parts:
-      - image: horizontal_motor_housing.jpeg
+      - image: horizontal_motor_housing.jpg

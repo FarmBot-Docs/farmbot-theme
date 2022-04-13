@@ -1,20 +1,20 @@
 version_number: 2
 status: stable
-home: docs/pages
+home: docs/intro
 contents:
   - title: Docs
     url: docs
     top: true
     pages:
-      - title: Pages
-        url: pages
+      - title: Intro
+        url: intro
+      - title: Other Page
+        url: other-page
         pages:
           - title: Page
             url: page
             tags:
               - tag
-      - title: Other Page
-        url: other-page
   - title: Other
     url: other
     top: true

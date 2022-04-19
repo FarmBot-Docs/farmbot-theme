@@ -185,6 +185,9 @@ body {
       color: #eee;
     }
     .content, .page-snippet {
+      .bom-table-container {
+        border-color: $gray;
+      }
       table {
         border-color: $gray;
         &.internal {

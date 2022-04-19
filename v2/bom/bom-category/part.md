@@ -10,7 +10,7 @@ specs:
   spec 1: 800mm
   spec 2: Orange
 internal-specs:
-  internal part name: Part - 800mm
+  internal-part-name: Part - 800mm
   vendor: LDO
   cost: $2.20
 ---

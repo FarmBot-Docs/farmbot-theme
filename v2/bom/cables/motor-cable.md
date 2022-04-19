@@ -15,7 +15,7 @@ specs:
   length: 0.7m|2.3m|3.8m|2.7m|4.2m|2.6m|4.1m|1.8m
   label: X1|X2|X2|Y|Y|ZY|ZY|ZZ
 internal-specs:
-  internal part name:
+  internal-part-name:
     Motor Cable - X1, 0.7m (Genesis and Genesis XL)|
     Motor Cable - X2, 2.3m (Genesis)|
     Motor Cable - Y, 2.7m (Genesis)|
@@ -24,6 +24,7 @@ internal-specs:
     Motor Cable - Y, 4.2m (Genesis XL)|
     Motor Cable - ZY, 4.1m (Genesis XL)|
     Motor Cable - ZZ, 1.8m (Genesis and Genesis XL)
+  rev: A|B|C|D|E|F|G|H
   vendor: LDO
   cost: $1.50|$2.10|$1.50|$2.10|$1.50|$2.10|$1.50|$2.10
   notes: One note for all motor cables

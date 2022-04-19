@@ -20,5 +20,11 @@ body.internal {
     &.price, &.price-subtotal {
       display: none;
     }
+    a.part-name {
+      display: none;
+    }
+  }
+  .internal-part-name, .rev {
+    display: inline-block;
   }
 }

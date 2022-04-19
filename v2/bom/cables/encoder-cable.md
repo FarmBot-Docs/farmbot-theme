@@ -15,7 +15,7 @@ specs:
   length: 0.7m|2.3m|3.8m|2.7m|4.2m|2.6m|4.1m|1.8m
   label: X1|X2|X2|Y|Y|ZY|ZY|ZZ
 internal-specs:
-  internal part name:
+  internal-part-name:
     Encoder Cable - X1, 0.7m (Genesis and Genesis XL)|
     Encoder Cable - X2, 2.3m (Genesis)|
     Encoder Cable - Y, 2.7m (Genesis)|

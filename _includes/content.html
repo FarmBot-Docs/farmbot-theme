@@ -79,8 +79,14 @@
   {%- else -%}
     {%- assign part_name_singular = part_name -%}
   {%- endif -%}
-  {%- assign part_slug = part_name_singular | slugify -%}
-  {%- assign part_page = site.pages | where: 'slug', part_slug | first -%}
+  {%- assign words = part_name_singular | split: ' ' -%}
+  {%- capture titlecase -%}
+    {%- for word in words -%}{{ word | capitalize }} {% endfor -%}
+  {%- endcapture -%}
+  {%- capture part_name_singular_titlecase -%}
+    {{ titlecase | rstrip }}
+  {%- endcapture -%}
+  {%- assign part_page = site.pages | where: 'title', part_name_singular_titlecase | first -%}
   {%- capture old -%}[[{{ part_name }}]]{%- endcapture -%}
   {%- capture new -%}
   <a href="{{ part_page.url | remove: '.html' }}#" class="part">{{ part_name }}</a>

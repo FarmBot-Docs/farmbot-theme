@@ -1,7 +1,5 @@
 .nav-toc {
   min-width: $nav-toc-width;
-  padding-left: 1rem;
-  padding-top: 0.5rem;
   @media (max-width: $md-screen-size) {
     display: none;
   }

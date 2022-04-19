@@ -1,5 +1,6 @@
 .content {
-  padding-left: 1rem;
+  overflow: hidden;
+  padding: 0rem;
   position: relative;
   width: 100%;
   @media (max-width: $md-screen-size) {
@@ -8,17 +9,17 @@
   .page-header,
   main {
     margin: 0;
-    padding: 1rem;
+    padding: 0rem;
   }
   .page-header {
     background: unset;
+    border-bottom: 1px solid #eee;
     color: unset;
     display: grid;
     gap: 0 1rem;
     grid-template-columns: 1fr auto;
-    margin-bottom: 2rem !important;
+    margin-bottom: 1.5rem !important;
     padding-bottom: 0 !important;
-    padding-top: 0.5rem;
   }
   .page-name {
     color: $dark_gray;
@@ -46,7 +47,6 @@
     }
   }
   .page-description {
-    border-bottom: 1px solid #eee;
     color: #6d757c;
     font-weight: normal;
     font-size: 1rem;
@@ -147,6 +147,18 @@
 
 .page-snippet table {
   margin: 0 auto;
+}
+
+.bom-table-container {
+  overflow: scroll;
+  width: 100%;
+  border: #eee 3px solid;
+  border-radius: 5px;
+  table {
+    display: table;
+    border: none!important;
+    margin: 0;
+  }
 }
 
 .main-content table,
@@ -273,6 +285,19 @@ h3 {
   font-weight: bold;
   font-style: normal;
   text-transform: uppercase;
+  font-family: sans-serif;
+}
+
+span.rev {
+  display: none;
+  margin-left: 0.25rem;
+  padding: 0rem 0.25rem;
+  border-radius: 3px;
+  background: #434343;
+  color: $offWhite;
+  font-size: 0.8rem;
+  font-weight: bold;
+  font-style: normal;
   font-family: sans-serif;
 }
 

@@ -43,20 +43,20 @@
         </h1>
         <div class="page-controls">
           {%- if page.specs -%}
-          <a href="http://shop.farm.bot">
-            <i class='fa fa-shopping-cart'></i>
-          </a>
+            <a href="https://farm.bot/search?q={{ page.title | url_encode }}" target="_blank">
+              <i class='fa fa-shopping-cart'></i>
+            </a>
           {%- endif -%}
           {%- if page.cad -%}
-          <a href="{{ page.cad | default: "http://cad.farm.bot/" }}">
-            <i class='fa fa-cube'></i>
-          </a>
+            <a href="{{ page.cad }}" target="_blank">
+              <i class='fa fa-cube'></i>
+            </a>
           {%- endif -%}
           <a href="javascript:window.print()">
             <i class='fa fa-print'></i>
           </a>
           <a href="{{ site.github.repository_url }}/edit/main{{ page.url
-            | replace: '.html', '.md'  }}">
+            | replace: '.html', '.md'  }}" target="_blank">
             <i class='fa fa-edit'></i>
           </a>
         </div>

@@ -36,12 +36,16 @@
   {%- if page.cad -%}
   <tr>
     <td class="spec-name">CAD model</td>
-    <td><a href="{{ page.cad }}">Onshape</a> <i class="fa fa-cube"></i></td>
+    <td><a href="{{ page.cad }}" target="_blank">Onshape</a> <i class="fa fa-cube"></i></td>
   </tr>
   {%- endif -%}
   <tr>
     <td class="spec-name">Purchase</td>
-    <td><a href="http://shop.farm.bot">The FarmBot Shop</a> <i class="fa fa-shopping-cart"></i></td>
+    <td>
+      <a href="https://farm.bot/search?q={{ page.title | url_encode }}" target="_blank">
+        The FarmBot Shop</a>
+      <i class="fa fa-shopping-cart"></i>
+    </td>
   </tr>
   {% for internal_spec in page.internal-specs %}
   {% unless internal_spec[1] contains "|" %}

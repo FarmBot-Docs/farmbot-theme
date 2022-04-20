@@ -2,7 +2,7 @@
 #markdown-toc {
   position: absolute;
   width: $markdown-toc-width;
-  left: calc(#{$max-width-min} - #{$both-toc-width} - 1rem);
+  left: calc(#{$max-width-min} - #{$both-toc-width} - 3rem);
   @media (max-width: $lg-screen-size) {
     display: none;
   }

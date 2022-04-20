@@ -1,47 +1,63 @@
 nav {
   height: 60px;
   background: $site-color;
-  a {
-    color: #ddd;
-    float: left;
-    line-height: 20px;
-    padding: 20px 15px;
-    text-decoration: none !important;
-    transition: background 0.2s ease;
-    &:hover {
-      color: white;
-      background: darken($site-color, 5%);
+  .nav-content {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    overflow-y: scroll;
+    max-width: $max-width;
+    margin: 0 auto;
+    a {
+      color: #ddd;
+      float: left;
+      line-height: 20px;
+      padding: 20px 15px;
+      text-decoration: none !important;
       transition: background 0.2s ease;
-      img {
-        filter: brightness(1.2);
-        transition: filter 0.2s ease;
+      &:hover {
+        color: white;
+        background: darken($site-color, 5%);
+        transition: background 0.2s ease;
+        img {
+          filter: brightness(1.2);
+          transition: filter 0.2s ease;
+        }
       }
     }
-  }
-  .current {
-    border-bottom: 5px solid #f4f4f4;
-    padding-bottom: 15px;
-  }
-  .doc-icon {
-    font-family: Inknut Antiqua;
-    height: 60px;
-    padding: 15px 25px;
-    img {
-      filter: brightness(1);
-      float: left;
-      height: 30px;
-      transition: filter 0.2s ease;
+    .current {
+      border-bottom: 5px solid #f4f4f4;
+      padding-bottom: 15px;
     }
-    p {
-      float: left;
-      line-height: 30px;
-      margin: 0 0 0 10px;
-    }
-  }
-  .nav-links {
-    display: inline;
-    @media (max-width: $md-screen-size) {
-      display: none;
+    .doc-icon {
+      font-family: Inknut Antiqua;
+      height: 60px;
+      padding: 15px 25px;
+      @media (max-width: $md-screen-size) {
+        padding: 15px 15px;
+      }
+      img {
+        filter: brightness(1);
+        float: left;
+        height: 30px;
+        transition: filter 0.2s ease;
+      }
+      p {
+        float: left;
+        line-height: 30px;
+        margin: 0 0 0 10px;
+        &.docs-title {
+          display: none;
+          @media (max-width: $md-screen-size) {
+            display: initial;
+          }
+        }
+        &.documentation-title {
+          @media (max-width: $md-screen-size) {
+            display: none;
+          }
+        }
+      }
     }
   }
 }

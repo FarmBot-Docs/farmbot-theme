@@ -13,7 +13,8 @@
       {%- endcapture -%}
       {%- capture v_url -%}{{ version }}{{ path }}{%- endcapture -%}
       {%- capture current -%}
-      {%- if include.current contains v_url -%}current{%- endif -%}
+      {%- capture page_path -%}{{ page.path | remove: ".md" }}{%- endcapture -%}
+      {%- if page_path == v_url -%}current{%- endif -%}
       {%- endcapture -%}
       {%- capture parent -%}{%- if item.pages -%}parent{%- endif -%}{% endcapture %}
       <li id="{{ path }}-top" class="{{ parent }} {{ current }}">

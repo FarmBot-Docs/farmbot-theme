@@ -41,7 +41,7 @@
       line-height: 50px;
       width: 50px;
       &:hover {
-        background: #eee;
+        background: rgba($site-color, 0.15);
         border: none;
       }
     }
@@ -61,10 +61,10 @@
 .main-content {
   width: calc(#{$max-width-min} - #{$both-toc-width} - 4rem);
   @media (max-width: $lg-screen-size) {
-    width: calc(#{$max-width-min} - #{$nav-toc-width} - 2rem);
+    width: calc(#{$max-width-min} - #{$nav-toc-width} - 4rem);
   }
   @media (max-width: $md-screen-size) {
-    width: 100vw;
+    width: calc(100vw - 2rem);
   }
   font-size: 15px;
   padding-top: 0 !important;
@@ -302,8 +302,9 @@ span.rev {
 }
 
 footer.site-footer {
-  padding: 1rem;
   background: #f6f7f8;
+  border: none;
+  padding: 1rem;
   text-align: center;
   p {
     margin: 0;

@@ -14,7 +14,6 @@ body {
     }
     .doc-nav {
       background: $darkGray;
-      border-color: $mediumGray;
       select {
         color: $offWhite;
         background: $darkestGray;
@@ -32,12 +31,15 @@ body {
     }
     .nav-toc {
       a:hover {
-        background: $gray;
+        background: rgba($site-color, 0.25);
       }
       .parent.open a {
-        background: $mediumGray;
+        background: rgba($site-color, 0.07);
+        &.current {
+          background: $site-color;
+        }
       }
-      .pages a {
+      .pages a, .fa-chevron-right, .fa-external-link-square {
         color: $offWhite;
         &:hover {
           color: $white;
@@ -48,11 +50,14 @@ body {
       color: $offWhite;
     }
     .content {
+      .page-header {
+        border-color: $gray;
+      }
       .page-name {
         color: $offWhite;
       }
       .page-controls a:hover {
-        background: $gray;
+        background: rgba($site-color, 0.15);
       }
       .page-description {
         color: $offWhite;
@@ -138,7 +143,6 @@ body {
       }
     }
     .site-footer {
-      border-color: $gray;
       background: $darkGray;
       a {
         color: lighten($site-color, 45%);

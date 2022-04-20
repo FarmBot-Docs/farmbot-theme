@@ -22,8 +22,19 @@ contents:
       - title: Pages
         url: pages
         pages:
-          - title: Page
-            url: page
+          - title: Page 1
+            url: page-1
+            pages:
+              - title: Subpage 1
+                url: subpage-1
+              - title: Subpage 2
+                url: subpage-2
+              - title: Subpage 3
+                url: subpage-3
+          - title: Page 2
+            url: page-2
+          - title: Page 3
+            url: page-3
       - title: External links
         url: external-links
         pages:

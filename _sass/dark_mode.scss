@@ -32,12 +32,15 @@ body {
     }
     .nav-toc {
       a:hover {
-        background: $gray;
+        background: rgba($site-color, 0.25);
       }
       .parent.open a {
-        background: $mediumGray;
+        background: rgba($site-color, 0.07);
+        &.current {
+          background: $site-color;
+        }
       }
-      .pages a {
+      .pages a, .fa-chevron-right, .fa-external-link-square {
         color: $offWhite;
         &:hover {
           color: $white;

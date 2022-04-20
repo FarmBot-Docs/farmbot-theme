@@ -20,7 +20,7 @@
     padding: 0.25rem 0.15rem;
   }
   .fa-chevron-right, .fa-external-link-square {
-    color: rgba($site-color, 0.8);
+    color: rgba($dark_gray, 0.8);
   }
   ul,
   li {
@@ -117,7 +117,7 @@
     border-bottom-right-radius: 5px;
     margin-bottom: 0.5rem;
     a {
-      color: $site-color;
+      color: $dark_gray;
       background: none;
       font-weight: normal;
       &:hover {

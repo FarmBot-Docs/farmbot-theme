@@ -17,7 +17,10 @@
   }
   .fa-external-link-square {
     float: right;
-    line-height: 1.5rem;
+    padding: 0.25rem 0.15rem;
+  }
+  .fa-chevron-right, .fa-external-link-square {
+    color: rgba($site-color, 0.8);
   }
   ul,
   li {
@@ -39,10 +42,10 @@
     display: block;
     padding: 0.25rem 0.5rem;
     &:hover {
-      background: #f3f3f3;
+      background: rgba($site-color, 0.1);
       color: $site-color;
       text-decoration: none;
-      transition: background 0.3s ease-out;
+      transition: transform 0.3s ease-out;
     }
     &.current {
       background: $site-color;
@@ -56,7 +59,7 @@
     position: relative;
     a {
       &:hover {
-        background: #dfdfdf;
+        background: rgba($site-color, 0.1);
       }
       &.current {
         background: $site-color;
@@ -69,10 +72,12 @@
     }
     &.open {
       a {
-        background: #f3f3f3;
+        background: rgba($site-color, 0.07);
         font-weight: bold;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
         &:hover {
-          background: #dfdfdf;
+          background: rgba($site-color, 0.1);
         }
         &.current {
           background: $site-color;
@@ -82,7 +87,9 @@
         }
       }
       .fa-chevron-right {
+        text-align: center;
         transform: rotate(90deg);
+        width: 2.1rem;
         &:hover {
           transform: rotate(90deg) scale(1.25);
         }
@@ -90,9 +97,11 @@
     }
     .fa-chevron-right {
       position: absolute;
-      right: 0.5rem;
-      top: 0.25rem;
-      padding: 0.25rem;
+      right: 0rem;
+      text-align: center;
+      top: 0rem;
+      padding: 0.5rem;
+      width: 2rem;
       cursor: pointer;
       transition: transform 0.3s ease-out;
       &:hover {
@@ -102,17 +111,18 @@
   }
   .pages {
     display: none;
-    margin: 0.5rem;
-    border-left: 3px solid $site-color;
+    padding: 0.5rem;
+    background: rgba($site-color, 0.07);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-bottom: 0.5rem;
     a {
-      color: #666;
+      color: $site-color;
       background: none;
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
       font-weight: normal;
       &:hover {
         color: $site-color;
-        background: #f3f3f3;
+        background: rgba($site-color, 0.1);
       }
       &.current {
         background: $site-color;

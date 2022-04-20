@@ -2,7 +2,7 @@
 #markdown-toc {
   position: absolute;
   width: $markdown-toc-width;
-  left: calc(#{$max-width-min} - #{$both-toc-width} - 3rem);
+  left: calc(#{$max-width-min} - #{$both-toc-width} - 1rem);
   @media (max-width: $lg-screen-size) {
     display: none;
   }
@@ -17,6 +17,7 @@
 #markdown-toc {
   padding: 0;
   padding-top: 2rem;
+  padding-right: 3rem;
   a {
     border: none;
     color: #757575;

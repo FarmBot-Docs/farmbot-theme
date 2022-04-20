@@ -41,7 +41,7 @@
       line-height: 50px;
       width: 50px;
       &:hover {
-        background: #eee;
+        background: rgba($site-color, 0.15);
         border: none;
       }
     }
@@ -302,8 +302,9 @@ span.rev {
 }
 
 footer.site-footer {
-  padding: 1rem;
   background: #f6f7f8;
+  border: none;
+  padding: 1rem;
   text-align: center;
   p {
     margin: 0;

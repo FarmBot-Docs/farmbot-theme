@@ -50,6 +50,7 @@
     &.current {
       background: $site-color;
       color: #f3f3f3;
+      font-weight: bold;
       &:hover {
         color: white;
       }
@@ -127,6 +128,7 @@
       &.current {
         background: $site-color;
         color: #f3f3f3;
+        font-weight: bold;
         &:hover {
           color: white;
         }

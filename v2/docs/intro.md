@@ -22,7 +22,7 @@ Use the links in the top navigation bar to navigate to the actual documentation 
 
 ## H2 heading
 
-### H3 heading
+### H3 heading that is much longer than the average heading
 
 Text
 

@@ -3,13 +3,11 @@
   position: relative;
   height: 2rem !important;
   max-width: 100%;
-  margin-bottom: 15px;
   input {
-    height: 100%;
     border: 2px solid #eee;
     border-radius: 5px;
     box-shadow: none;
-    padding: 10px 10px 10px 35px;
+    padding: 4px 10px 4px 35px;
     &:focus {
       outline: none;
     }
@@ -32,8 +30,9 @@
 }
 
 .ais-SearchBox-submit {
+  pointer-events: none;
   left: 4px;
-  top: calc(50% - 18px/2);
+  top: 6px;
   svg {
     height: 18px;
     width: 18px;
@@ -43,7 +42,7 @@
 .ais-SearchBox-loadingIndicator,
 .ais-SearchBox-reset {
   right: 4px;
-  top: calc(50% - 22px/2);
+  top: 4px;
   svg {
     height: 12px;
     width: 12px;
@@ -79,7 +78,8 @@
     }
   }
   &:hover {
-    background: #fafafa;
+    background: rgba($site-color, 0.1);
+    border-color: rgba($site-color, 0.1);
   }
 }
 
@@ -146,34 +146,40 @@ mark {
 
 #search-searchbar {
   height: 2rem;
-  float: right;
+  justify-self: right;
   text-align: center;
   @media (max-width: $md-screen-size) {
     height: unset;
-    float: none;
-    margin-top: 1rem;
+    grid-column: 1 / span 2;
+    justify-self: center;
   }
 }
 
 #search-hits {
   background: #f6f7f8;
-  border-bottom: 1px solid #dadee2;
   border-bottom-left-radius: 5px;
-  border-left: 1px solid #dadee2;
   display: none;
-  height: 25rem;
-  margin-top: 4px;
+  max-height: calc(100vh - 100px);
+  top: 100px;
   overflow: scroll;
   overflow-x: hidden;
-  padding: 0.5rem 1rem 0;
   position: absolute;
   right: 0;
   width: calc(min(30rem, 100%));
   z-index: 1;
+  @media (max-width: $md-screen-size) {
+    top: 148px;
+    max-height: calc(100vh - 148px);
+  }
 }
 
 #search-hits.open {
   display: block;
+  padding: 0;
+}
+
+#search-hits.open.results {
+  padding: 0.5rem 1rem 0;
 }
 
 #search-hits {
@@ -183,6 +189,8 @@ mark {
   &.results {
     .ais-Hits--empty {
       display: block;
+      text-align: center;
+      padding-bottom: 1rem;
     }
   }
 }

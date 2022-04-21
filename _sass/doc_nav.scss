@@ -1,7 +1,6 @@
 .doc-nav {
   background: #f6f7f8;
   border: none;
-  padding: 0.25rem;
   a {
     display: inline-block;
     margin: 0;
@@ -17,31 +16,32 @@
   }
   .mobile-nav {
     display: none;
+    justify-self: right;
     @media (max-width: $md-screen-size) {
-      display: inline;
+      display: block;
     }
-    float: right;
-    margin-right: 0.5rem;
     select {
       width: 11rem;
     }
   }
   .version {
-    height: 2rem;
+    padding: 0.25rem 1.5rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 1rem;
+    align-items: center;
     select {
       background: white;
       border: 2px solid #eee;
       border-radius: 5px;
       cursor: pointer;
       height: 2rem;
-      margin-left: 1rem;
       padding: 0 .5rem;
-      @media (max-width: $md-screen-size) {
-        margin-left: 0.5rem;
-      }
     }
     @media (max-width: $md-screen-size) {
-      height: unset;
+      gap: 0.5rem 1rem;
+      grid-template-columns: auto 1fr;
+      padding: 0.5rem 1rem;
     }
   }
 }

@@ -130,7 +130,7 @@ Links to individual part BOM pages (Genesis v1.6+ and Express v1.1+) have a hove
 ![business](_images/business.jpg)
 ![farmbot logo](/assets/images/farmbot.svg)
 ![tall image](_images/tall.png)
-<iframe width="100%" src="https://www.youtube.com/embed/qwSbWy_1f8w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" src="https://www.youtube.com/embed/qwSbWy_1f8w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="FarmBot YouTube video"></iframe>
 ' %}
 
 # Links

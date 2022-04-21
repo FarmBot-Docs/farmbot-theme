@@ -10,11 +10,14 @@ contents:
         url: intro
       - title: Other Page
         url: other-page
+        tags:
+          - tag
         pages:
           - title: Page
             url: page
             tags:
-              - tag
+              - Work in progress
+              - WIP
   - title: Other
     url: other
     top: true

@@ -71,6 +71,9 @@
         }
       }
     }
+    .tag {
+      margin-right: 1.5rem;
+    }
     &.open {
       a {
         background: rgba($site-color, 0.07);

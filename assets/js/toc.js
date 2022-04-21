@@ -145,7 +145,6 @@ function setModeIcon(mode) {
 /** Set mode toggle button states upon load. */
 addEventListener('load', () => {
   Object.keys(ICONS).map(mode => {
-    getModeToggleButton(mode).classList.add('visible');
     setModeIcon(mode);
   });
 });

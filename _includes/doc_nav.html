@@ -50,13 +50,13 @@
       {% include algolia.html %}
     {%- endif -%}
 
-    {%- assign modes = 'internal dark' | split: ' ' -%}
-    {% for mode in modes %}
-      {%- if mode == 'dark' or site.modes contains mode -%}
-        <button class="{{ mode }}-mode-toggle" onclick="toggleMode('{{ mode }}')">
-          <i id="{{ mode }}-mode-icon" class="fa"></i>
-        </button>
-      {%- endif -%}
-    {%- endfor -%}
+    {%- if site.modes contains "internal" -%}
+      <button class="internal-mode-toggle" onclick="toggleMode('internal')">
+        <i id="internal-mode-icon" class="fa fa-user"></i>
+      </button>
+    {%- endif -%}
+    <button class="dark-mode-toggle" onclick="toggleMode('dark')">
+      <i id="dark-mode-icon" class="fa fa-sun-o"></i>
+    </button>
   </div>
 </div>

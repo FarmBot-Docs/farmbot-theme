@@ -43,20 +43,24 @@
         </h1>
         <div class="page-controls">
           {%- if page.specs -%}
-            <a href="https://farm.bot/search?q={{ page.title | url_encode }}" target="_blank">
+            <a href="https://farm.bot/search?q={{ page.title | url_encode }}" target="_blank"
+              aria-label="Buy this part from the FarmBot shop">
               <i class='fa fa-shopping-cart'></i>
             </a>
           {%- endif -%}
           {%- if page.cad -%}
-            <a href="{{ page.cad }}" target="_blank">
+            <a href="{{ page.cad }}" target="_blank"
+              aria-label="View the CAD model for this part">
               <i class='fa fa-cube'></i>
             </a>
           {%- endif -%}
-          <a href="javascript:window.print()">
+          <a href="javascript:window.print()"
+            aria-label="Print this page">
             <i class='fa fa-print'></i>
           </a>
           <a href="{{ site.github.repository_url }}/edit/main{{ page.url
-            | replace: '.html', '.md'  }}" target="_blank">
+            | replace: '.html', '.md'  }}" target="_blank"
+              aria-label="Edit this documentation page">
             <i class='fa fa-edit'></i>
           </a>
         </div>

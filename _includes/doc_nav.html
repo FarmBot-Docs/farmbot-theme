@@ -51,11 +51,11 @@
     {%- endif -%}
 
     {%- if site.modes contains "internal" -%}
-      <button class="internal-mode-toggle" onclick="toggleMode('internal')">
+      <button class="internal-mode-toggle" onclick="toggleMode('internal')" aria-label="Internal Mode Toggle">
         <i id="internal-mode-icon" class="fa fa-user"></i>
       </button>
     {%- endif -%}
-    <button class="dark-mode-toggle" onclick="toggleMode('dark')">
+    <button class="dark-mode-toggle" onclick="toggleMode('dark')" aria-label="Dark Mode Toggle">
       <i id="dark-mode-icon" class="fa fa-sun-o"></i>
     </button>
   </div>

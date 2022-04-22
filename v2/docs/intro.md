@@ -4,10 +4,6 @@ slug: intro
 description: "Example FarmBot documentation for infrastructure development purposes :wrench:"
 ---
 
-* toc
-{:toc}
-
-
 {%
 include callout.html
 type="info"
@@ -20,11 +16,13 @@ Use the links in the top navigation bar to navigate to the actual documentation 
 
 # H1 heading
 
-## H2 heading
+## H2 heading that is much longer than the average heading such that it will wrap to additional lines
 
-### H3 heading that is much longer than the average heading
+## H2 heading with emoji :robot: :seedling: :strawberry:
 
-Text
+### H3 heading
+
+Note that H3 headings and deeper will not show up in the table of contents.
 
 # Tables
 

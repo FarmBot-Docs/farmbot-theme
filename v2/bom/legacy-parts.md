@@ -4,9 +4,6 @@ slug: "legacy-parts"
 description: "Tech specs for the extrusions in FarmBot Genesis. Visit [our shop](http://shop.farm.bot) to purchase parts."
 ---
 
-* toc
-{:toc}
-
 # Dowel Pins
 
 These pins are used to help align track extrusions and the gantry main beams.

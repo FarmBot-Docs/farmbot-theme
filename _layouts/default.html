@@ -70,18 +70,27 @@
       {%- assign full_width = "full-width" -%}
       {%- endif -%}
       <main id="content" class="main-content {{ full_width }}" role="main">
-        {%- assign splitContent = content | newline_to_br | split: '<br />' -%}
-        {%- if splitContent.first == '<ul id="markdown-toc">' -%}
-        <h2 class="markdown-toc-header">Page Contents</h2>
-        {%- endif -%}
-        {%- if page.specs -%}
-          {% include bom_gallery.html %}
-          {% include spec_table.html %}
-          {%- if page.variants -%}
-            {% include variant_table.html %}
+        <div class="page-toc-all" id="page-toc-all">
+          {%- if content contains '<h' -%}
+          <div class="page-toc-header">
+            <button onclick="togglePageToc()" aria-label="Toggle the page table of contents">
+              <i class='fa fa-list-ul'></i>
+            </button>
+            <h2>Page Contents</h2>
+          </div>
+          {% include page_toc.html html=content class="page-toc" h_max=2 %}
           {%- endif -%}
-        {%- endif -%}
-        {% include content.html content=content page_version_number=page_version_number %}
+        </div>
+        <div class="markdown-content">
+          {%- if page.specs -%}
+            {% include bom_gallery.html %}
+            {% include spec_table.html %}
+            {%- if page.variants -%}
+              {% include variant_table.html %}
+            {%- endif -%}
+          {%- endif -%}
+          {% include content.html content=content page_version_number=page_version_number %}
+        </div>
       </main>
     </div>
   </div>

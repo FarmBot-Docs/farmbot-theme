@@ -148,3 +148,13 @@ addEventListener('load', () => {
     setModeIcon(mode);
   });
 });
+
+/** Open/close page toc */
+function togglePageToc() {
+  var element = document.getElementById("page-toc-all");
+  if (element.classList.contains("closed")) {
+    element.classList.remove("closed");
+  } else {
+    element.classList.add("closed");
+  }
+}

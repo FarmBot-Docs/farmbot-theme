@@ -74,7 +74,7 @@ body {
           border-color: $offWhite;
         }
       }
-      #markdown-toc {
+      .page-toc {
         a {
           color: darken($offWhite, 15%);
           &:hover {

@@ -6,6 +6,3 @@ tags:
  - Work in progress
  - WIP
 ---
-
-* toc
-{:toc}

@@ -4,60 +4,85 @@ nav {
   .nav-content {
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: max-content;
-    overflow-y: scroll;
     max-width: $max-width;
-    margin: 0 auto;
-    a {
-      color: #ddd;
-      float: left;
-      line-height: 20px;
-      padding: 20px 15px;
-      text-decoration: none !important;
-      transition: background 0.2s ease;
-      &:hover {
-        color: white;
-        background: darken($site-color, 5%);
+    justify-content: space-between;
+    .nav-links {
+      overflow-y: scroll;
+      grid-auto-flow: column;
+      display: grid;
+      a {
+        color: #ddd;
+        float: left;
+        line-height: 20px;
+        padding: 20px 15px;
+        text-decoration: none !important;
         transition: background 0.2s ease;
+        &:hover {
+          color: white;
+          background: darken($site-color, 5%);
+          transition: background 0.2s ease;
+          img {
+            filter: brightness(1.2);
+            transition: filter 0.2s ease;
+          }
+        }
+      }
+      .current {
+        border-bottom: 5px solid #f4f4f4;
+        padding-bottom: 15px;
+      }
+      .doc-icon {
+        font-family: Inknut Antiqua;
+        height: 60px;
+        padding: 15px 25px;
+        display: grid;
+        grid-auto-flow: column;
+        @media (max-width: $md-screen-size) {
+          padding: 12px 15px;
+          grid-auto-flow: row;
+        }
         img {
-          filter: brightness(1.2);
+          filter: brightness(1);
+          float: left;
+          height: 30px;
           transition: filter 0.2s ease;
-        }
-      }
-    }
-    .current {
-      border-bottom: 5px solid #f4f4f4;
-      padding-bottom: 15px;
-    }
-    .doc-icon {
-      font-family: Inknut Antiqua;
-      height: 60px;
-      padding: 15px 25px;
-      @media (max-width: $md-screen-size) {
-        padding: 15px 15px;
-      }
-      img {
-        filter: brightness(1);
-        float: left;
-        height: 30px;
-        transition: filter 0.2s ease;
-      }
-      p {
-        float: left;
-        line-height: 30px;
-        margin: 0 0 0 10px;
-        &.docs-title {
-          display: none;
           @media (max-width: $md-screen-size) {
-            display: initial;
+            height: 20px;
           }
         }
-        &.documentation-title {
-          @media (max-width: $md-screen-size) {
+        p {
+          float: left;
+          line-height: 30px;
+          margin: 0 0 0 10px;
+          &.docs-title {
             display: none;
+            text-align: center;
+            @media (max-width: $md-screen-size) {
+              display: block;
+              line-height: 20px;
+              font-size: 75%;
+              margin: 0;
+              float: none;
+            }
+          }
+          &.documentation-title {
+            @media (max-width: $md-screen-size) {
+              display: none;
+            }
           }
         }
       }
+    }
+  }
+  .hub-controls {
+    justify-self: right;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 1rem;
+    padding-right: 1rem;
+    @media (max-width: $md-screen-size) {
+      padding-right: 0;
     }
   }
 }

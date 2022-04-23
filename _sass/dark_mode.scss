@@ -12,24 +12,20 @@ body {
     .banner a {
       color: darkred;
     }
-    .doc-nav {
-      background: $darkGray;
-      select {
-        color: $offWhite;
-        background: $darkestGray;
-        border-color: $gray;
-      }
-      .dark-mode-toggle,
-      .internal-mode-toggle {
-        background: $darkestGray;
-        border-color: $gray;
-        &:after {
-          background: $gray;
-          box-shadow: inset 0 0 0px 2px $darkestGray;
-        }
+    .version-picker {
+      color: $offWhite;
+      background: $darkestGray;
+      border-color: $gray;
+    }
+    .dark-mode-toggle,
+    .internal-mode-toggle {
+      background: $darkestGray;
+      &:after {
+        background: $gray;
+        box-shadow: inset 0 0 0px 2px $darkestGray;
       }
     }
-    .nav-toc {
+    .hub-toc-all {
       a:hover {
         background: rgba($site-color, 0.25);
       }
@@ -172,7 +168,6 @@ body {
     .ais-SearchBox {
       input {
         background: $darkestGray;
-        border-color: $gray;
       }
     }
     #search-hits {

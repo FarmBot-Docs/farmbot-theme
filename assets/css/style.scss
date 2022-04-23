@@ -7,16 +7,15 @@ $site-color: darken({{ site.color }}, 0%);
 @import 'colors';
 @import 'sizes';
 @import 'fonts';
-@import 'hub_nav';
-@import 'doc_nav';
 @import 'banner';
-@import 'doc_toc';
 @import 'value_icon';
 @import 'content';
 @import 'callout';
 @import 'gallery';
 @import 'whats_next';
 @import 'hover_images';
+@import 'hub_nav';
+@import 'hub_toc';
 @import 'mode_toggles';
 @import 'page_toc';
 @import 'dark_mode';
@@ -29,10 +28,15 @@ body {
 }
 
 .all {
-  display: flex;
+  display: grid;
   gap: 2rem;
-  padding: 0 1rem;
+  grid-template-columns: auto 1fr;
+  padding: 0.25rem 1rem;
   overflow: hidden;
+  @media (max-width: $md-screen-size) {
+    gap: 0;
+    grid-template-columns: 1fr;
+  }
 }
 
 .all,

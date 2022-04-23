@@ -3,6 +3,9 @@
   gap: 1.5rem;
   grid-template-rows: auto 1fr;
   width: 100%;
+  @media (max-width: $md-screen-size) {
+    gap: 1rem;
+  }
   .page-header,
   main {
     margin: 0;
@@ -63,6 +66,7 @@
     grid-template-columns: 1fr;
   }
   .markdown-content {
+    display: grid;
     order: -1;
     @media (max-width: $md-screen-size) {
       order: 1;

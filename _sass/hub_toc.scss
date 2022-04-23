@@ -1,13 +1,86 @@
-.nav-toc {
-  min-width: $nav-toc-width;
+.hub-toc-all {
+  transition: margin .2s ease;
+  width: 20rem;
+  @media (max-width: $md-screen-size) {
+    width: 100%;
+  }
+  &.closed {
+    margin-left: -21rem;
+    margin-right: 2rem;
+    @media (max-width: $md-screen-size) {
+      margin: 0;
+    }
+    button {
+      order: 3;
+      justify-self: right;
+      margin-right: -3rem;
+      @media (max-width: $md-screen-size) {
+        order: unset;
+        margin-right: 0;
+        justify-self: left;
+      }
+    }
+    .hub-toc {
+      @media (max-width: $md-screen-size) {
+        height: 0;
+        overflow: hidden;
+      }
+    }
+  }
+}
+.hub-toc-header {
+  align-items: center;
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  gap: 0.25rem;
+  margin-top: 1.75rem;
+  @media (max-width: $md-screen-size) {
+    margin-top: 0.5rem;
+  }
+  button {
+    background: none;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    line-height: 30px;
+    width: 30px;
+    padding: 0;
+    &:hover {
+      background: rgba($site-color, 0.15);
+    }
+  }
+  h3 {
+    margin: 0;
+    text-transform: uppercase;
+  }
+  .version-picker {
+    justify-self: right;
+    background: white;
+    border: 2px solid #eee;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 2rem;
+    padding: 0 .5rem;
+  }
+}
+.hub-toc-all.ready .hub-toc {
+  @media (max-width: $md-screen-size) {
+    display: block;
+  }
+}
+.hub-toc {
   @media (max-width: $md-screen-size) {
     display: none;
   }
   h3 {
+    display: inline-block;
     text-transform: uppercase;
     padding-left: 8px;
     margin-bottom: .25rem;
     margin-top: 2rem;
+  }
+  h3:first-child {
+    display: none;
   }
   .tag {
     float: right;
@@ -21,6 +94,9 @@
   }
   .fa-chevron-right, .fa-external-link-square {
     color: rgba($dark_gray, 0.8);
+  }
+  ul:first-child {
+    margin-top: 0.5rem;
   }
   ul,
   li {

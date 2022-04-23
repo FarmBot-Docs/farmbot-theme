@@ -22,16 +22,22 @@
   {%- assign page_toc =
     site.data.toc | where: "version_number", page_version_number | first -%}
 
-  {%- include doc_nav.html version_factor=version_factor
-    page_version_number=page_version_number
-    page_toc=page_toc -%}
-
   {%- include banner.html page_version_number=page_version_number -%}
 
   <div class="all">
-    <div class="nav-toc">
-      {% include toc.html toc=page_toc.contents current=page.url
-        version=page_version_number %}
+    <div class="hub-toc-all" id="hub-toc-all">
+      <div class="hub-toc-header">
+        <button onclick="toggleHubToc()" aria-label="Toggle the documentation hub table of contents">
+          <i class='fa fa-list-ul'></i>
+        </button>
+        <h3>{{ site.title | remove: "Documentation" }}</h3>
+        {%- include version_picker.html version_factor=version_factor
+          page_version_number=page_version_number -%}
+      </div>
+      <div class="hub-toc">
+        {% include toc.html toc=page_toc.contents current=page.url
+          version=page_version_number %}
+      </div>
     </div>
     <div class="content">
       <header class="page-header" role="banner">
@@ -78,7 +84,7 @@
             </button>
             <h2>Page Contents</h2>
           </div>
-          {% include page_toc.html html=content class="page-toc" h_max=2 %}
+          {% include page_toc.html html=content class="page-toc" id="page-toc" h_max=2 %}
           {%- endif -%}
         </div>
         <div class="markdown-content">

@@ -22,16 +22,22 @@
   {%- assign page_toc =
     site.data.toc | where: "version_number", page_version_number | first -%}
 
-  {%- include doc_nav.html version_factor=version_factor
-    page_version_number=page_version_number
-    page_toc=page_toc -%}
-
   {%- include banner.html page_version_number=page_version_number -%}
 
   <div class="all">
-    <div class="nav-toc">
-      {% include toc.html toc=page_toc.contents current=page.url
-        version=page_version_number %}
+    <div class="hub-toc-all" id="hub-toc-all">
+      <div class="hub-toc-header">
+        <button onclick="toggleHubToc()" aria-label="Toggle the documentation hub table of contents">
+          <i class='fa fa-list-ul'></i>
+        </button>
+        <h3>{{ site.title | remove: "Documentation" }}</h3>
+        {%- include version_picker.html version_factor=version_factor
+          page_version_number=page_version_number -%}
+      </div>
+      <div class="hub-toc">
+        {% include toc.html toc=page_toc.contents current=page.url
+          version=page_version_number %}
+      </div>
     </div>
     <div class="content">
       <header class="page-header" role="banner">
@@ -70,18 +76,27 @@
       {%- assign full_width = "full-width" -%}
       {%- endif -%}
       <main id="content" class="main-content {{ full_width }}" role="main">
-        {%- assign splitContent = content | newline_to_br | split: '<br />' -%}
-        {%- if splitContent.first == '<ul id="markdown-toc">' -%}
-        <h2 class="markdown-toc-header">Page Contents</h2>
-        {%- endif -%}
-        {%- if page.specs -%}
-          {% include bom_gallery.html %}
-          {% include spec_table.html %}
-          {%- if page.variants -%}
-            {% include variant_table.html %}
+        <div class="page-toc-all" id="page-toc-all">
+          {%- if content contains '<h' -%}
+          <div class="page-toc-header">
+            <button onclick="togglePageToc()" aria-label="Toggle the page table of contents">
+              <i class='fa fa-list-ul'></i>
+            </button>
+            <h2>Page Contents</h2>
+          </div>
+          {% include page_toc.html html=content class="page-toc" id="page-toc" h_max=2 %}
           {%- endif -%}
-        {%- endif -%}
-        {% include content.html content=content page_version_number=page_version_number %}
+        </div>
+        <div class="markdown-content">
+          {%- if page.specs -%}
+            {% include bom_gallery.html %}
+            {% include spec_table.html %}
+            {%- if page.variants -%}
+              {% include variant_table.html %}
+            {%- endif -%}
+          {%- endif -%}
+          {% include content.html content=content page_version_number=page_version_number %}
+        </div>
       </main>
     </div>
   </div>

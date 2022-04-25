@@ -1,28 +1,44 @@
 <nav>
   <div class="nav-content">
-    <a class="doc-icon" href="https://docs.farm.bot">
-      <img src="{{ 'assets/images/farmbot.svg' | relative_url }}" alt="FarmBot Logo">
-      <p class="documentation-title">Documentation</p>
-      <p class="docs-title">Docs</p>
-    </a>
-    <a class="{%- if site.github.repository_name == 'farmbot-express' -%}
-    current
-    {%- endif -%}" href="https://express.farm.bot">Express</a>
-    <a class="{%- if site.github.repository_name == 'farmbot-genesis' -%}
-    current
-    {%- endif -%}" href="https://genesis.farm.bot">Genesis</a>
-    <a class="{%- if site.github.repository_name == 'farmbot-software' -%}
-    current
-    {%- endif -%}" href="https://software.farm.bot">Software</a>
-    <a class="{%- if site.github.repository_name == 'farmbot-developers' -%}
-    current
-    {%- endif -%}" href="https://developer.farm.bot">Developer</a>
-    <a class="{%- if site.github.repository_name == 'farmbot-oer' -%}
-    current
-    {%- endif -%}" href="https://oer.farm.bot">Education</a>
-    <a class="{%- if site.github.repository_name == 'farmbot-meta' -%}
-    current
-    {%- endif -%}" href="https://meta.farm.bot">Business</a>
-    <a href="https://farm.bot/collections">Shop</a>
+    <div class="nav-links">
+      <a class="doc-icon" href="https://docs.farm.bot">
+        <img src="{{ 'assets/images/farmbot.svg' | relative_url }}" alt="FarmBot Logo">
+        <p class="documentation-title">Documentation</p>
+        <p class="docs-title">Docs</p>
+      </a>
+      <a class="{%- if site.github.repository_name == 'farmbot-express' -%}
+      current
+      {%- endif -%}" href="https://express.farm.bot">Express</a>
+      <a class="{%- if site.github.repository_name == 'farmbot-genesis' -%}
+      current
+      {%- endif -%}" href="https://genesis.farm.bot">Genesis</a>
+      <a class="{%- if site.github.repository_name == 'farmbot-software' -%}
+      current
+      {%- endif -%}" href="https://software.farm.bot">Software</a>
+      <a class="{%- if site.github.repository_name == 'farmbot-developers' -%}
+      current
+      {%- endif -%}" href="https://developer.farm.bot">Developer</a>
+      <a class="{%- if site.github.repository_name == 'farmbot-oer' -%}
+      current
+      {%- endif -%}" href="https://oer.farm.bot">Education</a>
+      <a class="{%- if site.github.repository_name == 'farmbot-meta' -%}
+      current
+      {%- endif -%}" href="https://meta.farm.bot">Business</a>
+      <a href="https://farm.bot/collections">Shop</a>
+    </div>
+    <div class="hub-controls">
+      {%- if site.algolia.index_name -%}
+        {% include algolia.html %}
+      {%- endif -%}
+
+      {%- if site.modes contains "internal" -%}
+        <button class="internal-mode-toggle" onclick="toggleMode('internal')" aria-label="Internal Mode Toggle">
+          <i id="internal-mode-icon" class="fa fa-user"></i>
+        </button>
+      {%- endif -%}
+      <button class="dark-mode-toggle" onclick="toggleMode('dark')" aria-label="Dark Mode Toggle">
+        <i id="dark-mode-icon" class="fa fa-sun-o"></i>
+      </button>
+    </div>
   </div>
 </nav>

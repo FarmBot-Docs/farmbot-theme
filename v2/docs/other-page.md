@@ -6,9 +6,6 @@ tags:
  - tag
 ---
 
-* toc
-{:toc}
-
 
 # What's next?
 

@@ -148,3 +148,32 @@ addEventListener('load', () => {
     setModeIcon(mode);
   });
 });
+
+/** Toggle hub TOC */
+function toggleHubToc() {
+  var element = document.getElementById("hub-toc-all");
+  if (element.classList.contains("closed")) {
+    element.classList.remove("closed");
+  } else {
+    element.classList.add("closed");
+  }
+}
+
+/** Toggle page TOC */
+function togglePageToc() {
+  var element = document.getElementById("page-toc-all");
+  if (element.classList.contains("closed")) {
+    element.classList.remove("closed");
+  } else {
+    element.classList.add("closed");
+  }
+}
+
+window.onload = function() {
+  if (window.innerWidth < 768) {
+    toggleHubToc();
+    togglePageToc();
+    document.getElementById("hub-toc-all").classList.add("ready");
+    document.getElementById("page-toc-all").classList.add("ready");
+  }
+}

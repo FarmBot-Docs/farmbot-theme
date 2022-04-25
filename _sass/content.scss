@@ -1,9 +1,10 @@
 .content {
-  padding: 0rem;
-  position: relative;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-rows: auto 1fr;
   width: 100%;
   @media (max-width: $md-screen-size) {
-    padding-left: 0;
+    gap: 1rem;
   }
   .page-header,
   main {
@@ -13,12 +14,9 @@
   .page-header {
     background: unset;
     border-bottom: 1px solid #eee;
-    color: unset;
     display: grid;
     gap: 0 1rem;
     grid-template-columns: 1fr auto;
-    margin-bottom: 1.5rem !important;
-    padding-bottom: 0 !important;
   }
   .page-name {
     color: $dark_gray;
@@ -58,15 +56,21 @@
 }
 
 .main-content {
-  width: calc(#{$max-width-min} - #{$both-toc-width} - 4rem);
-  @media (max-width: $lg-screen-size) {
-    width: calc(#{$max-width-min} - #{$nav-toc-width} - 4rem);
-  }
-  @media (max-width: $md-screen-size) {
-    width: calc(100vw - 2rem);
-  }
+  display: grid;
+  width: 100%;
+  max-width: 100%;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
   font-size: 15px;
-  padding-top: 0 !important;
+  @media (max-width: $md-screen-size) {
+    grid-template-columns: 1fr;
+  }
+  .markdown-content {
+    order: -1;
+    @media (max-width: $md-screen-size) {
+      order: 1;
+    }
+  }
   &.full-width {
     width: 100%;
     max-width: none;
@@ -122,9 +126,6 @@
       line-height: 0.5rem;
     }
   }
-  .markdown-toc-header {
-    font-family: unset;
-  }
   iframe {
     max-width: 100%;
     margin-top: 1rem;
@@ -142,6 +143,7 @@
 
 .main-content table {
   margin: 1rem auto;
+  max-width: calc(100vw - 2rem);
 }
 
 .page-snippet table {

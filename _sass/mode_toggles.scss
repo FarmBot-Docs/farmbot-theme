@@ -7,7 +7,7 @@
 .dark-mode-toggle,
 .internal-mode-toggle {
   background: $white;
-  border: 2px solid #eee;
+  border: none;
   border-radius: 1rem;
   height: 1.75rem;
   width: 4rem;
@@ -45,11 +45,7 @@
       margin-left: 2rem;
     }
     &:after {
-      margin-left: -0.4rem;
+      margin-left: -0.28rem;
     }
-  }
-
-  &.internal {
-    border-color: orange !important;
   }
 }

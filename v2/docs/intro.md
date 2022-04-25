@@ -174,6 +174,18 @@ horizontal rule:
 code block
 ```
 
+```
+code block with really long lines that need to break on spaces and wrap.
+
+2 plants marked for removal. Plants at the following machine coordinates ( X Y ) with R = radius are to be removed:
+    (   743   541 ) R = 6
+    (   654   447 ) R = 6
+
+2 plants marked for safe removal. Plants at the following machine coordinates ( X Y ) with R = radius were too close to the known plant to remove completely:
+    (   651   446 ) R = 7
+    (   676   512 ) R = 3
+```
+
 # HTML
 
 <details>

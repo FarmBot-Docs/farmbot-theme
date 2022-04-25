@@ -134,6 +134,9 @@
       aspect-ratio: 16/9;
     }
   }
+  code {
+    white-space: break-spaces!important;
+  }
 }
 
 .main-content strong.internal,

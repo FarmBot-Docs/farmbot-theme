@@ -1,3 +1,8 @@
+// Temporarily hide old TOCs until they are deleted
+ul#markdown-toc {
+  display: none;
+}
+
 .page-toc-all {
   transition: margin .2s ease;
   width: 20rem;

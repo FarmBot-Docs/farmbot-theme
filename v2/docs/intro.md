@@ -4,6 +4,9 @@ slug: intro
 description: "Example FarmBot documentation for infrastructure development purposes :wrench:"
 ---
 
+* toc
+{:toc}
+
 {%
 include callout.html
 type="info"

@@ -6,6 +6,7 @@ nav {
     grid-auto-flow: column;
     max-width: $max-width;
     justify-content: space-between;
+    overflow: hidden;
     .nav-links {
       overflow-y: scroll;
       grid-auto-flow: column;
@@ -75,6 +76,7 @@ nav {
     }
   }
   .hub-controls {
+    box-shadow: -20px 0px 20px $site-color;
     justify-self: right;
     align-items: center;
     display: grid;

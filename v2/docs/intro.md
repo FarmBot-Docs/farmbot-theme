@@ -172,7 +172,7 @@ code block
 ```
 
 ```
-code block with really long lines that need to break on spaces and wrap.
+code block with really long lines.
 
 This line has a long word without whitespace. https://cdn.shopify.com/s/files/1/2040/0289/files/FarmBot.io_Trimmed_Logo_Gray_on_Transparent_1_1ec606e9-8aed-4af9-ad98-3b14a2fc0602_436x200.png?v=1588622523
 

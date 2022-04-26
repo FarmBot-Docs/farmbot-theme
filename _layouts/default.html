@@ -29,8 +29,8 @@
       <div class="hub-toc-header">
         <button onclick="toggleHubToc()" aria-label="Toggle the documentation hub table of contents">
           <i class='fa fa-list-ul'></i>
+          <h3>{{ site.title | remove: "Documentation" }}</h3>
         </button>
-        <h3>{{ site.title | remove: "Documentation" }}</h3>
         {%- include version_picker.html version_factor=version_factor
           page_version_number=page_version_number -%}
       </div>

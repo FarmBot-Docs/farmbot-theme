@@ -10,14 +10,26 @@
     @media (max-width: $md-screen-size) {
       margin: 0;
     }
-    button {
-      order: 3;
-      justify-self: right;
-      margin-right: -3rem;
-      @media (max-width: $md-screen-size) {
-        order: unset;
-        margin-right: 0;
-        justify-self: left;
+    .hub-toc-header {
+      @media (min-width: $md-screen-size) {
+        grid-template-columns: auto 1fr;
+      }
+      button {
+        order: 2;
+        justify-self: right;
+        margin-right: -3rem;
+        @media (max-width: $md-screen-size) {
+          order: unset;
+          margin-right: 0;
+          justify-self: left;
+        }
+        i {
+          @media (min-width: $md-screen-size) {
+            order: 2;
+            margin-left: 2rem;
+            justify-self: right;
+          }
+        }
       }
     }
     .hub-toc {
@@ -31,27 +43,34 @@
 .hub-toc-header {
   align-items: center;
   display: grid;
-  grid-template-columns: auto auto 1fr;
+  grid-template-columns: 1fr auto;
   gap: 0.25rem;
   margin-top: 1.75rem;
   @media (max-width: $md-screen-size) {
     margin-top: 0.5rem;
   }
   button {
+    align-items: center;
     background: none;
     border: none;
     border-radius: 5px;
+    display: grid;
+    grid-template-columns: auto 1fr;
     height: 30px;
     line-height: 30px;
-    width: 30px;
     padding: 0;
+    width: 100%;
     &:hover {
       background: rgba($site-color, 0.15);
     }
-  }
-  h3 {
-    margin: 0;
-    text-transform: uppercase;
+    i {
+      width: 30px;
+    }
+    h3 {
+      margin: 0;
+      text-transform: uppercase;
+      justify-self: left;
+    }
   }
   .version-picker {
     justify-self: right;

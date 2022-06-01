@@ -2,8 +2,11 @@ version_number: 2
 bom:
   - category: bom-category
     parts:
+      - image: eccentric_spacer.jpg
       - image: part.jpg
+      - image: standard_spacer.jpg
       - image: stepper_motor.jpg
+      - image: z-axis_motor_mount.jpg
   - category: cables
     parts:
       - image: encoder_cable.jpg

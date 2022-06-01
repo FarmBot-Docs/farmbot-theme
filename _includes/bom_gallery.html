@@ -2,7 +2,7 @@
 {%- for media in site.static_files -%}
   {%- assign media_dir = media.path | remove: media.name | remove: "_images/" -%}
   {%- if media_dir == page.dir -%}
-    {%- assign media_basename = media.basename | replace: "_", "-" -%}
+    {%- assign media_basename = media.basename | slugify -%}
     {%- if media_basename contains page.slug -%}
       {%- if media.extname == ".youtube" -%}
         {%- assign youtube_id = media.basename | slice: -11, 11 -%}

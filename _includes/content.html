@@ -81,7 +81,13 @@
   {%- endif -%}
   {%- assign words = part_name_singular | split: ' ' -%}
   {%- capture titlecase -%}
-    {%- for word in words -%}{{ word | capitalize }} {% endfor -%}
+    {%- for word in words -%}
+      {%- if word contains "-" -%}
+      {{ word | split: "-" | first | capitalize }}-{{ word | split: "-" | last | capitalize | append: " " }}
+      {%- else -%}
+        {{ word | capitalize | append: " " }}
+      {%- endif -%}
+    {%- endfor -%}
   {%- endcapture -%}
   {%- capture part_name_singular_titlecase -%}
     {{ titlecase | rstrip }}

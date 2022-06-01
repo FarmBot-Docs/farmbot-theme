@@ -4,6 +4,7 @@ bom:
     parts:
       - image: part.jpg
       - image: stepper_motor.jpg
+      - image: z-axis_motor_mount.jpg
   - category: cables
     parts:
       - image: encoder_cable.jpg

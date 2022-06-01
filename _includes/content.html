@@ -84,6 +84,8 @@
     {%- for word in words -%}
       {%- if word contains "-" -%}
       {{ word | split: "-" | first | capitalize }}-{{ word | split: "-" | last | capitalize | append: " " }}
+      {%- elsif word == "x" -%}
+        {{ word | append: " " }}
       {%- else -%}
         {{ word | capitalize | append: " " }}
       {%- endif -%}

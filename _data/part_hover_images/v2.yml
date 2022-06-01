@@ -3,6 +3,7 @@ bom:
   - category: bom-category
     parts:
       - image: eccentric_spacer.jpg
+      - image: m5_screw_16mm.jpg
       - image: part.jpg
       - image: standard_spacer.jpg
       - image: stepper_motor.jpg

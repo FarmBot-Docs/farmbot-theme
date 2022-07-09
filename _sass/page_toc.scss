@@ -1,9 +1,11 @@
 .page-toc-all {
-  transition: margin .2s ease;
   width: 20rem;
   overflow: hidden;
   @media (max-width: $md-screen-size) {
     width: 100%;
+  }
+  &.ready {
+    transition: margin .2s ease;
   }
   &.closed {
     margin-right: -18rem;

@@ -24,7 +24,7 @@
 
   {%- include banner.html page_version_number=page_version_number -%}
 
-  <div class="all">
+  <div class="all" id="all">
     <div class="hub-toc-all" id="hub-toc-all">
       <div class="hub-toc-header">
         <button onclick="toggleHubToc()" aria-label="Toggle the documentation hub table of contents">
@@ -60,6 +60,10 @@
               <i class='fa fa-cube'></i>
             </a>
           {%- endif -%}
+          <a onclick="toggleFullscreen()"
+            aria-label="View full-width">
+            <i class='fa fa-expand' id="fullscreen-toggle"></i>
+          </a>
           <a href="javascript:window.print()"
             aria-label="Print this page">
             <i class='fa fa-print'></i>
@@ -72,10 +76,7 @@
         </div>
         <div class="page-description">{{ page.description | markdownify }}</div>
       </header>
-      {%- if page.full-width -%}
-      {%- assign full_width = "full-width" -%}
-      {%- endif -%}
-      <main id="content" class="main-content {{ full_width }}" role="main">
+      <main id="content" class="main-content" role="main">
         <div class="page-toc-all" id="page-toc-all">
           {%- if content contains '<h' -%}
           <div class="page-toc-header">
@@ -107,6 +108,25 @@
       </a>
     </p>
   </footer>
+  <script>
+    (function() {
+      if (window.innerWidth >= 768) {
+        const HubTocState = getState("HubToc");
+        const PageTocState = getState("PageToc");
+        if (HubTocState == "closed") {
+          toggleHubToc();
+        }
+        if (PageTocState == "closed") {
+          togglePageToc();
+        }
+      }
+      if (window.innerWidth < 768) {
+        toggleHubToc();
+        togglePageToc();
+      }
+      document.getElementById("all").classList.add("ready");
+    })();
+  </script>
 
 </body>
 

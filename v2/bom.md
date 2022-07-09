@@ -1,7 +1,6 @@
 ---
 title: Bill of Materials
 slug: bom
-full-width: true
 ---
 
 

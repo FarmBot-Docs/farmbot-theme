@@ -149,31 +149,85 @@ addEventListener('load', () => {
   });
 });
 
-/** Toggle hub TOC */
+/** Hub TOC */
+function openHubToc() {
+  var element = document.getElementById("hub-toc-all");
+  element.classList.remove("closed");
+  setState("HubToc", "open");
+}
+
+function closeHubToc() {
+  var element = document.getElementById("hub-toc-all");
+  element.classList.add("closed");
+  setState("HubToc", "closed");
+}
+
 function toggleHubToc() {
   var element = document.getElementById("hub-toc-all");
   if (element.classList.contains("closed")) {
-    element.classList.remove("closed");
-  } else {
-    element.classList.add("closed");
+    openHubToc();
   }
+  else {
+    closeHubToc();
+  }
+  setFullscreenIcon();
 }
 
-/** Toggle page TOC */
+/** Page TOC */
+function openPageToc() {
+  var element = document.getElementById("page-toc-all");
+  element.classList.remove("closed");
+  setState("PageToc", "open");
+}
+
+function closePageToc() {
+  var element = document.getElementById("page-toc-all");
+  element.classList.add("closed");
+  setState("PageToc", "closed");
+}
+
 function togglePageToc() {
   var element = document.getElementById("page-toc-all");
   if (element.classList.contains("closed")) {
-    element.classList.remove("closed");
-  } else {
-    element.classList.add("closed");
+    openPageToc();
+  }
+  else {
+    closePageToc();
+  }
+  setFullscreenIcon();
+}
+
+/** Fullscreen viewing */
+function setFullscreenIcon() {
+  var element = document.getElementById("fullscreen-toggle");
+  const HubTocState = getState("HubToc");
+  const PageTocState = getState("PageToc");
+  if (HubTocState == "closed" && PageTocState == "closed") {
+    element.classList.remove("fa-expand");
+    element.classList.add("fa-compress");
+  }
+  else {
+    element.classList.remove("fa-compress");
+    element.classList.add("fa-expand");
   }
 }
 
-window.onload = function() {
-  if (window.innerWidth < 768) {
-    toggleHubToc();
-    togglePageToc();
-    document.getElementById("hub-toc-all").classList.add("ready");
-    document.getElementById("page-toc-all").classList.add("ready");
+function toggleFullscreen() {
+  var element = document.getElementById("fullscreen-toggle");
+  if (element.classList.contains("fa-expand")) {
+    closeHubToc();
+    closePageToc();
+    setFullscreenIcon();
   }
+  else {
+    openHubToc();
+    openPageToc();
+    setFullscreenIcon();
+  }
+}
+
+/** Set page and hub TOCs ready for animation */
+window.onload = function() {
+  document.getElementById("hub-toc-all").classList.add("ready");
+  document.getElementById("page-toc-all").classList.add("ready");
 }

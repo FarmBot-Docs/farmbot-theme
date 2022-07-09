@@ -28,7 +28,7 @@ body {
 }
 
 .all {
-  display: grid;
+  display: none;
   gap: 2rem;
   grid-template-columns: auto 1fr;
   padding: 0.25rem 1rem;
@@ -36,6 +36,9 @@ body {
   @media (max-width: $md-screen-size) {
     gap: 0;
     grid-template-columns: 1fr;
+  }
+  &.ready {
+    display: grid;
   }
 }
 

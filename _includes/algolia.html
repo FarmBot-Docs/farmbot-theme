@@ -114,8 +114,9 @@
       if (searchOpenAndActive) {
         e.key == 'ArrowUp' && selectedSearchResultIndex--;
         e.key == 'ArrowDown' && selectedSearchResultIndex++;
+        const darkMode = document.body.classList.contains('dark');
         document.querySelectorAll('.ais-Hits-item').forEach(item => {
-          item.style.borderColor = '#5c5c5c';
+          item.style.borderColor = darkMode ? '#5c5c5c' : '#eee';
           item.style.boxShadow = 'unset';
         });
         const selectedResult =

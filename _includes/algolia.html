@@ -86,18 +86,45 @@
       open();
     }
   });
+
+  let selectedSearchResultIndex = 0;
+
   document.addEventListener('click', e =>
     !(e.target.classList.contains('ais-SearchBox-input')
       || e.target.id == 'search-hits') && close());
   document.addEventListener('keydown', e => {
     e.key == 'Escape' && close();
-    if (e.key == '/' || e.keyCode == 75) {
-      if (!searchResults.classList.contains('open')
-        || document.querySelector(searchBoxQuery) != document.activeElement) {
+    const searchOpenAndActive = searchResults.classList.contains('open')
+      && document.querySelector(searchBoxQuery) == document.activeElement;
+    if (e.key == '/' || e.keyCode == 75 || e.keyCode == 83) {
+      if (!searchOpenAndActive) {
         e.preventDefault();
       }
       open();
       focus();
+    }
+    if (e.key == 'Enter') {
+      if (searchOpenAndActive) {
+        const selectedSearchResult =
+          document.querySelectorAll('.page-item')[selectedSearchResultIndex];
+        selectedSearchResult && selectedSearchResult.onclick();
+      }
+    }
+    if (e.key == 'ArrowDown' || e.key == 'ArrowUp') {
+      if (searchOpenAndActive) {
+        e.key == 'ArrowUp' && selectedSearchResultIndex--;
+        e.key == 'ArrowDown' && selectedSearchResultIndex++;
+        document.querySelectorAll('.ais-Hits-item').forEach(item => {
+          item.style.borderColor = '#5c5c5c';
+          item.style.boxShadow = 'unset';
+        });
+        const selectedResult =
+          document.querySelectorAll('.ais-Hits-item')[selectedSearchResultIndex];
+        if (selectedResult) {
+          selectedResult.style.borderColor = 'rgba(128, 128, 128, 1)';
+          selectedResult.style.boxShadow = '0px 0px 10px rgba(128, 128, 128, 50%)';
+        }
+      }
     }
   });
 

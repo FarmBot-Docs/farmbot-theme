@@ -69,6 +69,17 @@
   {%- assign content = content | replace: old, new -%}
 {%- endfor -%}
 
+{%- assign content = content
+  | replace: "(XL)", '<span class="fb-xl-sticker">XL</span>'
+  | replace: "(?)", '<span class="fb-tooltip"><i class="fa fa-question"></i></span>'
+  | replace: "(cog)", '<i class="fa fa-cog"></i>'
+  | replace: "(fb)", '<span class="value-icon fb"></span>'
+  | replace: "(products)", '<span class="value-icon products"></span>'
+  | replace: "(business)", '<span class="value-icon business"></span>'
+  | replace: "(community)", '<span class="value-icon community"></span>'
+  | replace: "(people)", '<span class="value-icon good-people"></span>'
+-%}
+
 {%- assign part_links = include.content | split: '[[' | slice: 1, 999 -%}
 {%- for part_link in part_links -%}
   {%- assign part_name = part_link | split: ']]' | first -%}

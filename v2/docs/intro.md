@@ -32,7 +32,7 @@ Note that H3 headings and deeper will not show up in the table of contents.
 
 Text
 
-|Component|$/Unit|Genesis Qty|Genesis Subtotal|XL Qty|XL Subtotal|
+|Component|$/Unit|Genesis Qty|Genesis Subtotal|(XL) Qty|(XL) Subtotal|
 |---------|------|-----------|----------------|------|-----------|
 |40mm Horizontal Cable Carrier Support|$3.00|12|$36.00|24|$72.00
 |60mm Horizontal Cable Carrier Support|$3.00|6|$18.00|12|$36.00
@@ -41,7 +41,7 @@ Text
 |------------------------------|------------------------------|
 |**Material**                  |Gray UV stabilized ABS
 |**Price**                     |$3.00
-|**Quantity**                  |Genesis - 12<br>Genesis XL - 24
+|**Quantity**                  |Genesis - 12<br>Genesis (XL) - 24
 |**Recommended Supplier**      |[The FarmBot Shop](http://shop.farm.bot)
 
 |||
@@ -56,7 +56,7 @@ type="info"
 title="Info"
 content="This callout contains multiple lines of text, showcasing the spacing between lines. How does it look? It should look and feel consistent with body text outside of callouts.
 
-This callout also has multiple paragraphs, showing the spacing between paragraphs."
+This callout also has multiple paragraphs, showing the spacing between paragraphs, as well as an (XL) sticker."
 %}
 
 {%
@@ -112,7 +112,7 @@ Tall images respect a maximum height:
 
 ## Section images
 
-simplSection links to aggregate BOM pages with sections for multiple parts (Genesis v1.5- and Express v1.0) have a hover image, like for these [dowel pins](../bom/legacy-parts.md#dowel-pins).
+Section links to aggregate BOM pages with sections for multiple parts (Genesis v1.5- and Express v1.0) have a hover image, like for these [dowel pins](../bom/legacy-parts.md#dowel-pins).
 
 ## Hover images
 
@@ -192,7 +192,7 @@ This line has a long word without whitespace. https://cdn.shopify.com/s/files/1/
 # HTML
 
 <details>
-<summary>Details summary</summary>
+<summary>Details summary (click me to see more)</summary>
 details
 </details>
 
@@ -276,25 +276,19 @@ details
 
 # Icons and emoji
 
-Favicon: <span class="value-icon fb"></span>
+|Icon       |Meaning             |Source|
+|:---------:|--------------------|------|
+|(fb)       |Favicon             |`( fb )` without spaces
+|(products) |Open products       |`( products )` without spaces
+|(business) |Open business       |`( business )` without spaces
+|(community)|1% for the community|`( community )` without spaces
+|(people)   |Be good people      |`( people )` without spaces
+|(?)        |Tooltip             |`( ? )` without spaces
+|(XL)       |XL Sticker          |`( XL )` without spaces
+|(cog)      |Settings            |`( cog )` without spaces
+|:art:      |Art emoji           |`:art:`
 
-Open products: <span class="value-icon products"></span>
-
-Open business: <span class="value-icon business"></span>
-
-1% for the community: <span class="value-icon community"></span>
-
-Be good people: <span class="value-icon good-people"></span>
-
-Tooltip: <span class="fb-tooltip"><i class='fa fa-question'></i></span>
-
-XL sticker: <span class="fb-xl-sticker">XL</span>
-
-Settings:
-<i class='fa fa-cog'></i>
-
-Art:
-:art:
+This is a tooltip (?) inline with other text, followed by more text and other icons. And here is an (XL) sticker. And this is a value icon (community) for community. How do they look? (fb)
 
 LEDs:
 <span class="fa fa-circle led green"></span>

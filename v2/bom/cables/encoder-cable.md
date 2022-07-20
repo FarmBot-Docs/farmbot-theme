@@ -18,16 +18,13 @@ internal-specs:
   internal-part-name:
     Encoder Cable - X1, 0.7m (Genesis and Genesis XL)|
     Encoder Cable - X2, 2.3m (Genesis)|
-    Encoder Cable - Y, 2.7m (Genesis)|
-    Encoder Cable - ZY, 2.6m (Genesis)|
     Encoder Cable - X2, 3.8m (Genesis XL)|
+    Encoder Cable - Y, 2.7m (Genesis)|
     Encoder Cable - Y, 4.2m (Genesis XL)|
+    Encoder Cable - ZY, 2.6m (Genesis)|
     Encoder Cable - ZY, 4.1m (Genesis XL)|
     Encoder Cable - ZZ, 1.8m (Genesis and Genesis XL)
   vendor: LDO
   cost: $1.50|$2.10|$1.50|$2.10|$1.50|$2.10|$1.50|$2.10
-  notes: "Updated length: 0.7m<br>Label: X1|
-Label: X2|
-Label: X2|
-Label: Y<br>The rest of the encoder cables don't have notes"
+  notes: "Updated length: 0.7m|||||||"
 ---

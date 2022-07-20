@@ -19,6 +19,7 @@ nav {
         padding: 20px 15px;
         text-decoration: none !important;
         transition: background 0.2s ease;
+        order: 2;
         &:hover {
           color: white;
           background: darken($site-color, 5%);
@@ -32,6 +33,9 @@ nav {
       .current {
         border-bottom: 5px solid #f4f4f4;
         padding-bottom: 15px;
+        @media (max-width: $md-screen-size) {
+          order: 1;
+        }
       }
       .doc-icon {
         font-family: Inknut Antiqua;
@@ -39,6 +43,7 @@ nav {
         padding: 15px 25px;
         display: grid;
         grid-auto-flow: column;
+        order: 0;
         @media (max-width: $md-screen-size) {
           padding: 12px 15px;
           grid-auto-flow: row;

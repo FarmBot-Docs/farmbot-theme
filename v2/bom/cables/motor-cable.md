@@ -18,10 +18,10 @@ internal-specs:
   internal-part-name:
     Motor Cable - X1, 0.7m (Genesis and Genesis XL)|
     Motor Cable - X2, 2.3m (Genesis)|
-    Motor Cable - Y, 2.7m (Genesis)|
-    Motor Cable - ZY, 2.6m (Genesis)|
     Motor Cable - X2, 3.8m (Genesis XL)|
+    Motor Cable - Y, 2.7m (Genesis)|
     Motor Cable - Y, 4.2m (Genesis XL)|
+    Motor Cable - ZY, 2.6m (Genesis)|
     Motor Cable - ZY, 4.1m (Genesis XL)|
     Motor Cable - ZZ, 1.8m (Genesis and Genesis XL)
   rev: A|B|C|D|E|F|G|H

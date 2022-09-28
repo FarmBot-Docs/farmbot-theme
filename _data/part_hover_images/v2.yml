@@ -8,6 +8,7 @@ bom:
       - image: standard_spacer.jpg
       - image: stepper_motor.jpg
       - image: z-axis_motor_mount.jpg
+      - image: gantry_corner_bracket_left.jpg
   - category: cables
     parts:
       - image: encoder_cable.jpg

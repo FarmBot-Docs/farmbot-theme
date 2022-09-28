@@ -141,7 +141,7 @@ Here is a link to the BOM page for a single [[horizontal motor housing]] as well
 
 These links are created by wrapping the part name in double square brackets, `[``[`like this`]``]`, but without any spaces between the double brackets. This syntax will auto generate the link to the BOM page, extra styling, and hover image.
 
-Other parts: [[Eccentric spacers]] and [[standard spacers]] and [[M5 x 16mm Screws]].
+Other parts: [[Eccentric spacers]], [[standard spacers]], and [[M5 x 16mm Screws]]. This [[left gantry corner bracket]] has a tall aspect ratio hover image.
 
 ## CAD
 

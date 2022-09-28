@@ -315,6 +315,10 @@ Indicators:
 <span class="fa fa-circle saucer light-blue"></span>
 <span class="fa fa-circle saucer yellow"></span>
 
+# What you can grow graphic
+
+{% include what_you_can_grow.html %}
+
 # What's next?
 
  * [Other Page](other-page.md)

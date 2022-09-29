@@ -8,7 +8,15 @@
   {%- for header_plus in headers_plus -%}
     {%- assign id = header_plus | split: '">' | first -%}
     {{ header_start }}{{ id }}">|{{ header_start }}{{ id }}">
-    <a href="#{{ id }}"><i class="fa fa-anchor"></i></a>%%%
+    <a href="#{{ id }}">
+      {%- capture anchor_link -%}
+      {{ site.url }}{{ page.url | remove: '.html' }}#{{ id }}
+      {%- endcapture -%}
+      <i
+        class="fa fa-anchor"
+        onclick="function copy(){navigator.clipboard.writeText('{{ anchor_link }}')};copy()"
+      ></i>
+    </a>%%%
   {%- endfor -%}
   {%- endcapture -%}
   {%- capture all_headers_joined -%}

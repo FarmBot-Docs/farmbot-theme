@@ -89,8 +89,5 @@ nav {
     grid-template-columns: 1fr auto auto;
     gap: 1rem;
     padding-right: 1rem;
-    @media (max-width: $md-screen-size) {
-      padding-right: 0;
-    }
   }
 }

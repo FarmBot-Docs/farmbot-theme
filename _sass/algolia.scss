@@ -7,9 +7,12 @@
     border: none;
     border-radius: 5px;
     box-shadow: none;
-    padding: 6px 10px 6px 35px;
+    padding: 6px 5px 6px 35px;
     width: 100px;
     transition: width .2s ease;
+    @media (max-width: $md-screen-size) {
+      width: 0px;
+    }
     &:focus {
       outline: none;
       width: 150px;
@@ -155,9 +158,6 @@ mark {
   height: 2rem;
   justify-self: right;
   text-align: center;
-  @media (max-width: $md-screen-size) {
-    grid-column: 1 / span 2;
-  }
 }
 
 #search-hits {

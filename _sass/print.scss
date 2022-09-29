@@ -2,26 +2,21 @@
   iframe,
   nav,
   .doc-nav,
+  .hub-toc-all,
+  .page-toc-all,
   .page-controls a,
-  .gallery-featured-image,
+  .gallery-thumbnail.featured,
   #whats-next,
   #whats-next + ul,
   footer {
     display: none;
   }
   img {
-    display: inline;
-    max-height: 30vh!important;
-    max-width: 48%!important;
+    max-height: 25vh!important;
   }
-  .gallery {
-    display: block;
-  }
-  img,
-  .callout {
-    page-break-before: auto;
-    page-break-after: auto;
-    page-break-inside: avoid;
+  .callout,
+  .gallery img {
+    break-inside: avoid;
   }
   * {
     -webkit-print-color-adjust: exact !important;

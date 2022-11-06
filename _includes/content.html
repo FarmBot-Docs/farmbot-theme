@@ -62,6 +62,7 @@
   {%- capture wrapped_img -%}
   <div class='gallery'>
     <img class="gallery-featured-image" src={{ img_content }}>
+    <i class='fa fa-times-circle'></i>
   </div>
   {%- endcapture -%}
   {%- assign content = content | replace: img_inner, wrapped_img -%}

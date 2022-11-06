@@ -32,13 +32,12 @@
     display: none;
   }
   &.open {
-    background: $darkestGray;
+    background: $white;
     cursor: zoom-out;
     height: 100vh;
     left: 0;
     position: fixed;
     top: -1rem;
-    transition: background-color 0.1s ease;
     width: 100vw;
     z-index: 1;
     .gallery-featured-image {
@@ -57,9 +56,9 @@
       top: 2rem;
       cursor: pointer;
       font-size: 2rem;
-      color: $offWhite;
+      color: $gray;
       &:hover {
-        color: darken($offWhite, 10%);
+        color: darken($gray, 10%);
       }
     }
   }

@@ -126,6 +126,9 @@ body {
         border-color: $gray;
       }
       .gallery {
+        &.open {
+          background: $darkestGray;
+        }
         .gallery-thumbnail {
           &.featured {
             border-color: $offWhite;
@@ -135,6 +138,12 @@ body {
           }
           iframe {
             border-color: $gray;
+          }
+        }
+        .fa-times-circle {
+          color: $offWhite;
+          &:hover {
+            color: darken($offWhite, 10%);
           }
         }
       }

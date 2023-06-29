@@ -47,6 +47,8 @@ contents:
       - title: External link
         external: true
         url: https://farm.bot
+      - title: CAD
+        url: cad
   - title: Bill of Materials
     url: bom
     top: true

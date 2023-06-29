@@ -8,6 +8,8 @@ contents:
     pages:
       - title: Page
         url: page
+      - title: CAD
+        url: cad
   - title: Bill of Materials
     url: bom
     top: true

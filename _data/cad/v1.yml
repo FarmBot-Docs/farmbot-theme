@@ -1,7 +1,7 @@
-version_number: 2
+version_number: 1
 document: 8c6d3fb365562e82241f295b
-workspace: 801f07c1aaa3d07ae030fea5
-versioned: false
+workspace: c5d6a4152c121c3d028107e4
+versioned: true
 part:
   - name: Part 1
     id: 9c74e45494fd9f8330b7f86b

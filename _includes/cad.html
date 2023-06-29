@@ -5,10 +5,15 @@
   | default: site.latest_version_number -%}
 {%- assign cad =
   site.data.cad | where: "version_number", page_version_number | first -%}
+{%- if cad.versioned -%}
+  {%- assign v_or_w = "v" -%}
+{%- else -%}
+  {%- assign v_or_w = "w" -%}
+{%- endif -%}
 {%- assign element = cad[include.type] | where: "name", include.name | first -%}
 {%- if element.id -%}
   {%- capture url -%}
-  https://cad.onshape.com/documents/{{ cad.document }}/w/{{ cad.workspace }}/e/{{ element.id }}
+  https://cad.onshape.com/documents/{{ cad.document }}/{{ v_or_w }}/{{ cad.workspace }}/e/{{ element.id }}
   {%- endcapture -%}
   <a href="{{ url }}" target="_blank" rel="noreferrer">
     {{- include.name -}}&nbsp;<i class="fa fa-external-link-square"></i></a>

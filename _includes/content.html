@@ -99,25 +99,18 @@
   {%- else -%}
     {%- assign part_name_singular = part_name -%}
   {%- endif -%}
-  {%- assign words = part_name_singular | split: ' ' -%}
-  {%- capture titlecase -%}
-    {%- for word in words -%}
-      {%- if word contains "-" -%}
-      {{ word | split: "-" | first | capitalize }}-{{ word | split: "-" | last | capitalize | append: " " }}
-      {%- elsif word == "x" -%}
-        {{ word | append: " " }}
-      {%- else -%}
-        {{ word | capitalize | append: " " }}
-      {%- endif -%}
-    {%- endfor -%}
-  {%- endcapture -%}
-  {%- capture part_name_singular_titlecase -%}
-    {{ titlecase | rstrip }}
-  {%- endcapture -%}
-  {%- assign part_page = site.pages | where: 'title', part_name_singular_titlecase | first -%}
+  {%- assign part_name_lowercase = part_name_singular | downcase | strip -%}
+  {%- assign part_page_url = '' -%}
+  {%- for site_page in site.pages -%}
+    {%- assign page_title_lowercase = site_page.title | downcase | strip -%}
+    {%- if page_title_lowercase == part_name_lowercase -%}
+      {%- assign part_page_url = site_page.url -%}
+      {%- break -%}
+    {%- endif -%}
+  {%- endfor -%}
   {%- capture old -%}[[{{ part_name }}]]{%- endcapture -%}
   {%- capture new -%}
-  <a href="{{ part_page.url | remove: '.html' }}#" class="part">{{ part_name }}</a>
+  <a href="{{ part_page_url | remove: '.html' }}#" class="part">{{ part_name }}</a>
   {%- endcapture -%}
   {%- assign content = content | replace: old, new -%}
 {%- endfor -%}

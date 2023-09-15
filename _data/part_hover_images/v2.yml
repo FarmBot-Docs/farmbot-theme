@@ -15,6 +15,7 @@ bom:
       - image: motor_cable.jpg
       - image: motor_cable_zy_2600mm.jpg
       - image: motor_cable_zz_1800mm.jpg
+      - image: led_indicator_wiring_harness.jpg
   - category: plastic-parts
     parts:
       - image: motor_housing_horizontal_75mm.jpg

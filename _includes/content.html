@@ -91,7 +91,8 @@
 
 {%- assign part_links = include.content | split: '[[' | slice: 1, 999 -%}
 {%- for part_link in part_links -%}
-  {%- assign part_name = part_link | split: ']]' | first -%}
+  {%- assign part_name_content = part_link | split: ']]' | first -%}
+  {%- assign part_name = part_name_content | strip -%}
   {%- assign part_name_last_letter = part_name | slice: -1, 1 -%}
   {%- if part_name_last_letter == 's' -%}
     {%- assign length = part_name | size | minus: 1 -%}
@@ -99,16 +100,19 @@
   {%- else -%}
     {%- assign part_name_singular = part_name -%}
   {%- endif -%}
-  {%- assign part_name_lowercase = part_name_singular | downcase | strip -%}
+  {%- assign part_name_singular_lowercase = part_name_singular | downcase -%}
+  {%- assign part_name_lowercase = part_name | downcase -%}
   {%- assign part_page_url = '' -%}
   {%- for site_page in site.pages -%}
-    {%- assign page_title_lowercase = site_page.title | downcase | strip -%}
-    {%- if page_title_lowercase == part_name_lowercase -%}
-      {%- assign part_page_url = site_page.url -%}
-      {%- break -%}
+    {%- if site_page.url contains "bom" and site_page.url contains include.page_version_number -%}
+      {%- assign page_title_lowercase = site_page.title | downcase | strip -%}
+      {%- if page_title_lowercase == part_name_singular_lowercase or page_title_lowercase == part_name_lowercase -%}
+        {%- assign part_page_url = site_page.url -%}
+        {%- break -%}
+      {%- endif -%}
     {%- endif -%}
   {%- endfor -%}
-  {%- capture old -%}[[{{ part_name }}]]{%- endcapture -%}
+  {%- capture old -%}[[{{ part_name_content }}]]{%- endcapture -%}
   {%- capture new -%}
   <a href="{{ part_page_url | remove: '.html' }}#" class="part">{{ part_name }}</a>
   {%- endcapture -%}

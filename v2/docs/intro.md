@@ -137,7 +137,7 @@ Here is a [link](page.md)
 
 ## Part links
 
-Here is a link to the BOM page for a single [[horizontal motor housing]] as well as plural [[horizontal motor housings]]. Links like this can also work with hyphenated part names and various capitalizations such as [[Z-axis motor mount]] and [[Z-Axis Motor Mount]] and [[ UTM ]].
+Here is a link to the BOM page for a single [[horizontal motor housing]] as well as plural [[horizontal motor housings]]. Links like this can also work with hyphenated part names and various capitalizations such as [[Z-axis motor mount]], [[Z-Axis Motor Mount]], [[ UTM ]] and [[ LED indicator wiring harness ]].
 
 These links are created by wrapping the part name in double square brackets, `[``[`like this`]``]`, but without any spaces between the double brackets. This syntax will auto generate the link to the BOM page, extra styling, and hover image.
 

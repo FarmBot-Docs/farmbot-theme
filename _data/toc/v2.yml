@@ -8,6 +8,19 @@ contents:
     pages:
       - title: Intro
         url: intro
+      - title: Documentation Style Guide
+        url: documentation-style-guide
+      - title: Documentation Development
+        url: development
+        pages:
+          - title: Pages
+            url: pages
+          - title: Tests
+            url: tests
+          - title: Algolia
+            url: algolia
+          - title: Versions
+            url: versions
       - title: Other Page
         url: other-page
         tags:

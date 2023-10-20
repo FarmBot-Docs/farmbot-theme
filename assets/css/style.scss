@@ -6,7 +6,6 @@ $site-color: darken({{ site.color }}, 0%);
 @import 'jekyll-theme-cayman';
 @import 'colors';
 @import 'sizes';
-@import 'fonts';
 @import 'banner';
 @import 'value_icon';
 @import 'content';
@@ -24,7 +23,8 @@ $site-color: darken({{ site.color }}, 0%);
 @import 'algolia';
 
 body {
-  font-size: 15px;
+  font-size: 16px;
+  font-family: Cabin, sans-serif;
 }
 
 .all {

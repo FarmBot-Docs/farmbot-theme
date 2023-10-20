@@ -13,7 +13,9 @@
   {%- endcapture -%}
   <link rel="stylesheet" href="{{ stylesheet_url | relative_url }}">
   {% endfor %}
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inknut+Antiqua:700">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,700;1,400;1,700&family=Inknut+Antiqua:wght@700">
   {%- assign js = 'toc gallery' | split: ' ' -%}
   {% for filename in js %}
   <script src="/assets/js/{{ filename }}.js"></script>

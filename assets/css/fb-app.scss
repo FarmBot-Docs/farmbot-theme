@@ -1,0 +1,182 @@
+---
+---
+
+.app {
+  font-size: 10px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 3px solid #eee;
+  border-radius: 5px;
+  background: white;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  align-items: center;
+  &.dark {
+    background-color: #434343;
+    border: 3px solid #434343;
+  }
+  &.colored {
+    background: linear-gradient(315deg, #22a36d, #4ea3ed);
+    border: none;
+  }
+
+
+  .fb-button {
+    font-weight: bold;
+    padding: 0.4em 0.8em;
+    border-radius: 5px;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    color: #f4f4f4;
+    border: none!important;
+    margin: 0.25em 0.5em;
+    box-shadow: inset 0 -1px 0px 0px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0,0,0,.15);
+    &:hover:not(.noop, .busy, :disabled) {
+      filter: brightness(1.05);
+      box-shadow: inset 0 -1px 0px 0px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0,0,0,.15), inset 0 0 5px rgba(255,255,255,.3);
+    }
+    &:active:not(.noop, .busy, :disabled) {
+      filter: brightness(1);
+      box-shadow: inset 0 1px 0px 0px rgba(0, 0, 0, 0.1), inset 0 0 5px rgba(0,0,0,.2);
+    }
+    &:disabled {
+      filter: brightness(0.7) contrast(0.8);
+      cursor: not-allowed;
+    }
+    &.busy {
+      cursor: progress;
+    }
+    &.noop {
+      cursor: default;
+    }
+  }
+
+  .fb-green {
+    background: #6a4;
+  }
+
+  .fb-purple {
+    background: #a64d79;
+  }
+
+  .fb-pink {
+    background: #eebbbb;
+  }
+
+  .fb-red {
+    background: #ee6666;
+  }
+
+  .fb-yellow {
+    background: #fd6;
+  }
+
+  .fb-gray {
+    background: #666;
+  }
+
+  .fb-white {
+    background: #f4f4f4;
+  }
+
+  .fb-brown {
+    background: #ca8;
+  }
+
+  .fb-orange {
+    background: #fa0;
+  }
+
+  .fb-teal {
+    background: #1eb287;
+  }
+
+  .fb-blue {
+    background: #489fe4;
+  }
+
+  .fb-clear-light {
+    background: transparent;
+    box-shadow: inset 0 0 0 2px #f4f4f4;
+    &:hover:not(.noop, .busy, :disabled) {
+      background: rgba(255,255,255,.1);
+      box-shadow: inset 0 0 0 2px #f4f4f4, 0 0 5px rgba(0,0,0,.15), inset 0 0 5px rgba(255,255,255,.3);
+    }
+    &:active:not(.noop, .busy, :disabled) {
+      background: rgba(0,0,0,.1);
+      box-shadow: inset 0 0 0 2px #f4f4f4;
+    }
+    &:disabled {
+      filter: brightness(0.7) contrast(0.8);
+      cursor: not-allowed;
+    }
+  }
+
+  .fb-clear-dark {
+    background: transparent;
+    box-shadow: inset 0 0 0 2px #434343;
+    &:hover:not(.noop, .busy, :disabled) {
+      background: rgba(255,255,255,.1);
+      box-shadow: inset 0 0 0 2px #434343, 0 0 5px rgba(0,0,0,.15), inset 0 0 5px rgba(255,255,255,.3);
+    }
+    &:active:not(.noop, .busy, :disabled) {
+      background: rgba(0,0,0,.1);
+      box-shadow: inset 0 0 0 2px #434343;
+    }
+    &:disabled {
+      filter: brightness(0.7) contrast(0.8);
+      cursor: not-allowed;
+    }
+  }
+
+  .fb-yellow, .fb-orange, .fb-clear, .fb-pink, .fb-white, .fb-brown, .fb-add-variable, .fb-clear-dark {
+    color: #434343;
+  }
+
+
+  .fb-icon-button-cluster {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+  }
+  .fb-icon-button {
+    width: 2em;
+    height: 2em;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 5px;
+    background: transparent;
+    color: #434343;
+    &.light {
+      color: #f4f4f4;
+      &:hover:not(.noop, .busy, :disabled) {
+        background: rgba(255,255,255,.12);
+      }
+      &:disabled {
+        color: #f4f4f4;
+        filter: brightness(.8);
+      }
+    }
+    &:hover {
+      background: rgba(0,0,0,.08);
+    }
+    &:active:not(.noop, .busy, :disabled) {
+      box-shadow: inset 0 0 5px rgba(0,0,0,.2);
+      filter: brightness(0.95);
+    }
+    &:disabled {
+      filter: invert(.5);
+      cursor: not-allowed;
+    }
+    &.busy {
+      cursor: progress;
+    }
+    &.noop {
+      cursor: default;
+    }
+  }
+}

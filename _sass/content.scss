@@ -62,7 +62,7 @@
   max-width: 100%;
   grid-template-columns: 1fr auto;
   gap: 1rem;
-  font-size: 15px;
+  font-size: 1rem;
   @media (max-width: $md-screen-size) {
     grid-template-columns: 1fr;
   }
@@ -258,15 +258,15 @@
 }
 
 h1 {
-  font-size: 23px;
+  font-size: 1.5rem;
 }
 
 h2 {
-  font-size: 21px;
+  font-size: 1.25rem;
 }
 
 h3 {
-  font-size: 17px;
+  font-size: 1rem;
 }
 
 .emoji {

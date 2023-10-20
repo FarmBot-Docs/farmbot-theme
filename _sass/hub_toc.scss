@@ -72,6 +72,7 @@
       margin: 0;
       text-transform: uppercase;
       justify-self: left;
+      font-size: 1.1rem;
     }
   }
   .version-picker {
@@ -99,15 +100,16 @@
     padding-left: 8px;
     margin-bottom: .25rem;
     margin-top: 2rem;
+    font-size: 1.1rem;
   }
   h3:first-child {
     display: none;
   }
   .tag {
     float: right;
-    font-size: 0.6rem;
+    font-size: 0.65rem;
     margin-top: 0.1rem;
-    padding: 0.15rem 0.3rem;
+    padding: 0.15rem 0.4rem;
   }
   .fa-external-link-square {
     float: right;

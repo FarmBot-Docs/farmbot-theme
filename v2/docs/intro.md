@@ -15,9 +15,7 @@ Any example content is for reference and development purposes only and has no ot
 
 # H1 heading
 
-## H2 heading that is much longer than the average heading such that it will wrap to additional lines
-
-## H2 heading with emoji :robot: :seedling: :strawberry:
+## H2 heading that is much longer than the average heading such that it will wrap to additional lines with emoji :robot: :seedling: :strawberry:
 
 ### H3 heading
 

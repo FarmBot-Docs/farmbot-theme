@@ -17,6 +17,9 @@
       outline: none;
       width: 150px;
     }
+    &:hover, &:focus {
+      background: darken($white, 5%);
+    }
   }
   form {
     height: 0.5rem;

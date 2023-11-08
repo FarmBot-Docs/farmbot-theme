@@ -16,13 +16,29 @@ body {
       color: $offWhite;
       background: $darkestGray;
       border-color: $gray;
+      &:hover {
+        background: rgba($site-color, 0.25);
+        color: $white;
+      }
     }
     .dark-mode-toggle,
     .internal-mode-toggle {
       background: $darkestGray;
       &:after {
         background: $gray;
-        box-shadow: inset 0 0 0px 2px $darkestGray;
+      }
+      &:hover {
+        background: darken($darkestGray, 5%);
+        color: $white;
+      }
+    }
+    .hub-toc-header {
+      button:hover {
+        background: rgba($site-color, 0.25);
+        color: $white;
+        h3 {
+          color: $white;
+        }
       }
     }
     .hub-toc-all {
@@ -53,7 +69,8 @@ body {
         color: $offWhite;
       }
       .page-controls a:hover {
-        background: rgba($site-color, 0.15);
+        background: rgba($site-color, 0.25);
+        color: $white;
       }
       .page-description {
         color: $offWhite;
@@ -70,10 +87,20 @@ body {
           border-color: $offWhite;
         }
       }
+      .page-toc-header {
+        button:hover {
+          background: rgba($site-color, 0.25);
+          color: $white;
+          h2 {
+            color: $white;
+          }
+        }
+      }
       .page-toc {
         a {
           color: darken($offWhite, 15%);
           &:hover {
+            background: rgba($site-color, 0.25);
             color: $white;
           }
         }
@@ -177,6 +204,10 @@ body {
     .ais-SearchBox {
       input {
         background: $darkestGray;
+        &:hover, &:focus {
+          background: darken($darkestGray, 5%);
+          color: $white;
+        }
       }
     }
     #search-hits {

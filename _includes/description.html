@@ -11,7 +11,11 @@
   {%- assign page_url = page.url | split: '/' | reverse | slice: 1, 999 | reverse | join: '/' -%}
 
   {%- capture new_url -%}
-  <a href="{{ site.url }}{{ page_url }}/{{ old_url }}"
+  {%- if old_url contains 'http' -%}
+    <a href="{{ old_url }}"
+  {%- else -%}
+    <a href="{{ site.url }}{{ page_url }}/{{ old_url }}"
+  {%- endif -%}
   {%- endcapture -%}
 
   {%- capture all -%}

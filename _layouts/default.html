@@ -27,7 +27,9 @@
   <div class="all" id="all">
     <div class="hub-toc-all" id="hub-toc-all">
       <div class="hub-toc-header">
-        <button onclick="toggleHubToc()" aria-label="Toggle the documentation hub table of contents">
+        <button onclick="toggleHubToc()"
+          title="toggle hub table of contents"
+          aria-label="Toggle the documentation hub table of contents">
           <i class='fa fa-list-ul'></i>
           <h3>{{ site.title | remove: "Documentation" }}</h3>
         </button>
@@ -50,37 +52,46 @@
         <div class="page-controls">
           {%- if page.specs -%}
             <a href="https://farm.bot/search?q={{ page.title | url_encode }}" target="_blank"
+              title="shop"
               aria-label="Buy this part from the FarmBot shop">
               <i class='fa fa-shopping-cart'></i>
             </a>
           {%- endif -%}
           {%- if page.cad -%}
             <a href="{{ page.cad }}" target="_blank"
+              title="view CAD"
               aria-label="View the CAD model for this part">
               <i class='fa fa-cube'></i>
             </a>
           {%- endif -%}
           <a onclick="toggleFullscreen()"
+            title="toggle fullscreen"
             aria-label="View full-width">
             <i class='fa fa-expand' id="fullscreen-toggle"></i>
           </a>
           <a href="javascript:window.print()"
+            title="print"
             aria-label="Print this page">
             <i class='fa fa-print'></i>
           </a>
           <a href="{{ site.github.repository_url }}/edit/main{{ page.url
             | replace: '.html', '.md'  }}" target="_blank"
+              title="edit"
               aria-label="Edit this documentation page">
             <i class='fa fa-edit'></i>
           </a>
         </div>
-        <div class="page-description">{{ page.description | markdownify }}</div>
+        <div class="page-description">
+          {% include description.html description=page.description %}
+        </div>
       </header>
       <main id="content" class="main-content" role="main">
         <div class="page-toc-all" id="page-toc-all">
           {%- if content contains '<h' -%}
           <div class="page-toc-header">
-            <button onclick="togglePageToc()" aria-label="Toggle the page table of contents">
+            <button onclick="togglePageToc()"
+              title="toggle page table of contents"
+              aria-label="Toggle the page table of contents">
               <i class='fa fa-list-ul'></i>
               <h2>Page Contents</h2>
             </button>

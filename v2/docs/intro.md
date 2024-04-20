@@ -1,7 +1,7 @@
 ---
 title: FarmBot Theme
 slug: intro
-description: "Example FarmBot documentation :book: and documention development resources :wrench:"
+description: "Example FarmBot documentation :book: and documentation development resources :wrench:"
 ---
 
 {%

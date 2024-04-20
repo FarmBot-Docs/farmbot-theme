@@ -1,0 +1,22 @@
+{%- assign description = include.description | markdownify | replace: '.md', '.html' -%}
+
+{%- assign all_parts = description | split: '<a href="' -%}
+{%- assign before = all_parts | first -%}
+{%- assign parts = all_parts | slice: 1, 999 -%}
+{%- assign all = before -%}
+
+{%- for part in parts -%}
+  {%- assign old_url = part | split: '"' | first -%}
+  {%- assign after_url = part | split: '"' | slice: 1, 999 | join: '"' -%}
+  {%- assign page_url = page.url | split: '/' | reverse | slice: 1, 999 | reverse | join: '/' -%}
+
+  {%- capture new_url -%}
+  <a href="{{ site.url }}{{ page_url }}/{{ old_url }}"
+  {%- endcapture -%}
+
+  {%- capture all -%}
+  {{ all }}{{ new_url }}{{ after_url }}
+  {%- endcapture -%}
+{%- endfor -%}
+
+{{ all }}

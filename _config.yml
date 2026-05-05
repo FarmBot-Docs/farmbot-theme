@@ -10,6 +10,7 @@ latest_version_number: 2
 plugins:
   - jemoji
   - jekyll-github-metadata
+  - jekyll-default-layout
   - jekyll-relative-links
   - jekyll-seo-tag
   - jekyll-redirect-from

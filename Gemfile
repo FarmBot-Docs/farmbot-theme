@@ -7,6 +7,7 @@ gem 'jekyll-relative-links'
 gem 'jekyll-seo-tag'
 gem 'jekyll-theme-cayman'
 gem 'jemoji'
+gem 'ostruct'
 
 group :jekyll_plugins do
   gem 'jekyll-algolia'

@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'jekyll'
 gem 'jekyll-github-metadata'
+gem 'jekyll-default-layout'
 gem 'jekyll-redirect-from'
 gem 'jekyll-relative-links'
 gem 'jekyll-seo-tag'

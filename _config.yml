@@ -2,9 +2,9 @@ theme: jekyll-theme-cayman
 title: FarmBot Docs Theme
 description: Example FarmBot documentation and documentation development resources
 url: https://theme.farm.bot/
-repository: https://github.com/FarmBot-Docs/farmbot-theme
+repository: FarmBot-Docs/farmbot-theme
 site_branch: main
-logo: "/assets/images/farmbot.svg"
+logo: /assets/images/farmbot.svg
 color: '#434343'
 latest_version_number: 2
 plugins:

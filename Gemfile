@@ -13,3 +13,5 @@ gem 'ostruct'
 group :jekyll_plugins do
   gem 'jekyll-algolia'
 end
+
+ruby '~> 4.0.0'
